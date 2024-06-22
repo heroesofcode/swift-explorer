@@ -1,7 +1,7 @@
 # Swift Explorer
 
 [![CI](https://github.com/heroesofcode/swift-explorer/actions/workflows/CI.yml/badge.svg)](https://github.com/heroesofcode/swift-explorer/actions/workflows/CI.yml)
-[![GitHub](https://img.shields.io/github/license/heroesofcode/swift-explorer)](https://github.com/joaolfp/swift-explorer/blob/main/LICENSE)
+[![GitHub](https://img.shields.io/github/license/heroesofcode/swift-explorer)](https://github.com/heroesofcode/swift-explorer/blob/main/LICENSE)
 
 Desktop tool to quickly explore and analyze Swift bytecode.
 
@@ -14,6 +14,10 @@ Desktop tool to quickly explore and analyze Swift bytecode.
 - <b>Education and Learning:</b> Valuable educational tool for learning about compilers and how different language constructs translate into machine instructions.
 - <b>Optimization:</b> Helps identify and optimize code snippets that are not compiling efficiently.
 - <b>Comparative Analysis:</b> Allows you to compare how different approaches or code versions generate different bytecode, facilitating the choice of best coding practices.
+
+## Installing
+
+Download the dmg - [click here](https://github.com/heroesofcode/swift-explorer/releases/download/1.0.0/SwiftExplorer.dmg)
 
 ## Contributing
 
