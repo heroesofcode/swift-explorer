@@ -8,17 +8,77 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var swiftCode: String = ""
+    @State private var bytecode: String = ""
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TextEditor(text: $swiftCode)
+                .border(Color.gray, width: 1)
+                .padding()
+            
+            Button(action: generateBytecode) {
+                Text("Generate Bytecode")
+            }
+            .padding()
+            
+            TextEditor(text: $bytecode)
+                .border(Color.gray, width: 1)
+                .padding()
         }
         .padding()
     }
-}
 
-#Preview {
-    ContentView()
+    func generateBytecode() {
+        let tempFile = NSTemporaryDirectory() + "tempfile.swift"
+        let outputFile = NSTemporaryDirectory() + "output.s"
+        
+        let correctedSwiftCode = swiftCode.replacingOccurrences(of: "“", with: "\"")
+                                          .replacingOccurrences(of: "”", with: "\"")
+        
+        do {
+            try correctedSwiftCode.write(toFile: tempFile, atomically: true, encoding: .utf8)
+        } catch {
+            bytecode = "Error writing temporary file: \(error.localizedDescription)"
+            return
+        }
+        
+        guard let scriptPath = Bundle.main.path(forResource: "generate_bytecode", ofType: "sh") else {
+            bytecode = "Unable to find script"
+            return
+        }
+        
+        print("Script Path: \(scriptPath)")
+        
+        let process = Process()
+        process.launchPath = scriptPath
+        process.arguments = [tempFile, outputFile]
+        
+        let pipe = Pipe()
+        let errorPipe = Pipe()
+        process.standardOutput = pipe
+        process.standardError = errorPipe
+        
+        process.launch()
+        process.waitUntilExit()
+        
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+        
+        let errorOutput = String(data: errorData, encoding: .utf8) ?? ""
+        
+        print("Error Output: \(errorOutput)")
+        
+        if !errorOutput.isEmpty {
+            bytecode = "Error during script execution: \(errorOutput)"
+        } else {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: outputFile))
+                bytecode = String(data: data, encoding: .utf8) ?? "Error reading bytecode"
+            } catch {
+                bytecode = "Error reading output file: \(error.localizedDescription)"
+            }
+        }
+    }
+
 }
