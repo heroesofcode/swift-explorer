@@ -2,7 +2,7 @@
 
 Desktop tool to quickly explore and analyze Swift bytecode.
 
-<img src="https://github.com/heroesofcode/swift-explorer/blob/develop/Assets/screen.png?raw=true">
+<img src="https://github.com/heroesofcode/swift-explorer/blob/main/Assets/screen.png?raw=true">
 
 ## Features
 
