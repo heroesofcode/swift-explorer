@@ -16,5 +16,4 @@ final class ContentViewTests: XCTestCase {
         let view = ContentView()
         assertSnapshot(of: view.view(width: 500, height: 500), as: .image)
     }
-
 }
