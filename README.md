@@ -1,5 +1,8 @@
 # Swift Explorer
 
+[![CI](https://github.com/heroesofcode/swift-explorer/actions/workflows/CI.yml/badge.svg)](https://github.com/heroesofcode/swift-explorer/actions/workflows/CI.yml)
+[![GitHub](https://img.shields.io/github/license/heroesofcode/swift-explorer)](https://github.com/joaolfp/swift-explorer/blob/main/LICENSE)
+
 Desktop tool to quickly explore and analyze Swift bytecode.
 
 <img src="https://github.com/heroesofcode/swift-explorer/blob/main/Assets/screen.png?raw=true">
