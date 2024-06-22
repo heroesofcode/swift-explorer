@@ -5,19 +5,26 @@ import PackageDescription
 
 let package = Package(
     name: "Bytecode",
+    defaultLocalization: "en",
     platforms: [
         .macOS(.v13)
     ],
     products: [
         .library(
             name: "Bytecode",
-            targets: ["Bytecode"]),
+            targets: ["Bytecode"]
+        )
     ],
     targets: [
         .target(
-            name: "Bytecode"),
+            name: "Bytecode",
+            resources: [
+                .process("Localizable")
+            ]
+        ),
         .testTarget(
             name: "BytecodeTests",
-            dependencies: ["Bytecode"]),
+            dependencies: ["Bytecode"]
+        )
     ]
 )

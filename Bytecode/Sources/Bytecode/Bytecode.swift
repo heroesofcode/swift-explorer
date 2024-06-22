@@ -19,12 +19,12 @@ public final class Bytecode {
         let errorData = pipe.fileHandleForReading.readDataToEndOfFile()
         let errorOutput = String(data: errorData, encoding: .utf8) ?? ""
         
-        print("Error Output: \(errorOutput)")
+        print(L10n.errorOutput(errorOutput))
         
         result(errorOutput: errorOutput, outputFile: outputFile)
     }
     
-    private func validationFieldSwiftCode() -> (String, String) {
+    internal func validationFieldSwiftCode() -> (String, String) {
         let tempFile = NSTemporaryDirectory() + "tempfile.swift"
         let outputFile = NSTemporaryDirectory() + "output.s"
         
@@ -34,7 +34,7 @@ public final class Bytecode {
         do {
             try correctedSwiftCode.write(toFile: tempFile, atomically: true, encoding: .utf8)
         } catch {
-            bytecode = "Error writing temporary file: \(error.localizedDescription)"
+            bytecode = L10n.errorWritingTemporary(error.localizedDescription)
             return (tempFile, outputFile)
         }
         
@@ -59,13 +59,13 @@ public final class Bytecode {
     
     private func result(errorOutput: String, outputFile: String) {
         if !errorOutput.isEmpty {
-            bytecode = "Error during script execution: \(errorOutput)"
+            bytecode = L10n.errorScriptExecution(errorOutput)
         } else {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: outputFile))
-                bytecode = String(data: data, encoding: .utf8) ?? "Error reading bytecode"
+                bytecode = String(data: data, encoding: .utf8) ?? L10n.errorReadingBytecode
             } catch {
-                bytecode = "Error reading output file: \(error.localizedDescription)"
+                bytecode = L10n.errorReadingOutput(error.localizedDescription)
             }
         }
     }
