@@ -1,0 +1,13 @@
+/* 
+  Bytecode.strings
+  
+
+  Created by João Lucas on 22/06/24.
+  
+*/
+
+"errorOutput" = "Error Output: %@";
+"errorWritingTemporary" = "Error writing temporary file: %@";
+"errorScriptExecution" = "Error during script execution %@";
+"errorReadingBytecode" = "Error reading bytecode";
+"errorReadingOutput" = "Error reading output file: %@";

@@ -1,0 +1,13 @@
+/* 
+  SwiftExplorer.strings
+  SwiftExplorer
+
+  Created by João Lucas on 22/06/24.
+  
+*/
+
+"swiftExplorer" = "Swift Explorer";
+"description" = "Desktop tool to quickly explore and analyze Swift bytecode.";
+"swift" = "Swift";
+"generatedBytecode" = "Generate Bytecode";
+"bytecode" = "Bytecode";
