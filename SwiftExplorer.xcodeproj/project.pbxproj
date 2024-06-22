@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		C519A74C2C26E10600BF91E3 /* Bytecode in Frameworks */ = {isa = PBXBuildFile; productRef = C519A74B2C26E10600BF91E3 /* Bytecode */; };
 		C519A74F2C26ED6B00BF91E3 /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = C519A74E2C26ED6B00BF91E3 /* Theme */; };
+		C519A7542C26F16700BF91E3 /* SwiftExplorer.strings in Resources */ = {isa = PBXBuildFile; fileRef = C519A7522C26F16700BF91E3 /* SwiftExplorer.strings */; };
+		C519A7572C26F1EF00BF91E3 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = C519A7562C26F1EF00BF91E3 /* L10n.swift */; };
+		C519A75F2C27034900BF91E3 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C519A75E2C27034900BF91E3 /* ContentViewTests.swift */; };
+		C519A7622C27044F00BF91E3 /* CommonTest in Frameworks */ = {isa = PBXBuildFile; productRef = C519A7612C27044F00BF91E3 /* CommonTest */; };
+		C519A7642C27045500BF91E3 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = C519A7632C27045500BF91E3 /* SnapshotTesting */; };
 		C58379CC2C26A3440068D178 /* SwiftExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58379CB2C26A3440068D178 /* SwiftExplorerApp.swift */; };
 		C58379CE2C26A3440068D178 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58379CD2C26A3440068D178 /* ContentView.swift */; };
 		C58379D02C26A3450068D178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58379CF2C26A3450068D178 /* Assets.xcassets */; };
@@ -31,6 +36,10 @@
 /* Begin PBXFileReference section */
 		C519A74A2C26E0C900BF91E3 /* Bytecode */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Bytecode; sourceTree = "<group>"; };
 		C519A74D2C26ED3500BF91E3 /* Theme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Theme; sourceTree = "<group>"; };
+		C519A7532C26F16700BF91E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SwiftExplorer.strings; sourceTree = "<group>"; };
+		C519A7562C26F1EF00BF91E3 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		C519A7592C26F5EE00BF91E3 /* CommonTest */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CommonTest; sourceTree = "<group>"; };
+		C519A75E2C27034900BF91E3 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		C58379C82C26A3440068D178 /* SwiftExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58379CB2C26A3440068D178 /* SwiftExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExplorerApp.swift; sourceTree = "<group>"; };
 		C58379CD2C26A3440068D178 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C519A7622C27044F00BF91E3 /* CommonTest in Frameworks */,
+				C519A7642C27045500BF91E3 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,9 +98,50 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		C519A7502C26F12200BF91E3 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				C519A7512C26F15000BF91E3 /* en.lproj */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		C519A7512C26F15000BF91E3 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				C519A7522C26F16700BF91E3 /* SwiftExplorer.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		C519A7552C26F17E00BF91E3 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				C519A7562C26F1EF00BF91E3 /* L10n.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		C519A75C2C27032800BF91E3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				C519A75D2C27033100BF91E3 /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		C519A75D2C27033100BF91E3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C519A75E2C27034900BF91E3 /* ContentViewTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		C58379BF2C26A3440068D178 = {
 			isa = PBXGroup;
 			children = (
+				C519A7592C26F5EE00BF91E3 /* CommonTest */,
 				C519A74D2C26ED3500BF91E3 /* Theme */,
 				C519A74A2C26E0C900BF91E3 /* Bytecode */,
 				C58379CA2C26A3440068D178 /* SwiftExplorer */,
@@ -111,6 +163,8 @@
 		C58379CA2C26A3440068D178 /* SwiftExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				C519A7552C26F17E00BF91E3 /* Generated */,
+				C519A7502C26F12200BF91E3 /* Localizable */,
 				C519A7482C26E02200BF91E3 /* Features */,
 				C519A7472C26E01A00BF91E3 /* Application */,
 				C58379CF2C26A3450068D178 /* Assets.xcassets */,
@@ -132,6 +186,7 @@
 		C58379DC2C26A3450068D178 /* SwiftExplorerTests */ = {
 			isa = PBXGroup;
 			children = (
+				C519A75C2C27032800BF91E3 /* Features */,
 				C58379DD2C26A3450068D178 /* SwiftExplorerTests.swift */,
 			);
 			path = SwiftExplorerTests;
@@ -183,6 +238,10 @@
 				C58379DB2C26A3450068D178 /* PBXTargetDependency */,
 			);
 			name = SwiftExplorerTests;
+			packageProductDependencies = (
+				C519A7612C27044F00BF91E3 /* CommonTest */,
+				C519A7632C27045500BF91E3 /* SnapshotTesting */,
+			);
 			productName = SwiftExplorerTests;
 			productReference = C58379D92C26A3450068D178 /* SwiftExplorerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -217,6 +276,7 @@
 			mainGroup = C58379BF2C26A3440068D178;
 			packageReferences = (
 				C58379F82C26B4110068D178 /* XCRemoteSwiftPackageReference "CodeEditor" */,
+				C519A7602C27042000BF91E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = C58379C92C26A3440068D178 /* Products */;
 			projectDirPath = "";
@@ -236,6 +296,7 @@
 				C58379D32C26A3450068D178 /* Preview Assets.xcassets in Resources */,
 				C58379F72C26A8640068D178 /* generate_bytecode.sh in Resources */,
 				C58379D02C26A3450068D178 /* Assets.xcassets in Resources */,
+				C519A7542C26F16700BF91E3 /* SwiftExplorer.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +316,7 @@
 			files = (
 				C58379CE2C26A3440068D178 /* ContentView.swift in Sources */,
 				C58379CC2C26A3440068D178 /* SwiftExplorerApp.swift in Sources */,
+				C519A7572C26F1EF00BF91E3 /* L10n.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C519A75F2C27034900BF91E3 /* ContentViewTests.swift in Sources */,
 				C58379DE2C26A3450068D178 /* SwiftExplorerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +338,17 @@
 			targetProxy = C58379DA2C26A3450068D178 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C519A7522C26F16700BF91E3 /* SwiftExplorer.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C519A7532C26F16700BF91E3 /* en */,
+			);
+			name = SwiftExplorer.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C58379EB2C26A3460068D178 /* Debug */ = {
@@ -518,6 +592,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C519A7602C27042000BF91E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = exactVersion;
+				version = 1.16.1;
+			};
+		};
 		C58379F82C26B4110068D178 /* XCRemoteSwiftPackageReference "CodeEditor" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ZeeZide/CodeEditor";
@@ -536,6 +618,15 @@
 		C519A74E2C26ED6B00BF91E3 /* Theme */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Theme;
+		};
+		C519A7612C27044F00BF91E3 /* CommonTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CommonTest;
+		};
+		C519A7632C27045500BF91E3 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C519A7602C27042000BF91E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 		C58379FA2C26B43B0068D178 /* CodeEditor */ = {
 			isa = XCSwiftPackageProductDependency;

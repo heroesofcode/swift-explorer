@@ -1,0 +1,5 @@
+strings:
+  inputs: SwiftExplorer/Localizable/en.lproj
+  outputs:
+    templateName: structured-swift5
+    output: SwiftExplorer/Generated/L10n.swift

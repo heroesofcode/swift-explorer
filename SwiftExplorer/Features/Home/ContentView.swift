@@ -23,16 +23,16 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .foregroundColor(Color(hex: "#FA7343"))
                     
-                    Text("Swift Explorer")
+                    Text(L10n.swiftExplorer)
                         .font(.largeTitle)
                 }
                 
-                Text("Desktop tool to quickly explore and analyze Swift bytecode.")
+                Text(L10n.description)
             }
             
             VStack {
                 HStack {
-                    Text("Swift")
+                    Text(L10n.swift)
                         .bold()
                         .font(.title2)
                     
@@ -54,7 +54,7 @@ struct ContentView: View {
                 let bytecode = Bytecode(swiftCode: $swiftCode, bytecode: $bytecode)
                 bytecode.generateBytecode()
             }) {
-                Text("Generate Bytecode")
+                Text(L10n.generatedBytecode)
                     .foregroundColor(.white)
                     .padding()
                     .background(Color(hex: "#FA7343"))
@@ -67,7 +67,7 @@ struct ContentView: View {
             
             VStack {
                 HStack {
-                    Text("Bytecode")
+                    Text(L10n.bytecode)
                         .bold()
                         .font(.title2)
                     
