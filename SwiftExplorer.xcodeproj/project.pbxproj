@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C519A74C2C26E10600BF91E3 /* Bytecode in Frameworks */ = {isa = PBXBuildFile; productRef = C519A74B2C26E10600BF91E3 /* Bytecode */; };
+		C519A74F2C26ED6B00BF91E3 /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = C519A74E2C26ED6B00BF91E3 /* Theme */; };
 		C58379CC2C26A3440068D178 /* SwiftExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58379CB2C26A3440068D178 /* SwiftExplorerApp.swift */; };
 		C58379CE2C26A3440068D178 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58379CD2C26A3440068D178 /* ContentView.swift */; };
 		C58379D02C26A3450068D178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58379CF2C26A3450068D178 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		C519A74A2C26E0C900BF91E3 /* Bytecode */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Bytecode; sourceTree = "<group>"; };
+		C519A74D2C26ED3500BF91E3 /* Theme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Theme; sourceTree = "<group>"; };
 		C58379C82C26A3440068D178 /* SwiftExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58379CB2C26A3440068D178 /* SwiftExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExplorerApp.swift; sourceTree = "<group>"; };
 		C58379CD2C26A3440068D178 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C519A74F2C26ED6B00BF91E3 /* Theme in Frameworks */,
 				C58379FB2C26B43B0068D178 /* CodeEditor in Frameworks */,
 				C519A74C2C26E10600BF91E3 /* Bytecode in Frameworks */,
 			);
@@ -87,6 +90,7 @@
 		C58379BF2C26A3440068D178 = {
 			isa = PBXGroup;
 			children = (
+				C519A74D2C26ED3500BF91E3 /* Theme */,
 				C519A74A2C26E0C900BF91E3 /* Bytecode */,
 				C58379CA2C26A3440068D178 /* SwiftExplorer */,
 				C58379DC2C26A3450068D178 /* SwiftExplorerTests */,
@@ -159,6 +163,7 @@
 			packageProductDependencies = (
 				C58379FA2C26B43B0068D178 /* CodeEditor */,
 				C519A74B2C26E10600BF91E3 /* Bytecode */,
+				C519A74E2C26ED6B00BF91E3 /* Theme */,
 			);
 			productName = SwiftExplorer;
 			productReference = C58379C82C26A3440068D178 /* SwiftExplorer.app */;
@@ -402,6 +407,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftExplorer/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,6 +434,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftExplorer/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -525,6 +532,10 @@
 		C519A74B2C26E10600BF91E3 /* Bytecode */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Bytecode;
+		};
+		C519A74E2C26ED6B00BF91E3 /* Theme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Theme;
 		};
 		C58379FA2C26B43B0068D178 /* CodeEditor */ = {
 			isa = XCSwiftPackageProductDependency;

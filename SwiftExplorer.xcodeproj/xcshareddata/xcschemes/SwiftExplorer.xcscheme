@@ -50,6 +50,16 @@
                ReferencedContainer = "container:Bytecode">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ThemeTests"
+               BuildableName = "ThemeTests"
+               BlueprintName = "ThemeTests"
+               ReferencedContainer = "container:Theme">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

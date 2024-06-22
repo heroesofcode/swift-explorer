@@ -61,12 +61,16 @@ public final class Bytecode {
         if !errorOutput.isEmpty {
             bytecode = L10n.errorScriptExecution(errorOutput)
         } else {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: outputFile))
-                bytecode = String(data: data, encoding: .utf8) ?? L10n.errorReadingBytecode
-            } catch {
-                bytecode = L10n.errorReadingOutput(error.localizedDescription)
-            }
+            validationOutputFile(outputFile: outputFile)
+        }
+    }
+    
+    private func validationOutputFile(outputFile: String) {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: outputFile))
+            bytecode = String(data: data, encoding: .utf8) ?? L10n.errorReadingBytecode
+        } catch {
+            bytecode = L10n.errorReadingOutput(error.localizedDescription)
         }
     }
 

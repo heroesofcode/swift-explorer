@@ -1,0 +1,39 @@
+disabled_rules:
+  - line_length
+  - force_try
+  - identifier_name
+  - trailing_whitespace
+  - force_cast
+  - colon
+  - implicit_getter
+  - void_return
+  - unused_enumerated
+  - function_parameter_count
+  - file_length
+  - self_in_property_initialization
+  - blanket_disable_command
+  - void_function_in_ternary
+  
+vertical_whitespace:
+    severity: error
+
+opt_in_rules:
+  - empty_count
+  - comma
+  
+custom_rules:
+  final_class:
+    included: ".*.swift"
+    name: "Final class requirement"
+    regex: '^class'
+    message: "It's recommended that all classes be final. The only exception are classes that allow inheritance, in these cases, it is 
+recommended that this rule be disabled.
+."
+    severity: warning
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - Carthage
+  - Fastlane
+  - Bytecode/Tests
+  - Theme/Tests
