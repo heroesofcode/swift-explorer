@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1540"
-   version = "1.7">
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
@@ -28,11 +28,10 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C58379D82C26A3450068D178"
@@ -42,14 +41,13 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C58379E22C26A3460068D178"
-               BuildableName = "SwiftExplorerUITests.xctest"
-               BlueprintName = "SwiftExplorerUITests"
-               ReferencedContainer = "container:SwiftExplorer.xcodeproj">
+               BlueprintIdentifier = "BytecodeTests"
+               BuildableName = "BytecodeTests"
+               BlueprintName = "BytecodeTests"
+               ReferencedContainer = "container:Bytecode">
             </BuildableReference>
          </TestableReference>
       </Testables>
