@@ -34,7 +34,7 @@ struct ContentView: View {
         let outputFile = NSTemporaryDirectory() + "output.s"
         
         let correctedSwiftCode = swiftCode.replacingOccurrences(of: "“", with: "\"")
-                                          .replacingOccurrences(of: "”", with: "\"")
+            .replacingOccurrences(of: "”", with: "\"")
         
         do {
             try correctedSwiftCode.write(toFile: tempFile, atomically: true, encoding: .utf8)
@@ -43,16 +43,9 @@ struct ContentView: View {
             return
         }
         
-        guard let scriptPath = Bundle.main.path(forResource: "generate_bytecode", ofType: "sh") else {
-            bytecode = "Unable to find script"
-            return
-        }
-        
-        print("Script Path: \(scriptPath)")
-        
         let process = Process()
-        process.launchPath = scriptPath
-        process.arguments = [tempFile, outputFile]
+        process.launchPath = "/usr/bin/env"
+        process.arguments = ["swiftc", "-emit-assembly", tempFile, "-o", outputFile]
         
         let pipe = Pipe()
         let errorPipe = Pipe()
