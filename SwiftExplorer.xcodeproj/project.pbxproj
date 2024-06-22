@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C58379CC2C26A3440068D178 /* SwiftExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58379CB2C26A3440068D178 /* SwiftExplorerApp.swift */; };
-		C58379CE2C26A3440068D178 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58379CD2C26A3440068D178 /* ContentView.swift */; };
+		C58379CE2C26A3440068D178 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58379CD2C26A3440068D178 /* HomeView.swift */; };
 		C58379D02C26A3450068D178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58379CF2C26A3450068D178 /* Assets.xcassets */; };
 		C58379D32C26A3450068D178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58379D22C26A3450068D178 /* Preview Assets.xcassets */; };
 		C58379DE2C26A3450068D178 /* SwiftExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58379DD2C26A3450068D178 /* SwiftExplorerTests.swift */; };
 		C58379F72C26A8640068D178 /* generate_bytecode.sh in Resources */ = {isa = PBXBuildFile; fileRef = C58379F62C26A8640068D178 /* generate_bytecode.sh */; };
+		C58379FB2C26B43B0068D178 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = C58379FA2C26B43B0068D178 /* CodeEditor */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +29,7 @@
 /* Begin PBXFileReference section */
 		C58379C82C26A3440068D178 /* SwiftExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58379CB2C26A3440068D178 /* SwiftExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExplorerApp.swift; sourceTree = "<group>"; };
-		C58379CD2C26A3440068D178 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C58379CD2C26A3440068D178 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C58379CF2C26A3450068D178 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C58379D22C26A3450068D178 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C58379D42C26A3450068D178 /* SwiftExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftExplorer.entitlements; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58379FB2C26B43B0068D178 /* CodeEditor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +63,7 @@
 				C58379CA2C26A3440068D178 /* SwiftExplorer */,
 				C58379DC2C26A3450068D178 /* SwiftExplorerTests */,
 				C58379C92C26A3440068D178 /* Products */,
+				C58379F92C26B43B0068D178 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				C58379CB2C26A3440068D178 /* SwiftExplorerApp.swift */,
-				C58379CD2C26A3440068D178 /* ContentView.swift */,
+				C58379CD2C26A3440068D178 /* HomeView.swift */,
 				C58379CF2C26A3450068D178 /* Assets.xcassets */,
 				C58379D42C26A3450068D178 /* SwiftExplorer.entitlements */,
 				C58379D12C26A3450068D178 /* Preview Content */,
@@ -102,6 +105,13 @@
 			path = SwiftExplorerTests;
 			sourceTree = "<group>";
 		};
+		C58379F92C26B43B0068D178 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,6 +128,9 @@
 			dependencies = (
 			);
 			name = SwiftExplorer;
+			packageProductDependencies = (
+				C58379FA2C26B43B0068D178 /* CodeEditor */,
+			);
 			productName = SwiftExplorer;
 			productReference = C58379C82C26A3440068D178 /* SwiftExplorer.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +181,9 @@
 				Base,
 			);
 			mainGroup = C58379BF2C26A3440068D178;
+			packageReferences = (
+				C58379F82C26B4110068D178 /* XCRemoteSwiftPackageReference "CodeEditor" */,
+			);
 			productRefGroup = C58379C92C26A3440068D178 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -203,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C58379CE2C26A3440068D178 /* ContentView.swift in Sources */,
+				C58379CE2C26A3440068D178 /* HomeView.swift in Sources */,
 				C58379CC2C26A3440068D178 /* SwiftExplorerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +480,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C58379F82C26B4110068D178 /* XCRemoteSwiftPackageReference "CodeEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZeeZide/CodeEditor";
+			requirement = {
+				kind = exactVersion;
+				version = 1.2.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C58379FA2C26B43B0068D178 /* CodeEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C58379F82C26B4110068D178 /* XCRemoteSwiftPackageReference "CodeEditor" */;
+			productName = CodeEditor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C58379C02C26A3440068D178 /* Project object */;
 }

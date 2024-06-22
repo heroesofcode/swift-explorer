@@ -1,0 +1,24 @@
+{
+  "originHash" : "2d3fb37ce5c71703b42fabdc8b38f47c0281faf41ff63ea39d9505a4183c79d6",
+  "pins" : [
+    {
+      "identity" : "codeeditor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ZeeZide/CodeEditor",
+      "state" : {
+        "revision" : "3a924589c957383693cae6336a29c3ead602ec96",
+        "version" : "1.2.4"
+      }
+    },
+    {
+      "identity" : "highlightr",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/helje5/Highlightr",
+      "state" : {
+        "revision" : "bd0358056ff1f12ea83833a9fc1b3b5a396a9da0",
+        "version" : "3.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}
