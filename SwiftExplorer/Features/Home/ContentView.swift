@@ -7,12 +7,12 @@
 
 import SwiftUI
 import CodeEditor
-import Bytecode
+import Llvm
 import Theme
 
 struct ContentView: View {
     @State private var swiftCode: String = ""
-    @State private var bytecode: String = ""
+    @State private var llvm: String = ""
     @State private var fontSize: Int = 14
 
     var body: some View {
@@ -50,10 +50,10 @@ struct ContentView: View {
             }
             .padding(.top, 16)
             
-            Button(action: {
-                let bytecode = Bytecode(swiftCode: $swiftCode, bytecode: $bytecode)
-                bytecode.generateBytecode()
-            }) {
+            Button{
+                let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm)
+                llvm.generateLlvm()
+            } label: {
                 Text(L10n.generatedBytecode)
                     .foregroundColor(.white)
                     .padding()
@@ -67,7 +67,7 @@ struct ContentView: View {
             
             VStack {
                 HStack {
-                    Text(L10n.bytecode)
+                    Text(L10n.llvm)
                         .bold()
                         .font(.title2)
                     
@@ -75,11 +75,23 @@ struct ContentView: View {
                 }
                 
                 CodeEditor(
-                    source: $bytecode,
+                    source: $llvm,
                     language: .bash,
                     fontSize: .init(get: { CGFloat(16)  },
                                     set: { fontSize = Int($0) }))
                     .border(Color.blue, width: 1)
+                
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        let pasteboard = NSPasteboard.general
+                        pasteboard.clearContents()
+                        pasteboard.setString(llvm, forType: .string)
+                    } label: {
+                        Text(L10n.copy)
+                    }
+                }
             }
         }
         .padding()

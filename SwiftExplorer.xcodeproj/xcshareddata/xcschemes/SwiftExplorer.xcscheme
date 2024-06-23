@@ -44,20 +44,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BytecodeTests"
-               BuildableName = "BytecodeTests"
-               BlueprintName = "BytecodeTests"
-               ReferencedContainer = "container:Bytecode">
+               BlueprintIdentifier = "ThemeTests"
+               BuildableName = "ThemeTests"
+               BlueprintName = "ThemeTests"
+               ReferencedContainer = "container:Theme">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ThemeTests"
-               BuildableName = "ThemeTests"
-               BlueprintName = "ThemeTests"
-               ReferencedContainer = "container:Theme">
+               BlueprintIdentifier = "LlvmTests"
+               BuildableName = "LlvmTests"
+               BlueprintName = "LlvmTests"
+               ReferencedContainer = "container:Llvm">
             </BuildableReference>
          </TestableReference>
       </Testables>
