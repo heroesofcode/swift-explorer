@@ -1,8 +1,8 @@
 import XCTest
 import SwiftUI
-@testable import Llvm
+@testable import Lowlevel
 
-final class LlvmTests: XCTestCase {
+final class LowlevelTests: XCTestCase {
     
     @State private var swiftCode: String = "let a = 10"
     @State private var llvm: String = ""
@@ -22,4 +22,20 @@ final class LlvmTests: XCTestCase {
             XCTFail("Error reading temporary Swift file: \(error.localizedDescription)")
         }
     }
+    
+    func testGenerateAssembly() {
+        let swiftCode = """
+        func sum(a: Int, b: Int) -> Int {
+            return a + b
+        }
+        """
+
+        let assemblyCode = Assembly().generateAssembly(fromSwiftCode: swiftCode)
+        
+        XCTAssertTrue(assemblyCode.contains("sum"), 
+                      "The generated assembly code must contain the 'sum' function.")
+        XCTAssertTrue(assemblyCode.contains("ret"), 
+                      "The generated assembly code must contain the 'ret' instruction.")
+    }
+
 }

@@ -10,26 +10,30 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Error generating assembly code: %@
+  internal static func errorAssemblyCode(_ p1: Any) -> String {
+    return L10n.tr("Lowlevel", "errorAssemblyCode", String(describing: p1), fallback: "Error generating assembly code: %@")
+  }
   /// Bytecode.strings
   ///   
   /// 
   ///   Created by João Lucas on 22/06/24.
   internal static func errorOutput(_ p1: Any) -> String {
-    return L10n.tr("Llvm", "errorOutput", String(describing: p1), fallback: "Error Output: %@")
+    return L10n.tr("Lowlevel", "errorOutput", String(describing: p1), fallback: "Error Output: %@")
   }
   /// Error reading bytecode
-  internal static let errorReadingBytecode = L10n.tr("Llvm", "errorReadingBytecode", fallback: "Error reading bytecode")
+  internal static let errorReadingBytecode = L10n.tr("Lowlevel", "errorReadingBytecode", fallback: "Error reading bytecode")
   /// Error reading output file: %@
   internal static func errorReadingOutput(_ p1: Any) -> String {
-    return L10n.tr("Llvm", "errorReadingOutput", String(describing: p1), fallback: "Error reading output file: %@")
+    return L10n.tr("Lowlevel", "errorReadingOutput", String(describing: p1), fallback: "Error reading output file: %@")
   }
   /// Error during script execution %@
   internal static func errorScriptExecution(_ p1: Any) -> String {
-    return L10n.tr("Llvm", "errorScriptExecution", String(describing: p1), fallback: "Error during script execution %@")
+    return L10n.tr("Lowlevel", "errorScriptExecution", String(describing: p1), fallback: "Error during script execution %@")
   }
   /// Error writing temporary file: %@
   internal static func errorWritingTemporary(_ p1: Any) -> String {
-    return L10n.tr("Llvm", "errorWritingTemporary", String(describing: p1), fallback: "Error writing temporary file: %@")
+    return L10n.tr("Lowlevel", "errorWritingTemporary", String(describing: p1), fallback: "Error writing temporary file: %@")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

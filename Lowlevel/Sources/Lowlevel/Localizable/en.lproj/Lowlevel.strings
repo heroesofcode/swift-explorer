@@ -11,3 +11,4 @@
 "errorScriptExecution" = "Error during script execution %@";
 "errorReadingBytecode" = "Error reading bytecode";
 "errorReadingOutput" = "Error reading output file: %@";
+"errorAssemblyCode" = "Error generating assembly code: %@";
