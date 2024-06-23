@@ -28,7 +28,7 @@ Please see the [documentation](https://github.com/heroesofcode/swift-explorer/bl
 
 This project was inspired by [kotlin-explorer](https://github.com/romainguy/kotlin-explorer) developed by [Romain Guy](https://github.com/romainguy).
 
-If you have any questions about the tool, I recommend you watch the talk [Practical Optimizations - Romain Guy](https://www.youtube.com/watch?v=5cxw_fdpnoA&list=PLn7H9CUCuXAtxPltq2mEHc_Wbgckrd4B-)
+If you have any questions about the kotlin-explorer tool, I recommend you watch the talk [Practical Optimizations - Romain Guy](https://www.youtube.com/watch?v=5cxw_fdpnoA&list=PLn7H9CUCuXAtxPltq2mEHc_Wbgckrd4B-)
 
 ## License
 
