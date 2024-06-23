@@ -15,10 +15,12 @@ Desktop tool to quickly explore and analyze Swift Intermediate Representation (I
 - <b>Optimization:</b> Helps identify and optimize code snippets that are not compiling efficiently by providing insights from both LLVM IR and assembly.
 - <b>Comparative Analysis:</b> Allows you to compare how different approaches or code versions generate different IR and assembly code, facilitating the choice of best coding practices.
 
+## Support
+macOS 14.0+
 
 ## Installing
 
-Download the dmg - [click here](https://github.com/heroesofcode/swift-explorer/releases/download/1.1.0/SwiftExplorer.dmg)
+Download the dmg - [click here](https://github.com/heroesofcode/swift-explorer/releases/download/1.2.0/SwiftExplorer.dmg)
 
 ## Contributing
 
