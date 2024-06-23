@@ -4,27 +4,27 @@
 import PackageDescription
 
 let package = Package(
-    name: "Llvm",
+    name: "Lowlevel",
     defaultLocalization: "en",
     platforms: [
         .macOS(.v13)
     ],
     products: [
         .library(
-            name: "Llvm",
-            targets: ["Llvm"]
+            name: "Lowlevel",
+            targets: ["Lowlevel"]
         )
     ],
     targets: [
         .target(
-            name: "Llvm",
+            name: "Lowlevel",
             resources: [
                 .process("Localizable")
             ]
         ),
         .testTarget(
-            name: "LlvmTests",
-            dependencies: ["Llvm"]
+            name: "LowlevelTests",
+            dependencies: ["Lowlevel"]
         )
     ]
 )

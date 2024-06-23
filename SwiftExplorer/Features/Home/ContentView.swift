@@ -7,12 +7,13 @@
 
 import SwiftUI
 import CodeEditor
-import Llvm
+import Lowlevel
 import Theme
 
 struct ContentView: View {
     @State private var swiftCode: String = ""
     @State private var llvm: String = ""
+    @State private var assemblyCode: String = ""
     @State private var fontSize: Int = 14
 
     var body: some View {
@@ -29,71 +30,105 @@ struct ContentView: View {
                 
                 Text(L10n.description)
             }
-            
-            VStack {
-                HStack {
-                    Text(L10n.swift)
-                        .bold()
-                        .font(.title2)
-                    
-                    Spacer()
-                }
-                
-                CodeEditor(
-                    source: $swiftCode,
-                    language: .swift,
-                    fontSize: .init(get: { CGFloat(16)  },
-                                    set: { fontSize = Int($0) }))
-                    .border(Color(hex: "#FA7343"), width: 1)
-                    .font(.system(size: 100))
-                    .frame(maxWidth: .infinity)
-            }
             .padding(.top, 16)
             
-            Button{
-                let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm)
-                llvm.generateLlvm()
-            } label: {
-                Text(L10n.generatedBytecode)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color(hex: "#FA7343"))
-                    .bold()
-                    .cornerRadius(8)
-            }
-            .buttonStyle(PlainButtonStyle())
-            .frame(width: 400, height: 30)
-            .padding([.top, .bottom], 20)
-            
-            VStack {
-                HStack {
-                    Text(L10n.llvm)
-                        .bold()
-                        .font(.title2)
+            HStack {
+                
+                VStack {
+                    HStack {
+                        Text(L10n.swift)
+                            .bold()
+                            .font(.title2)
+                        
+                        Spacer()
+                    }
                     
-                    Spacer()
+                    CodeEditor(
+                        source: $swiftCode,
+                        language: .swift,
+                        fontSize: .init(get: { CGFloat(16)  },
+                                        set: { fontSize = Int($0) }))
+                        .border(Color(hex: "#FA7343"), width: 1)
+                        .font(.system(size: 100))
+                        .frame(maxWidth: .infinity)
                 }
                 
-                CodeEditor(
-                    source: $llvm,
-                    language: .bash,
-                    fontSize: .init(get: { CGFloat(16)  },
-                                    set: { fontSize = Int($0) }))
-                    .border(Color.blue, width: 1)
-                
-                HStack {
-                    Spacer()
+                Button{
+                    let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm)
+                    llvm.generateLlvm()
                     
-                    Button {
-                        let pasteboard = NSPasteboard.general
-                        pasteboard.clearContents()
-                        pasteboard.setString(llvm, forType: .string)
-                    } label: {
-                        Text(L10n.copy)
+                    assemblyCode = Assembly().generateAssembly(fromSwiftCode: swiftCode)
+                } label: {
+                    Text(L10n.generatedButton)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color(hex: "#FA7343"))
+                        .bold()
+                        .cornerRadius(8)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .padding([.leading, .trailing], 20)
+                
+                VStack {
+                    HStack {
+                        Text(L10n.llvm)
+                            .bold()
+                            .font(.title2)
+                        
+                        Spacer()
+                    }
+                    
+                    CodeEditor(
+                        source: $llvm,
+                        language: .bash,
+                        fontSize: .init(get: { CGFloat(16)  },
+                                        set: { fontSize = Int($0) }))
+                        .border(Color.blue, width: 1)
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            let pasteboard = NSPasteboard.general
+                            pasteboard.clearContents()
+                            pasteboard.setString(llvm, forType: .string)
+                        } label: {
+                            Text(L10n.copy)
+                        }
                     }
                 }
+                
+                VStack {
+                    HStack {
+                        Text(L10n.assembly)
+                            .bold()
+                            .font(.title2)
+                        
+                        Spacer()
+                    }
+                    
+                    CodeEditor(
+                        source: $assemblyCode,
+                        language: .bash,
+                        fontSize: .init(get: { CGFloat(16)  },
+                                        set: { fontSize = Int($0) }))
+                        .border(Color.blue, width: 1)
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            let pasteboard = NSPasteboard.general
+                            pasteboard.clearContents()
+                            pasteboard.setString(assemblyCode, forType: .string)
+                        } label: {
+                            Text(L10n.copy)
+                        }
+                    }
+                }
+                .padding(.leading, 20)
             }
+            .padding()
         }
-        .padding()
     }
 }
