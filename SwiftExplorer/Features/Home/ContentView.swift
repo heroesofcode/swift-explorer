@@ -50,10 +50,10 @@ struct ContentView: View {
             }
             .padding(.top, 16)
             
-            Button(action: {
+            Button{
                 let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm)
                 llvm.generateLlvm()
-            }) {
+            } label: {
                 Text(L10n.generatedBytecode)
                     .foregroundColor(.white)
                     .padding()
@@ -67,7 +67,7 @@ struct ContentView: View {
             
             VStack {
                 HStack {
-                    Text(L10n.bytecode)
+                    Text(L10n.llvm)
                         .bold()
                         .font(.title2)
                     
@@ -80,6 +80,18 @@ struct ContentView: View {
                     fontSize: .init(get: { CGFloat(16)  },
                                     set: { fontSize = Int($0) }))
                     .border(Color.blue, width: 1)
+                
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        let pasteboard = NSPasteboard.general
+                        pasteboard.clearContents()
+                        pasteboard.setString(llvm, forType: .string)
+                    } label: {
+                        Text(L10n.copy)
+                    }
+                }
             }
         }
         .padding()
