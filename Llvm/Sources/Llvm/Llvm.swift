@@ -1,17 +1,17 @@
 import Foundation
 import SwiftUI
 
-public final class Bytecode {
+public final class Llvm {
     
     @Binding private var swiftCode: String
-    @Binding private var bytecode: String
+    @Binding private var llvm: String
     
-    public init(swiftCode: Binding<String>, bytecode: Binding<String>) {
+    public init(swiftCode: Binding<String>, llvm: Binding<String>) {
         self._swiftCode = swiftCode
-        self._bytecode = bytecode
+        self._llvm = llvm
     }
     
-    public func generateBytecode() {
+    public func generateLlvm() {
         let (tempFile, outputFile) = validationFieldSwiftCode()
         
         let pipe = processArgument(tempFile: tempFile, outputFile: outputFile)
@@ -26,7 +26,7 @@ public final class Bytecode {
     
     internal func validationFieldSwiftCode() -> (String, String) {
         let tempFile = NSTemporaryDirectory() + "tempfile.swift"
-        let outputFile = NSTemporaryDirectory() + "output.s"
+        let outputFile = NSTemporaryDirectory() + "output.ll"
         
         let correctedSwiftCode = swiftCode.replacingOccurrences(of: "“", with: "\"")
             .replacingOccurrences(of: "”", with: "\"")
@@ -34,7 +34,7 @@ public final class Bytecode {
         do {
             try correctedSwiftCode.write(toFile: tempFile, atomically: true, encoding: .utf8)
         } catch {
-            bytecode = L10n.errorWritingTemporary(error.localizedDescription)
+            llvm = L10n.errorWritingTemporary(error.localizedDescription)
             return (tempFile, outputFile)
         }
         
@@ -44,7 +44,7 @@ public final class Bytecode {
     private func processArgument(tempFile: String, outputFile: String) -> Pipe {
         let process = Process()
         process.launchPath = "/usr/bin/env"
-        process.arguments = ["swiftc", "-emit-assembly", tempFile, "-o", outputFile]
+        process.arguments = ["swiftc", "-emit-ir", tempFile, "-o", outputFile]
         
         let pipe = Pipe()
         let errorPipe = Pipe()
@@ -59,7 +59,7 @@ public final class Bytecode {
     
     private func result(errorOutput: String, outputFile: String) {
         if !errorOutput.isEmpty {
-            bytecode = L10n.errorScriptExecution(errorOutput)
+            llvm = L10n.errorScriptExecution(errorOutput)
         } else {
             validationOutputFile(outputFile: outputFile)
         }
@@ -68,9 +68,9 @@ public final class Bytecode {
     private func validationOutputFile(outputFile: String) {
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: outputFile))
-            bytecode = String(data: data, encoding: .utf8) ?? L10n.errorReadingBytecode
+            llvm = String(data: data, encoding: .utf8) ?? L10n.errorReadingBytecode
         } catch {
-            bytecode = L10n.errorReadingOutput(error.localizedDescription)
+            llvm = L10n.errorReadingOutput(error.localizedDescription)
         }
     }
 

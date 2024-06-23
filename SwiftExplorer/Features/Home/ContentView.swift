@@ -7,12 +7,12 @@
 
 import SwiftUI
 import CodeEditor
-import Bytecode
+import Llvm
 import Theme
 
 struct ContentView: View {
     @State private var swiftCode: String = ""
-    @State private var bytecode: String = ""
+    @State private var llvm: String = ""
     @State private var fontSize: Int = 14
 
     var body: some View {
@@ -51,8 +51,8 @@ struct ContentView: View {
             .padding(.top, 16)
             
             Button(action: {
-                let bytecode = Bytecode(swiftCode: $swiftCode, bytecode: $bytecode)
-                bytecode.generateBytecode()
+                let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm)
+                llvm.generateLlvm()
             }) {
                 Text(L10n.generatedBytecode)
                     .foregroundColor(.white)
@@ -75,7 +75,7 @@ struct ContentView: View {
                 }
                 
                 CodeEditor(
-                    source: $bytecode,
+                    source: $llvm,
                     language: .bash,
                     fontSize: .init(get: { CGFloat(16)  },
                                     set: { fontSize = Int($0) }))

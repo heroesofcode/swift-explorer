@@ -4,27 +4,27 @@
 import PackageDescription
 
 let package = Package(
-    name: "Bytecode",
+    name: "Llvm",
     defaultLocalization: "en",
     platforms: [
         .macOS(.v13)
     ],
     products: [
         .library(
-            name: "Bytecode",
-            targets: ["Bytecode"]
+            name: "Llvm",
+            targets: ["Llvm"]
         )
     ],
     targets: [
         .target(
-            name: "Bytecode",
+            name: "Llvm",
             resources: [
                 .process("Localizable")
             ]
         ),
         .testTarget(
-            name: "BytecodeTests",
-            dependencies: ["Bytecode"]
+            name: "LlvmTests",
+            dependencies: ["Llvm"]
         )
     ]
 )
