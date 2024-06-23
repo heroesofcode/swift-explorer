@@ -24,7 +24,7 @@ Download the dmg - [click here](https://github.com/heroesofcode/swift-explorer/r
 
 Please see the [documentation](https://github.com/heroesofcode/swift-explorer/blob/main/CONTRIBUTING.md)
 
-## Thanks to the original team
+## Inspiration
 
 This project was inspired by [kotlin-explorer](https://github.com/romainguy/kotlin-explorer) developed by [Romain Guy](https://github.com/romainguy).
 
