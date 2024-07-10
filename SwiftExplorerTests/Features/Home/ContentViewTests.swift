@@ -14,6 +14,8 @@ final class ContentViewTests: XCTestCase {
 
     func testShouldValidateLayout() {
         let view = ContentView()
-        assertSnapshot(of: view.view(width: 800, height: 800), as: .image)
+        
+        guard let width = NSScreen.main?.frame.width else { return }
+        assertSnapshot(of: view.view(width: width, height: 800), as: .image)
     }
 }

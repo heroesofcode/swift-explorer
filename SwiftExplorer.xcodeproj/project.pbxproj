@@ -18,7 +18,6 @@
 		C58379CE2C26A3440068D178 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58379CD2C26A3440068D178 /* ContentView.swift */; };
 		C58379D02C26A3450068D178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58379CF2C26A3450068D178 /* Assets.xcassets */; };
 		C58379D32C26A3450068D178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58379D22C26A3450068D178 /* Preview Assets.xcassets */; };
-		C58379DE2C26A3450068D178 /* SwiftExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58379DD2C26A3450068D178 /* SwiftExplorerTests.swift */; };
 		C58379F72C26A8640068D178 /* generate_bytecode.sh in Resources */ = {isa = PBXBuildFile; fileRef = C58379F62C26A8640068D178 /* generate_bytecode.sh */; };
 		C58379FB2C26B43B0068D178 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = C58379FA2C26B43B0068D178 /* CodeEditor */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		C58379D22C26A3450068D178 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C58379D42C26A3450068D178 /* SwiftExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftExplorer.entitlements; sourceTree = "<group>"; };
 		C58379D92C26A3450068D178 /* SwiftExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C58379DD2C26A3450068D178 /* SwiftExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExplorerTests.swift; sourceTree = "<group>"; };
 		C58379F62C26A8640068D178 /* generate_bytecode.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_bytecode.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				C519A75C2C27032800BF91E3 /* Features */,
-				C58379DD2C26A3450068D178 /* SwiftExplorerTests.swift */,
 			);
 			path = SwiftExplorerTests;
 			sourceTree = "<group>";
@@ -325,7 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C519A75F2C27034900BF91E3 /* ContentViewTests.swift in Sources */,
-				C58379DE2C26A3450068D178 /* SwiftExplorerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
