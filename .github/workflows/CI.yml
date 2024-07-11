@@ -18,4 +18,4 @@ jobs:
          brew install heroesofcode/taps/xrun
 
     - name: Run tests with xrun
-      run: xrun project SwiftExplorer.xcodeproj SwiftExplorer
+      run: xrun project SwiftExplorer.xcodeproj SwiftExplorer macOS
