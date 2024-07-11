@@ -12,5 +12,10 @@ jobs:
       with:
         xcode-version: 15.4
         
-    - name: Run tests
-      run: make test
+    - name: Install xrun
+      run: |
+         brew tap heroesofcode/taps
+         brew install heroesofcode/taps/xrun
+
+    - name: Run tests with xrun
+      run: xrun project SwiftExplorer.xcodeproj SwiftExplorer macOS
