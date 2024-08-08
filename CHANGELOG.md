@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 1.3.0
+**2024-08-08**
+
+- Added alert in case of leaving the Swift field empty
+
 ## Version 1.2.0
 **2024-06-24**
 
