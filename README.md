@@ -20,7 +20,7 @@ macOS 14.0+
 
 ## Installing
 
-Download the dmg - [click here](https://github.com/heroesofcode/swift-explorer/releases/download/1.2.0/SwiftExplorer.dmg)
+Download the dmg - [click here](https://github.com/heroesofcode/swift-explorer/releases/download/1.3.0/SwiftExplorer.dmg)
 
 ## Contributing
 
