@@ -13,3 +13,6 @@
 "llvm" = "LLVM";
 "copy" = "Copy";
 "assembly" = "Assembly";
+"warning" = "Warning";
+"messageEmptyField" = "Enter the Swift field";
+"ok" = "OK";

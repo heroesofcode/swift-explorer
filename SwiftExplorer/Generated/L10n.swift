@@ -20,6 +20,10 @@ internal enum L10n {
   internal static let generatedButton = L10n.tr("SwiftExplorer", "generatedButton", fallback: "Generate")
   /// LLVM
   internal static let llvm = L10n.tr("SwiftExplorer", "llvm", fallback: "LLVM")
+  /// Enter the Swift field
+  internal static let messageEmptyField = L10n.tr("SwiftExplorer", "messageEmptyField", fallback: "Enter the Swift field")
+  /// OK
+  internal static let ok = L10n.tr("SwiftExplorer", "ok", fallback: "OK")
   /// Swift
   internal static let swift = L10n.tr("SwiftExplorer", "swift", fallback: "Swift")
   /// SwiftExplorer.strings
@@ -27,6 +31,8 @@ internal enum L10n {
   /// 
   ///   Created by João Lucas on 22/06/24.
   internal static let swiftExplorer = L10n.tr("SwiftExplorer", "swiftExplorer", fallback: "Swift Explorer")
+  /// Warning
+  internal static let warning = L10n.tr("SwiftExplorer", "warning", fallback: "Warning")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

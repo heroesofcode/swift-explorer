@@ -14,7 +14,9 @@ struct ContentView: View {
     @State private var swiftCode: String = ""
     @State private var llvm: String = ""
     @State private var assemblyCode: String = ""
+    
     @State private var fontSize: Int = 14
+    @State private var showAlert = false
 
     var body: some View {
         VStack {
@@ -54,10 +56,14 @@ struct ContentView: View {
                 }
                 
                 Button{
-                    let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm)
-                    llvm.generateLlvm()
-                    
-                    assemblyCode = Assembly().generateAssembly(fromSwiftCode: swiftCode)
+                    if !swiftCode.isEmpty {
+                        let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm)
+                        llvm.generateLlvm()
+                        
+                        assemblyCode = Assembly().generateAssembly(fromSwiftCode: swiftCode)
+                    } else {
+                        showAlert = true
+                    }
                 } label: {
                     Text(L10n.generatedButton)
                         .foregroundColor(.white)
@@ -68,6 +74,13 @@ struct ContentView: View {
                 }
                 .buttonStyle(PlainButtonStyle())
                 .padding([.leading, .trailing], 20)
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text(L10n.warning),
+                        message: Text(L10n.messageEmptyField),
+                        dismissButton: .default(Text(L10n.ok))
+                    )
+                }
                 
                 VStack {
                     HStack {
