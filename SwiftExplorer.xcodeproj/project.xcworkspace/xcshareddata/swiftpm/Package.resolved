@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ZeeZide/CodeEditor",
       "state" : {
-        "revision" : "3a924589c957383693cae6336a29c3ead602ec96",
-        "version" : "1.2.4"
+        "revision" : "f5c076b94f4ceb05abff88ba91d75a8d57143f0c",
+        "version" : "1.2.6"
       }
     },
     {

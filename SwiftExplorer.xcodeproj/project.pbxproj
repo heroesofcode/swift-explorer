@@ -601,7 +601,7 @@
 			repositoryURL = "https://github.com/ZeeZide/CodeEditor";
 			requirement = {
 				kind = exactVersion;
-				version = 1.2.4;
+				version = 1.2.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
