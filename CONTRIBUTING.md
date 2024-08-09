@@ -1,6 +1,6 @@
 # Contributing
 
-1 - Clone the project
+1 - Clone the project<br>
 2 - Open SwiftExplore.xcodeproj
 
 ### Installation
