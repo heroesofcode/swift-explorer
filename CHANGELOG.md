@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 1.4.0
+**2024-08-11**
+
+- Add picker for compiler optimization level - #10 - @roanutil
+
 ## Version 1.3.0
 **2024-08-08**
 
