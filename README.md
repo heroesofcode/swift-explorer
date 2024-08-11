@@ -15,6 +15,13 @@ Desktop tool to quickly explore and analyze Swift Intermediate Representation (I
 - <b>Optimization:</b> Helps identify and optimize code snippets that are not compiling efficiently by providing insights from both LLVM IR and assembly.
 - <b>Comparative Analysis:</b> Allows you to compare how different approaches or code versions generate different IR and assembly code, facilitating the choice of best coding practices.
 
+### Optimization flags
+
+- `Onone:` Compile without any optimization
+- `Osize:` Compile with optimizations and target small code size
+- `Ounchecked:` Compile with optimizations and remove runtime safety checks
+- `O:` Compile with optimizations
+
 ## Support
 macOS 14.0+
 
