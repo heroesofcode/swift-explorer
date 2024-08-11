@@ -5,16 +5,18 @@ public final class Llvm {
     
     @Binding private var swiftCode: String
     @Binding private var llvm: String
+    @Binding private var optimizationLevel: OptimizationLevel
     
-    public init(swiftCode: Binding<String>, llvm: Binding<String>) {
+    public init(swiftCode: Binding<String>, llvm: Binding<String>, optimizationLevel: Binding<OptimizationLevel>) {
         self._swiftCode = swiftCode
         self._llvm = llvm
+        self._optimizationLevel = optimizationLevel
     }
     
     public func generateLlvm() {
         let (tempFile, outputFile) = validationFieldSwiftCode()
         
-        let pipe = processArgument(tempFile: tempFile, outputFile: outputFile)
+        let pipe = processArgument(tempFile: tempFile, outputFile: outputFile, optimizationLevel: optimizationLevel)
         
         let errorData = pipe.fileHandleForReading.readDataToEndOfFile()
         let errorOutput = String(data: errorData, encoding: .utf8) ?? ""
@@ -41,10 +43,17 @@ public final class Llvm {
         return (tempFile, outputFile)
     }
     
-    private func processArgument(tempFile: String, outputFile: String) -> Pipe {
+    private func processArgument(tempFile: String, outputFile: String, optimizationLevel: OptimizationLevel) -> Pipe {
         let process = Process()
         process.launchPath = "/usr/bin/env"
-        process.arguments = ["swiftc", "-emit-ir", tempFile, "-o", outputFile]
+        process.arguments = [
+            "swiftc",
+            "-emit-ir",
+            tempFile,
+            "-o",
+            outputFile,
+            optimizationLevel.rawValue
+        ]
         
         let pipe = Pipe()
         let errorPipe = Pipe()

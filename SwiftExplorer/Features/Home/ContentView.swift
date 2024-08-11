@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var swiftCode: String = ""
     @State private var llvm: String = ""
     @State private var assemblyCode: String = ""
+    @State private var optimizationLevel: OptimizationLevel = .balanced
     
     @State private var fontSize: Int = 14
     @State private var showAlert = false
@@ -54,32 +55,56 @@ struct ContentView: View {
                         .font(.system(size: 100))
                         .frame(maxWidth: .infinity)
                 }
-                
-                Button{
-                    if !swiftCode.isEmpty {
-                        let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm)
-                        llvm.generateLlvm()
-                        
-                        assemblyCode = Assembly().generateAssembly(fromSwiftCode: swiftCode)
-                    } else {
-                        showAlert = true
+                VStack {
+                    Button {
+                        if !swiftCode.isEmpty {
+                            let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm, optimizationLevel: $optimizationLevel)
+                            llvm.generateLlvm()
+                            
+                            assemblyCode = Assembly().generateAssembly(fromSwiftCode: swiftCode, optimizationLevel: optimizationLevel)
+                        } else {
+                            showAlert = true
+                        }
+                    } label: {
+                        Text(L10n.generatedButton)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color(hex: "#FA7343"))
+                            .bold()
+                            .cornerRadius(8)
                     }
-                } label: {
-                    Text(L10n.generatedButton)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color(hex: "#FA7343"))
-                        .bold()
-                        .cornerRadius(8)
-                }
-                .buttonStyle(PlainButtonStyle())
-                .padding([.leading, .trailing], 20)
-                .alert(isPresented: $showAlert) {
-                    Alert(
-                        title: Text(L10n.warning),
-                        message: Text(L10n.messageEmptyField),
-                        dismissButton: .default(Text(L10n.ok))
-                    )
+                    .buttonStyle(PlainButtonStyle())
+                    .padding([.leading, .trailing], 20)
+                    Picker(selection: $optimizationLevel) {
+                        Text(OptimizationLevel.balanced.rawValue)
+                            .tag(OptimizationLevel.balanced)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color(hex: "#FA7343"))
+                            .cornerRadius(8)
+                        Text(OptimizationLevel.none.rawValue)
+                            .tag(OptimizationLevel.none)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color(hex: "#FA7343"))
+                            .cornerRadius(8)
+                        Text(OptimizationLevel.size.rawValue)
+                            .tag(OptimizationLevel.size)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color(hex: "#FA7343"))
+                            .cornerRadius(8)
+                        Text(OptimizationLevel.unchecked.rawValue)
+                            .tag(OptimizationLevel.unchecked)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color(hex: "#FA7343"))
+                            .cornerRadius(8)
+                    } label: {
+                        EmptyView()
+                    }
+                    .pickerStyle(.segmented)
+                    .padding([.leading, .trailing], 20)
                 }
                 
                 VStack {
