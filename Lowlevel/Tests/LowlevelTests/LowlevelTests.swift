@@ -6,9 +6,15 @@ final class LowlevelTests: XCTestCase {
     
     @State private var swiftCode: String = "let a = 10"
     @State private var llvm: String = ""
+    @State private var optimizationLevel: OptimizationLevel = .balanced
     
     func testValidationFieldSwiftCode() {
-        let bytecodeGenerator = Llvm(swiftCode: $swiftCode, llvm: $llvm)
+        let bytecodeGenerator = Llvm(
+            swiftCode: $swiftCode,
+            llvm: $llvm,
+            optimizationLevel: $optimizationLevel
+        )
+        
         let (tempFile, outputFile) = bytecodeGenerator.validationFieldSwiftCode()
 
         XCTAssertTrue(FileManager.default.fileExists(atPath: tempFile), "Temporary Swift file should exist")
@@ -30,7 +36,10 @@ final class LowlevelTests: XCTestCase {
         }
         """
 
-        let assemblyCode = Assembly().generateAssembly(fromSwiftCode: swiftCode)
+        let assemblyCode = Assembly().generateAssembly(
+            fromSwiftCode: swiftCode,
+            optimizationLevel: optimizationLevel
+        )
         
         XCTAssertTrue(assemblyCode.contains("sum"), 
                       "The generated assembly code must contain the 'sum' function.")
