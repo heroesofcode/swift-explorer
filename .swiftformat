@@ -1,0 +1,9 @@
+# file options
+--exclude SwiftExplorer/Generated
+--exclude Lowlevel/Sources/Lowlevel/Generated
+
+# Rules
+--disable blankLinesAtStartOfScope
+--disable trailingCommas
+--disable unusedArguments
+--disable wrapMultilineStatementBraces

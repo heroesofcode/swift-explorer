@@ -5,9 +5,9 @@
 //  Created by João Lucas on 22/06/24.
 //
 
-import SwiftUI
 import CodeEditor
 import Lowlevel
+import SwiftUI
 import Theme
 
 struct ContentView: View {
@@ -15,7 +15,7 @@ struct ContentView: View {
     @State private var llvm: String = ""
     @State private var assemblyCode: String = ""
     @State private var optimizationLevel: OptimizationLevel = .balanced
-    
+
     @State private var fontSize: Int = 14
     @State private var showAlert = false
 
@@ -26,41 +26,42 @@ struct ContentView: View {
                     Image(systemName: "swift")
                         .font(.largeTitle)
                         .foregroundColor(Color(hex: "#FA7343"))
-                    
+
                     Text(L10n.swiftExplorer)
                         .font(.largeTitle)
                 }
-                
+
                 Text(L10n.description)
             }
             .padding(.top, 16)
-            
+
             HStack {
-                
+
                 VStack {
                     HStack {
                         Text(L10n.swift)
                             .bold()
                             .font(.title2)
-                        
+
                         Spacer()
                     }
-                    
+
                     CodeEditor(
                         source: $swiftCode,
                         language: .swift,
-                        fontSize: .init(get: { CGFloat(16)  },
-                                        set: { fontSize = Int($0) }))
-                        .border(Color(hex: "#FA7343"), width: 1)
-                        .font(.system(size: 100))
-                        .frame(maxWidth: .infinity)
+                        fontSize: .init(get: { CGFloat(16) },
+                                        set: { fontSize = Int($0) })
+                    )
+                    .border(Color(hex: "#FA7343"), width: 1)
+                    .font(.system(size: 100))
+                    .frame(maxWidth: .infinity)
                 }
                 VStack {
                     Button {
                         if !swiftCode.isEmpty {
                             let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm, optimizationLevel: $optimizationLevel)
                             llvm.generateLlvm()
-                            
+
                             assemblyCode = Assembly().generateAssembly(fromSwiftCode: swiftCode, optimizationLevel: optimizationLevel)
                         } else {
                             showAlert = true
@@ -106,26 +107,27 @@ struct ContentView: View {
                     .pickerStyle(.segmented)
                     .padding([.leading, .trailing], 20)
                 }
-                
+
                 VStack {
                     HStack {
                         Text(L10n.llvm)
                             .bold()
                             .font(.title2)
-                        
+
                         Spacer()
                     }
-                    
+
                     CodeEditor(
                         source: $llvm,
                         language: .bash,
-                        fontSize: .init(get: { CGFloat(16)  },
-                                        set: { fontSize = Int($0) }))
-                        .border(Color.blue, width: 1)
-                    
+                        fontSize: .init(get: { CGFloat(16) },
+                                        set: { fontSize = Int($0) })
+                    )
+                    .border(Color.blue, width: 1)
+
                     HStack {
                         Spacer()
-                        
+
                         Button {
                             let pasteboard = NSPasteboard.general
                             pasteboard.clearContents()
@@ -135,26 +137,27 @@ struct ContentView: View {
                         }
                     }
                 }
-                
+
                 VStack {
                     HStack {
                         Text(L10n.assembly)
                             .bold()
                             .font(.title2)
-                        
+
                         Spacer()
                     }
-                    
+
                     CodeEditor(
                         source: $assemblyCode,
                         language: .bash,
-                        fontSize: .init(get: { CGFloat(16)  },
-                                        set: { fontSize = Int($0) }))
-                        .border(Color.blue, width: 1)
-                    
+                        fontSize: .init(get: { CGFloat(16) },
+                                        set: { fontSize = Int($0) })
+                    )
+                    .border(Color.blue, width: 1)
+
                     HStack {
                         Spacer()
-                        
+
                         Button {
                             let pasteboard = NSPasteboard.general
                             pasteboard.clearContents()
