@@ -12,6 +12,11 @@ jobs:
       with:
         xcode-version: 15.4
         
+    - name: Mise install
+      uses: jdx/mise-action@v2
+      with:
+        experimental: true
+        
     - name: Install xrun
       run: |
          brew tap heroesofcode/taps

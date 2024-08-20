@@ -5,9 +5,9 @@
 //  Created by João Lucas on 22/06/24.
 //
 
-import XCTest
-import SnapshotTesting
 import CommonTest
+import SnapshotTesting
+import XCTest
 @testable import SwiftExplorer
 
 final class ContentViewTests: XCTestCase {

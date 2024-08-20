@@ -5,7 +5,7 @@
 
 ### Installation
 
-You don't need to install it to run the project, now if you add strings in SwiftGen you will need to install [Mint](https://github.com/yonaskolb/Mint)
+To run the app you need to install mise
 
-- mint bootstrap
-- mint run swiftgen
+1 - brew install mise<br>
+2 - mise install
