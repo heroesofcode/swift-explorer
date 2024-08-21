@@ -118,22 +118,6 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
-		C519A75C2C27032800BF91E3 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				C519A75D2C27033100BF91E3 /* Home */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		C519A75D2C27033100BF91E3 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				C519A75E2C27034900BF91E3 /* ContentViewTests.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		C58379BF2C26A3440068D178 = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +165,7 @@
 		C58379DC2C26A3450068D178 /* SwiftExplorerTests */ = {
 			isa = PBXGroup;
 			children = (
-				C519A75C2C27032800BF91E3 /* Features */,
+				C519A75E2C27034900BF91E3 /* ContentViewTests.swift */,
 			);
 			path = SwiftExplorerTests;
 			sourceTree = "<group>";
