@@ -28,10 +28,11 @@ struct ContentView: View {
                         .foregroundColor(Color(hex: "#FA7343"))
 
                     Text(L10n.swiftExplorer)
-                        .font(.largeTitle)
+                        .fontLatoBlack(size: 30)
                 }
 
                 Text(L10n.description)
+                    .fontLatoRegular(size: 16)
             }
             .padding(.top, 16)
 
@@ -41,7 +42,7 @@ struct ContentView: View {
                     HStack {
                         Text(L10n.swift)
                             .bold()
-                            .font(.title2)
+                            .fontLatoBold(size: 20)
 
                         Spacer()
                     }
@@ -68,34 +69,39 @@ struct ContentView: View {
                         }
                     } label: {
                         Text(L10n.generatedButton)
+                            .fontLatoBlack(size: 14)
                             .foregroundColor(.white)
                             .padding()
                             .background(Color(hex: "#FA7343"))
-                            .bold()
                             .cornerRadius(8)
                     }
                     .buttonStyle(PlainButtonStyle())
                     .padding([.leading, .trailing], 20)
+                    
                     Picker(selection: $optimizationLevel) {
                         Text(OptimizationLevel.balanced.rawValue)
+                            .fontLatoRegular(size: 14)
                             .tag(OptimizationLevel.balanced)
                             .foregroundColor(.white)
                             .padding()
                             .background(Color(hex: "#FA7343"))
                             .cornerRadius(8)
                         Text(OptimizationLevel.none.rawValue)
+                            .fontLatoRegular(size: 14)
                             .tag(OptimizationLevel.none)
                             .foregroundColor(.white)
                             .padding()
                             .background(Color(hex: "#FA7343"))
                             .cornerRadius(8)
                         Text(OptimizationLevel.size.rawValue)
+                            .fontLatoRegular(size: 14)
                             .tag(OptimizationLevel.size)
                             .foregroundColor(.white)
                             .padding()
                             .background(Color(hex: "#FA7343"))
                             .cornerRadius(8)
                         Text(OptimizationLevel.unchecked.rawValue)
+                            .fontLatoRegular(size: 14)
                             .tag(OptimizationLevel.unchecked)
                             .foregroundColor(.white)
                             .padding()
@@ -106,13 +112,14 @@ struct ContentView: View {
                     }
                     .pickerStyle(.segmented)
                     .padding([.leading, .trailing], 20)
+                    .padding(.top, 16)
                 }
 
                 VStack {
                     HStack {
                         Text(L10n.llvm)
                             .bold()
-                            .font(.title2)
+                            .fontLatoBold(size: 20)
 
                         Spacer()
                     }
@@ -134,6 +141,7 @@ struct ContentView: View {
                             pasteboard.setString(llvm, forType: .string)
                         } label: {
                             Text(L10n.copy)
+                                .fontLatoBold(size: 14)
                         }
                     }
                 }
@@ -142,7 +150,7 @@ struct ContentView: View {
                     HStack {
                         Text(L10n.assembly)
                             .bold()
-                            .font(.title2)
+                            .fontLatoBold(size: 20)
 
                         Spacer()
                     }
@@ -164,6 +172,7 @@ struct ContentView: View {
                             pasteboard.setString(assemblyCode, forType: .string)
                         } label: {
                             Text(L10n.copy)
+                                .fontLatoBold(size: 14)
                         }
                     }
                 }
