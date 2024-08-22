@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 1.5.0
+**2024-08-22**
+
+- Added a new font family and layout adjustment
+- New logo
+
 ## Version 1.4.0
 **2024-08-11**
 

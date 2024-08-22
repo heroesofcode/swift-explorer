@@ -28,7 +28,7 @@ Desktop tool to quickly explore and analyze Swift Intermediate Representation (I
 
 ## Installing
 
-Download the dmg - [click here](https://github.com/heroesofcode/swift-explorer/releases/download/1.4.0/SwiftExplorer.dmg)
+Download the dmg - [click here](https://github.com/heroesofcode/swift-explorer/releases/download/1.5.0/SwiftExplorer.dmg)
 
 ## Contributing
 
