@@ -12,6 +12,7 @@ jobs:
       id: xcode_version
       run: echo "XCODE_VERSION=$(cat .xcode-version)" >> $GITHUB_ENV
 
+    - name: Setup Xcode using .xcode-version
       uses: maxim-lobanov/setup-xcode@v1.6.0
       with:
         xcode-version: ${{ env.XCODE_VERSION }}
