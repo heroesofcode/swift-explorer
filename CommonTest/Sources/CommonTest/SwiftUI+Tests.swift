@@ -9,8 +9,14 @@ import SwiftUI
 
 public extension View {
 
-    func view(width: CGFloat? = nil, height: CGFloat? = nil, colorScheme: ColorScheme? = nil) -> NSView {
-        let hostingController = NSHostingController(rootView: environment(\.colorScheme, colorScheme ?? .light))
+    func view(
+        width: CGFloat? = nil,
+        height: CGFloat? = nil,
+        colorScheme: ColorScheme? = nil) -> NSView {
+            
+        let hostingController = NSHostingController(
+            rootView: environment(\.colorScheme, colorScheme ?? .light)
+        )
 
         var frameWidth: CGFloat = width ?? hostingController.view.fittingSize.width
         var frameHeight: CGFloat = height ?? hostingController.view.fittingSize.height
@@ -20,7 +26,12 @@ public extension View {
 
         let frame = NSRect(x: 0, y: 0, width: frameWidth, height: frameHeight)
 
-        let window = NSWindow(contentRect: frame, styleMask: [.titled, .closable, .resizable], backing: .buffered, defer: false)
+        let window = NSWindow(
+            contentRect: frame,
+            styleMask: [.titled, .closable, .resizable],
+            backing: .buffered, 
+            defer: false)
+            
         window.contentViewController = hostingController
         window.makeKeyAndOrderFront(nil)
 

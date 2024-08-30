@@ -60,10 +60,18 @@ struct ContentView: View {
                 VStack {
                     Button {
                         if !swiftCode.isEmpty {
-                            let llvm = Llvm(swiftCode: $swiftCode, llvm: $llvm, optimizationLevel: $optimizationLevel)
+                            let llvm = Llvm(
+                                swiftCode: $swiftCode,
+                                llvm: $llvm,
+                                optimizationLevel: $optimizationLevel
+                            )
+                            
                             llvm.generateLlvm()
 
-                            assemblyCode = Assembly().generateAssembly(fromSwiftCode: swiftCode, optimizationLevel: optimizationLevel)
+                            assemblyCode = Assembly().generateAssembly(
+                                fromSwiftCode: swiftCode,
+                                optimizationLevel: optimizationLevel
+                            )
                         } else {
                             showAlert = true
                         }
