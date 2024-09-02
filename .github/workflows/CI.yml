@@ -22,10 +22,21 @@ jobs:
       with:
         experimental: true
         
+    - name: Generate project with tuist
+      run: |
+         tuist install
+         tuist generate --no-open
+      shell: bash
+
+    - name: Install xrun
+      run: |
+         brew tap heroesofcode/taps
+         brew install heroesofcode/taps/xrun
+        
     - name: Install xrun
       run: |
          brew tap heroesofcode/taps
          brew install heroesofcode/taps/xrun
 
     - name: Run tests with xrun
-      run: xrun project SwiftExplorer.xcodeproj SwiftExplorer macOS
+      run: xrun workspace SwiftExplorer.xcworkspace SwiftExplorer macOS
