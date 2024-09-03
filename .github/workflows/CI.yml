@@ -40,3 +40,10 @@ jobs:
 
     - name: Run tests with xrun
       run: xrun workspace SwiftExplorer.xcworkspace SwiftExplorer macOS
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3.1.6
+      with:
+        swift: true
+        swift_project: SwiftExplorer
+        verbose: true

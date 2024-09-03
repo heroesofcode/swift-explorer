@@ -1,11 +1,12 @@
 # Contributing
 
 1 - Clone the project<br>
-2 - Open SwiftExplore.xcodeproj
-
-### Installation
-
-To run the app you need to install mise
-
-1 - brew install mise<br>
-2 - mise install
+2 - Install [mise](https://mise.jdx.dev/)
+```sh
+mise install
+```
+3 - Generate SwiftExplorer.xcworkspace with [Tuist](https://tuist.io/)
+```
+tuist install
+tuist generate
+```
