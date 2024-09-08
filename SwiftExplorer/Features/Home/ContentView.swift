@@ -9,6 +9,7 @@ import CodeEditor
 import Lowlevel
 import SwiftUI
 import Theme
+import Analytics
 
 struct ContentView: View {
     @State private var swiftCode: String = ""
@@ -72,8 +73,11 @@ struct ContentView: View {
                                 fromSwiftCode: swiftCode,
                                 optimizationLevel: optimizationLevel
                             )
+                            
+                            SetAnalyticsEvents.event(AnalyticsEvents.Home.button.rawValue)
                         } else {
                             showAlert = true
+                            SetAnalyticsEvents.event(AnalyticsEvents.Home.empty_field.rawValue)
                         }
                     } label: {
                         Text(L10n.generatedButton)
@@ -85,6 +89,13 @@ struct ContentView: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                     .padding([.leading, .trailing], 20)
+                    .alert(isPresented: $showAlert) {
+                        Alert(
+                            title: Text(L10n.warning),
+                            message: Text(L10n.messageEmptyField),
+                            dismissButton: .default(Text(L10n.ok))
+                        )
+                    }
                     
                     Picker(selection: $optimizationLevel) {
                         Text(OptimizationLevel.balanced.rawValue)
@@ -187,6 +198,9 @@ struct ContentView: View {
                 .padding(.leading, 20)
             }
             .padding()
+        }
+        .onAppear {
+            SetAnalyticsEvents.event(AnalyticsEvents.Home.view.rawValue)
         }
     }
 }

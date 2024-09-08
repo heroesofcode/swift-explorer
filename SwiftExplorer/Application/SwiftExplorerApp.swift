@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import Analytics
 
 @main
 struct SwiftExplorerApp: App {
+    
+    init() {
+        FirebaseConfiguration.start()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

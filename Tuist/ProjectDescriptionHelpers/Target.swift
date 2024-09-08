@@ -18,14 +18,21 @@ public extension Project {
                 resources: [
                     "SwiftExplorer/Assets.xcassets",
                     "SwiftExplorer/Localizable/en.lproj/**",
-                    "SwiftExplorer/Preview Content/**"
+                    "SwiftExplorer/Preview Content/**",
+                    "SwiftExplorer/GoogleService-Info.plist"
                 ],
                 scripts: Project.targetScripts(),
                 dependencies: [
                     .target(name: "Theme"),
                     .target(name: "Lowlevel"),
+                    .target(name: "Analytics"),
                     .external(name: "CodeEditor")
-                ]
+                ], 
+                settings: .settings(configurations: [
+                    // Other Linker Flags
+                    .debug(name: "Debug", settings: ["OTHER_LDFLAGS": "-ObjC"]),
+                    .release(name: "Release", settings: ["OTHER_LDFLAGS": "-ObjC"])
+                ])
             ),
             .target(
                 name: "SwiftExplorerTests",
@@ -82,6 +89,29 @@ public extension Project {
                 resources: [],
                 dependencies: [
                     .target(name: "Lowlevel")
+                ]
+            ),
+            .target(
+                name: "Analytics",
+                destinations: .macOS,
+                product: .staticFramework,
+                bundleId: "com.joaolfp.Analytics",
+                deploymentTargets: .macOS("14.0"),
+                sources: ["Analytics/Sources/**"],
+                resources: [],
+                dependencies: [
+                    .external(name: "FirebaseAnalytics")
+                ]
+            ),
+            .target(
+                name: "AnalyticsTests",
+                destinations: .macOS,
+                product: .unitTests,
+                bundleId: "com.joaolfp.AnalyticsTests",
+                sources: ["Analytics/Tests/**"],
+                resources: [],
+                dependencies: [
+                    .target(name: "Analytics")
                 ]
             ),
             .target(
