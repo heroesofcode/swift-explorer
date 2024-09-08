@@ -1,6 +1,7 @@
 # Swift Explorer
 
 [![CI](https://github.com/heroesofcode/swift-explorer/actions/workflows/CI.yml/badge.svg)](https://github.com/heroesofcode/swift-explorer/actions/workflows/CI.yml)
+[![codecov](https://codecov.io/gh/heroesofcode/swift-explorer/graph/badge.svg?token=gUGYi5D9Ga)](https://codecov.io/gh/heroesofcode/swift-explorer)
 ![GitHub Release](https://img.shields.io/github/v/release/heroesofcode/swift-explorer)
 ![macOS Version](https://img.shields.io/badge/macOS-14.0+-orange.svg)
 [![GitHub](https://img.shields.io/github/license/heroesofcode/swift-explorer)](https://github.com/heroesofcode/swift-explorer/blob/main/LICENSE)
@@ -28,7 +29,7 @@ Desktop tool to quickly explore and analyze Swift Intermediate Representation (I
 
 ## Installing
 
-Download the dmg - [click here](https://github.com/heroesofcode/swift-explorer/releases/download/1.5.0/SwiftExplorer.dmg)
+Download the dmg - [click here](https://github.com/heroesofcode/swift-explorer/releases/download/1.6.0/SwiftExplorer.dmg)
 
 ## Contributing
 

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## Version 1.6.0
+**2024-09-08**
+
+- Setup Firebase Analytics and returning to empty field validation #20 - @joaolfp
+- Migrate to Tuist - #15 - @joaolfp
+- Bump rexml from 3.3.5 to 3.3.6 - #14 - @dependabot
+
 ## Version 1.5.0
 **2024-08-22**
 
