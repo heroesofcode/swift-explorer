@@ -11,9 +11,6 @@ let package = Package(
     name: "SwiftExplorer",
     dependencies: [
         .package(url: "https://github.com/ZeeZide/CodeEditor", exact: "1.2.6"),
-        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", exact: "1.17.4"),
-        .package(path: "../Theme"),
-        .package(path: "../Lowlevel"),
-        .package(path: "../CommonTest")
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", exact: "1.17.4")
     ]
 )

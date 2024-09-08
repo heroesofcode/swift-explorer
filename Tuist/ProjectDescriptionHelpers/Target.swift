@@ -22,9 +22,9 @@ public extension Project {
                 ],
                 scripts: Project.targetScripts(),
                 dependencies: [
-                    .external(name: "CodeEditor"),
-                    .external(name: "Theme"),
-                    .external(name: "Lowlevel")
+                    .target(name: "Theme"),
+                    .target(name: "Lowlevel"),
+                    .external(name: "CodeEditor")
                 ]
             ),
             .target(
@@ -36,8 +36,19 @@ public extension Project {
                 resources: [],
                 dependencies: [
                     .target(name: "SwiftExplorer"),
-                    .external(name: "SnapshotTesting"),
-                    .external(name: "CommonTest")
+                    .target(name: "CommonTest"),
+                    .external(name: "SnapshotTesting")
+                ]
+            ),
+            .target(
+                name: "Theme",
+                destinations: .macOS,
+                product: .framework,
+                bundleId: "com.joaolfp.Theme",
+                deploymentTargets: .macOS("14.0"),
+                sources: ["Theme/Sources/**"],
+                resources: [
+                    "Theme/Sources/Theme/Resources/**"
                 ]
             ),
             .target(
@@ -48,7 +59,18 @@ public extension Project {
                 sources: ["Theme/Tests/**"],
                 resources: [],
                 dependencies: [
-                    .external(name: "Theme")
+                    .target(name: "Theme")
+                ]
+            ),
+            .target(
+                name: "Lowlevel",
+                destinations: .macOS,
+                product: .framework,
+                bundleId: "com.joaolfp.Lowlevel",
+                deploymentTargets: .macOS("14.0"),
+                sources: ["Lowlevel/Sources/**"],
+                resources: [
+                    "Lowlevel/Sources/Lowlevel/Localizable/en.lproj/**"
                 ]
             ),
             .target(
@@ -59,9 +81,18 @@ public extension Project {
                 sources: ["Lowlevel/Tests/**"],
                 resources: [],
                 dependencies: [
-                    .external(name: "Lowlevel")
+                    .target(name: "Lowlevel")
                 ]
             ),
+            .target(
+                name: "CommonTest",
+                destinations: .macOS,
+                product: .framework,
+                bundleId: "com.joaolfp.CommonTest",
+                deploymentTargets: .macOS("14.0"),
+                sources: ["CommonTest/Sources/**"],
+                resources: []
+            )
         ]
     }
 }
