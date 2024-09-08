@@ -11,7 +11,7 @@ public extension Project {
                 bundleId: "com.joaolfp.SwiftExplorer",
                 deploymentTargets: .macOS("14.0"),
                 infoPlist: .extendingDefault(with: [
-                    "CFBundleShortVersionString": "1.5.0",
+                    "CFBundleShortVersionString": "1.6.0",
                     "CFBundleVersion": "1"
                 ]),
                 sources: ["SwiftExplorer/**"],
