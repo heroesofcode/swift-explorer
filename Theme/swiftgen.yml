@@ -3,5 +3,4 @@ fonts:
     - Sources/Theme/Resources/Fonts
   outputs:
     - templateName: swift5
-      output: "Sources/Theme/Generated/FontsFamily.swift"
-
+      output: "Sources/Generated/FontsFamily.swift"
