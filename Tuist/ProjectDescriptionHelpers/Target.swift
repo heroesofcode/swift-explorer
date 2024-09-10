@@ -55,7 +55,7 @@ public extension Project {
                 deploymentTargets: .macOS("14.0"),
                 sources: ["Theme/Sources/**"],
                 resources: [
-                    "Theme/Sources/Theme/Resources/**"
+                    "Theme/Sources/Resources/**"
                 ]
             ),
             .target(
@@ -77,7 +77,7 @@ public extension Project {
                 deploymentTargets: .macOS("14.0"),
                 sources: ["Lowlevel/Sources/**"],
                 resources: [
-                    "Lowlevel/Sources/Lowlevel/Localizable/en.lproj/**"
+                    "Lowlevel/Sources/Localizable/en.lproj/**"
                 ]
             ),
             .target(
