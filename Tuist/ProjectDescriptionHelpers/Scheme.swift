@@ -11,7 +11,7 @@ public extension Project {
                     ["SwiftExplorerTests", "ThemeTests", "LowlevelTests", "AnalyticsTests"],
                     options: .options(
                         coverage: true,
-                        codeCoverageTargets: ["SwiftExplorer"]
+                        codeCoverageTargets: ["SwiftExplorer", "Theme", "Lowlevel", "Analytics"]
                     )
                 ),
                 runAction: .runAction(
