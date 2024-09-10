@@ -13,6 +13,7 @@ protocol AnalyticsLogging {
 }
 
 final class FirebaseAnalyticsLogger: AnalyticsLogging {
+    
     func logEvent(_ name: String, parameters: [String: Any]?) {
         Analytics.logEvent(name, parameters: parameters)
     }
