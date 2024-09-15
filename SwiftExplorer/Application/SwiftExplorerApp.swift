@@ -19,8 +19,5 @@ struct SwiftExplorerApp: App {
         WindowGroup {
             ContentView()
         }
-        .commands {
-            TextFormattingCommands()
-        }
     }
 }
