@@ -19,6 +19,7 @@ struct ContentView: View {
 
     @State private var fontSize: Int = 14
     @State private var showAlert = false
+    @State private var showCompareButton = false
     
     @State private var navigation = NavigationPath()
 
@@ -77,9 +78,12 @@ struct ContentView: View {
                                     optimizationLevel: optimizationLevel
                                 )
                                 
+                                showCompareButton = true
+                                
                                 SetAnalyticsEvents.event(AnalyticsEvents.Home.button.rawValue)
                             } else {
                                 showAlert = true
+                                showCompareButton = false
                                 SetAnalyticsEvents.event(AnalyticsEvents.Home.empty_field.rawValue)
                             }
                         } label: {
@@ -188,11 +192,13 @@ struct ContentView: View {
                         HStack {
                             Spacer()
                             
-                            Button {
-                                navigation.append(CompareView())
-                            } label: {
-                                Text("Compare")
-                                    .fontLatoBold(size: 14)
+                            if showCompareButton {
+                                Button {
+                                    navigation.append(CompareView(llvmCode: llvm, assemblyCode: assemblyCode))
+                                } label: {
+                                    Text("Compare")
+                                        .fontLatoBold(size: 14)
+                                }
                             }
 
                             Button {
@@ -211,6 +217,12 @@ struct ContentView: View {
             }
             .onAppear {
                 SetAnalyticsEvents.event(AnalyticsEvents.Home.view.rawValue)
+                
+                if llvm.isEmpty || assemblyCode.isEmpty {
+                    showCompareButton = false
+                } else {
+                    showCompareButton = true
+                }
             }
             .navigationDestination(for: CompareView.self) { view in
                 view

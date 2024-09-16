@@ -1,10 +1,23 @@
 import GoogleGenerativeAI
 
-public final class APIGemini {
+public protocol APIGeminiProtocol {
+    func result(
+        apiKey: String,
+        llvmCode: String,
+        assemblyCode: String,
+        completion: @escaping (Result<String, Error>) -> Void) async
+}
+
+public final class APIGemini: APIGeminiProtocol {
     
     public init() {}
     
-    public func result(apiKey: String, llvmCode: String, assemblyCode: String) async {
+    public func result(
+        apiKey: String,
+        llvmCode: String,
+        assemblyCode: String,
+        completion: @escaping (Result<String, Error>) -> Void) async {
+            
         let generativeModel = GenerativeModel(
             name: "gemini-1.5-flash",
             apiKey: apiKey
@@ -22,11 +35,12 @@ public final class APIGemini {
 
         do {
             let response = try await generativeModel.generateContent(prompt)
+            
             if let text = response.text {
-                print("Response the gemini: \(text)")
+                completion(.success(text))
             }
         } catch {
-            print("Error gemini: \(error)")
+            completion(.failure(error))
         }
     }
 }
