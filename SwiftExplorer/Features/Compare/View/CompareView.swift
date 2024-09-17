@@ -21,10 +21,12 @@ struct CompareView: View, Hashable {
     @State private var apiKey: String = ""
     @State private var resultText: String = ""
     
+    private let swiftCode: String
     private let llvmCode: String
     private let assemblyCode: String
     
-    init(llvmCode: String, assemblyCode: String) {
+    init(swiftCode: String, llvmCode: String, assemblyCode: String) {
+        self.swiftCode = swiftCode
         self.llvmCode = llvmCode
         self.assemblyCode = assemblyCode
     }
@@ -69,6 +71,20 @@ struct CompareView: View, Hashable {
                 }
             }
             
+            HStack {
+                Spacer()
+                
+                Button {
+                    let pasteboard = NSPasteboard.general
+                    pasteboard.clearContents()
+                    pasteboard.setString(resultText, forType: .string)
+                } label: {
+                    Text(L10n.copy)
+                        .fontLatoBold(size: 14)
+                }
+            }
+            .padding(.trailing)
+            
             ZStack {
                 Rectangle()
                     .fill(Color.gray.opacity(0.2))
@@ -96,7 +112,8 @@ struct CompareView: View, Hashable {
     
     private func comparationCode(apiKey: String) async {
         await APIGemini().result(
-            apiKey: apiKey,
+            apiKey: apiKey, 
+            code: swiftCode,
             llvmCode: llvmCode,
             assemblyCode: assemblyCode) { result in
                 switch result {

@@ -3,6 +3,7 @@ import GoogleGenerativeAI
 public protocol APIGeminiProtocol {
     func result(
         apiKey: String,
+        code: String,
         llvmCode: String,
         assemblyCode: String,
         completion: @escaping (Result<String, Error>) -> Void) async
@@ -14,6 +15,7 @@ public final class APIGemini: APIGeminiProtocol {
     
     public func result(
         apiKey: String,
+        code: String,
         llvmCode: String,
         assemblyCode: String,
         completion: @escaping (Result<String, Error>) -> Void) async {
@@ -24,7 +26,10 @@ public final class APIGemini: APIGeminiProtocol {
         )
 
         let prompt = """
-        Compare the following LLVM IR and Assembly code. Explain which is more efficient and how the instructions are optimized.
+        What can improve the performance of the code, do an analysis of the LVVM and the Assembly generated from the code, what would the code be like to improve the performance of the code I wrote? Give me examples
+        
+        Code:
+        \(code)
 
         LLVM IR:
         \(llvmCode)

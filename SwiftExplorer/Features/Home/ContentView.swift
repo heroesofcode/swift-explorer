@@ -194,7 +194,13 @@ struct ContentView: View {
                             
                             if showCompareButton {
                                 Button {
-                                    navigation.append(CompareView(llvmCode: llvm, assemblyCode: assemblyCode))
+                                    navigation.append(
+                                        CompareView(
+                                            swiftCode: swiftCode,
+                                            llvmCode: llvm, 
+                                            assemblyCode: assemblyCode
+                                        )
+                                    )
                                 } label: {
                                     Text("Compare")
                                         .fontLatoBold(size: 14)
