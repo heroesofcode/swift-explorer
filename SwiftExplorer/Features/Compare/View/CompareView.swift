@@ -9,7 +9,7 @@ import SwiftUI
 import Theme
 import Gemini
 
-struct CompareView: View, Hashable {
+struct CompareView<ViewModel: CompareViewModelProtocol>: View, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(1)
     }
@@ -19,23 +19,28 @@ struct CompareView: View, Hashable {
     }
     
     @State private var apiKey: String = ""
-    @State private var resultText: String = ""
+    @ObservedObject var viewModel: ViewModel
     
     private let swiftCode: String
     private let llvmCode: String
     private let assemblyCode: String
     
-    init(swiftCode: String, llvmCode: String, assemblyCode: String) {
+    init(
+        swiftCode: String,
+        llvmCode: String,
+        assemblyCode: String,
+        viewModel: ViewModel = CompareViewModel()) {
         self.swiftCode = swiftCode
         self.llvmCode = llvmCode
         self.assemblyCode = assemblyCode
+        self.viewModel = viewModel
     }
     
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Review the details of the generated LVVM and Assembly")
+                    Text(L10n.titleCompareView)
                         .fontLatoBlack(size: 18)
                         .padding([.leading, .top], 16)
                     
@@ -43,7 +48,7 @@ struct CompareView: View, Hashable {
                 }
                 
                 HStack {
-                    TextField("Enter the API Key Gemini", text: $apiKey)
+                    TextField(L10n.enterTheApiKeyGemini, text: $apiKey)
                         .padding()
                         .frame(width: 400, height: 40)
                         .cornerRadius(8)
@@ -56,11 +61,14 @@ struct CompareView: View, Hashable {
                         .padding(.leading, 16)
                     
                     Button {
-                        Task {
-                            await comparationCode(apiKey: apiKey)
-                        }
+                        viewModel.resultGemini(
+                            apiKey: apiKey,
+                            swiftCode: swiftCode,
+                            llvmCode: llvmCode,
+                            assemblyCode: assemblyCode
+                        )
                     } label: {
-                        Text("Review")
+                        Text(L10n.review)
                             .fontLatoBlack(size: 14)
                             .foregroundColor(.white)
                             .padding()
@@ -77,7 +85,7 @@ struct CompareView: View, Hashable {
                 Button {
                     let pasteboard = NSPasteboard.general
                     pasteboard.clearContents()
-                    pasteboard.setString(resultText, forType: .string)
+                    pasteboard.setString(viewModel.resultText, forType: .string)
                 } label: {
                     Text(L10n.copy)
                         .fontLatoBold(size: 14)
@@ -94,7 +102,7 @@ struct CompareView: View, Hashable {
                     .overlay(
                         ScrollView {
                             HStack {
-                                Text(resultText)
+                                Text(viewModel.resultText)
                                     .fontLatoRegular(size: 16)
                                     .padding()
                                 
@@ -107,21 +115,6 @@ struct CompareView: View, Hashable {
             
             Spacer()
         }
-        .navigationTitle("Details")
-    }
-    
-    private func comparationCode(apiKey: String) async {
-        await APIGemini().result(
-            apiKey: apiKey, 
-            code: swiftCode,
-            llvmCode: llvmCode,
-            assemblyCode: assemblyCode) { result in
-                switch result {
-                case .success(let text):
-                    self.resultText = text
-                case .failure(let error):
-                    print(error)
-                }
-            }
+        .navigationTitle(L10n.details)
     }
 }

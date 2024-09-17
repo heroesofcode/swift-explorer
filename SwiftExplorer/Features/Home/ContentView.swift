@@ -230,7 +230,7 @@ struct ContentView: View {
                     showCompareButton = true
                 }
             }
-            .navigationDestination(for: CompareView.self) { view in
+            .navigationDestination(for: CompareView<CompareViewModel>.self) { view in
                 view
             }
         }
