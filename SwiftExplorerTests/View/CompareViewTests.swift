@@ -1,6 +1,6 @@
 //
 //  CompareViewTests.swift
-//  SwiftExplorerTests
+//  SwiftExplorer
 //
 //  Created by João Lucas on 17/09/24.
 //

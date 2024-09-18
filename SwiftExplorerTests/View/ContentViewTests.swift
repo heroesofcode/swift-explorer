@@ -1,6 +1,6 @@
 //
 //  ContentViewTests.swift
-//  SwiftExplorerTests
+//  SwiftExplorer
 //
 //  Created by João Lucas on 22/06/24.
 //
