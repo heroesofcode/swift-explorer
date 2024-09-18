@@ -1,8 +1,8 @@
 //
-//  ContentViewTests.swift
+//  CompareViewTests.swift
 //  SwiftExplorerTests
 //
-//  Created by João Lucas on 22/06/24.
+//  Created by João Lucas on 17/09/24.
 //
 
 import CommonTest
@@ -10,10 +10,10 @@ import SnapshotTesting
 import XCTest
 @testable import SwiftExplorer
 
-final class ContentViewTests: XCTestCase {
+final class CompareViewTests: XCTestCase {
 
     func testShouldValidateLayout() {
-        let sut = ContentView()
+        let sut = CompareView(swiftCode: "code", llvmCode: "lvvm", assemblyCode: "assembly")
         assertSnapshot(of: sut.view(width: 1280, height: 800), as: .image)
     }
 }
