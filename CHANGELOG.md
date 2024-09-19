@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## Version 1.7.0
+**2024-09-19**
+
+- Add Gemini - #28 - @joaolfp
+- Update dependency tuist to v4.27.0 - #29 - @renovate
+- Add analytics to Gemini - #30 - @joaolfp
+
 ## Version 1.6.0
 **2024-09-08**
 
