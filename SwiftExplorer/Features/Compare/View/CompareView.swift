@@ -8,6 +8,7 @@
 import SwiftUI
 import Theme
 import Gemini
+import Analytics
 
 struct CompareView<ViewModel: CompareViewModelProtocol>: View, Hashable {
     func hash(into hasher: inout Hasher) {
@@ -67,6 +68,8 @@ struct CompareView<ViewModel: CompareViewModelProtocol>: View, Hashable {
                             llvmCode: llvmCode,
                             assemblyCode: assemblyCode
                         )
+                        
+                        SetAnalyticsEvents.event(AnalyticsEvents.Compare.button.rawValue)
                     } label: {
                         Text(L10n.review)
                             .fontLatoBlack(size: 14)
@@ -114,6 +117,9 @@ struct CompareView<ViewModel: CompareViewModelProtocol>: View, Hashable {
             .padding()
             
             Spacer()
+        }
+        .onAppear {
+            SetAnalyticsEvents.event(AnalyticsEvents.Compare.view.rawValue)
         }
         .navigationTitle(L10n.details)
     }

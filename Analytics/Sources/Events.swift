@@ -14,4 +14,11 @@ public enum AnalyticsEvents {
         case button = "generate_button"
         case empty_field = "empty_field"
     }
+    
+    public enum Compare: String {
+        case view = "compare_view"
+        case button = "review_button"
+        case success = "review_success"
+        case error = "review_error"
+    }
 }

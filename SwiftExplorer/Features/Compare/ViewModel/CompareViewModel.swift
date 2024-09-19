@@ -7,6 +7,7 @@
 
 import Foundation
 import Gemini
+import Analytics
 
 protocol CompareViewModelProtocol: ObservableObject {
     var resultText: String { get set }
@@ -54,10 +55,12 @@ final class CompareViewModel: CompareViewModelProtocol {
                 case .success(let text):
                     DispatchQueue.main.async {
                         self.resultText = text
+                        SetAnalyticsEvents.event(AnalyticsEvents.Compare.success.rawValue)
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
                         self.resultText = error.localizedDescription
+                        SetAnalyticsEvents.event(AnalyticsEvents.Compare.error.rawValue)
                     }
                 }
             }
