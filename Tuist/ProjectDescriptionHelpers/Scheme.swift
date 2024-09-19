@@ -8,10 +8,21 @@ public extension Project {
                 name: "SwiftExplorer",
                 buildAction: .buildAction(targets: ["SwiftExplorer"]),
                 testAction: .targets(
-                    ["SwiftExplorerTests", "ThemeTests", "LowlevelTests", "AnalyticsTests"],
+                    ["SwiftExplorerTests",
+                     "ThemeTests",
+                     "LowlevelTests",
+                     "AnalyticsTests",
+                     "GeminiTests"
+                    ],
                     options: .options(
                         coverage: true,
-                        codeCoverageTargets: ["SwiftExplorer", "Theme", "Lowlevel", "Analytics"]
+                        codeCoverageTargets: [
+                            "SwiftExplorer",
+                            "Theme",
+                            "Lowlevel",
+                            "Analytics",
+                            "Gemini"
+                        ]
                     )
                 ),
                 runAction: .runAction(

@@ -12,13 +12,19 @@ Desktop tool to quickly explore and analyze Swift Intermediate Representation (I
 
 ## Features
 
-<img src="https://github.com/heroesofcode/swift-explorer/blob/main/Assets/screen.png?raw=true">
+<img src="https://github.com/heroesofcode/swift-explorer/blob/main/Assets/screen1.png?raw=true">
+
+<img src="https://github.com/heroesofcode/swift-explorer/blob/main/Assets/screen2.png?raw=true">
 
 - <b>Deep Code Understanding:</b> Developers can see how Swift code is transformed into both LLVM IR and assembly code, helping them better understand optimization and low-level behavior.
 - <b>Advanced Debugging:</b> Viewing LLVM IR and assembly can help identify performance issues or hard-to-trace bugs in source code.
 - <b>Education and Learning:</b> A valuable educational tool for learning about compilers and how different language constructs translate into intermediate representation and assembly.
 - <b>Optimization:</b> Helps identify and optimize code snippets that are not compiling efficiently by providing insights from both LLVM IR and assembly.
 - <b>Comparative Analysis:</b> Allows you to compare how different approaches or code versions generate different IR and assembly code, facilitating the choice of best coding practices.
+- <b>IA Gemini:</b> You can see how to improve your code and compare LVVM and Assembly with the help of Gemini.
+
+> [!IMPORTANT]
+> To review the details through Gemini, you must generate an API Key through this [link](https://aistudio.google.com/app/apikey).
 
 ### Optimization flags
 

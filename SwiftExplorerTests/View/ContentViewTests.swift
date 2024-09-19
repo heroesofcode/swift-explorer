@@ -1,6 +1,6 @@
 //
 //  ContentViewTests.swift
-//  SwiftExplorerTests
+//  SwiftExplorer
 //
 //  Created by João Lucas on 22/06/24.
 //
@@ -13,7 +13,7 @@ import XCTest
 final class ContentViewTests: XCTestCase {
 
     func testShouldValidateLayout() {
-        let view = ContentView()
-        assertSnapshot(of: view.view(width: 1280, height: 800), as: .image)
+        let sut = ContentView()
+        assertSnapshot(of: sut.view(width: 1280, height: 800), as: .image)
     }
 }

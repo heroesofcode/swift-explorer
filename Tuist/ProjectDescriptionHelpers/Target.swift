@@ -26,6 +26,7 @@ public extension Project {
                     .target(name: "Theme"),
                     .target(name: "Lowlevel"),
                     .target(name: "Analytics"),
+                    .target(name: "Gemini"),
                     .external(name: "CodeEditor")
                 ], 
                 settings: .settings(configurations: [
@@ -112,6 +113,29 @@ public extension Project {
                 resources: [],
                 dependencies: [
                     .target(name: "Analytics")
+                ]
+            ),
+            .target(
+                name: "Gemini",
+                destinations: .macOS,
+                product: .staticFramework,
+                bundleId: "com.joaolfp.Gemini",
+                deploymentTargets: .macOS("14.0"),
+                sources: ["Gemini/Sources/**"],
+                resources: [],
+                dependencies: [
+                    .external(name: "GoogleGenerativeAI")
+                ]
+            ),
+            .target(
+                name: "GeminiTests",
+                destinations: .macOS,
+                product: .unitTests,
+                bundleId: "com.joaolfp.GeminiTests",
+                sources: ["Gemini/Tests/**"],
+                resources: [],
+                dependencies: [
+                    .target(name: "Gemini")
                 ]
             ),
             .target(
