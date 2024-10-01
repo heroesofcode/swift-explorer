@@ -12,7 +12,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/ZeeZide/CodeEditor", exact: "1.2.6"),
         .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", exact: "1.17.5"),
-        .package(url: "https://github.com/firebase/firebase-ios-sdk", exact: "11.2.0"),
+        .package(url: "https://github.com/firebase/firebase-ios-sdk", exact: "11.3.0"),
         .package(url: "https://github.com/google-gemini/generative-ai-swift", exact: "0.5.6")
     ]
 )
