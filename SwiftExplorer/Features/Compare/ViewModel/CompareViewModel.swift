@@ -17,7 +17,7 @@ protocol CompareViewModelProtocol: ObservableObject {
                       assemblyCode: String)
 }
 
-final class CompareViewModel: CompareViewModelProtocol {
+final class CompareViewModel: CompareViewModelProtocol, @unchecked Sendable {
     
     @Published var resultText: String = ""
     
@@ -50,16 +50,16 @@ final class CompareViewModel: CompareViewModelProtocol {
             apiKey: apiKey,
             code: swiftCode,
             llvmCode: llvmCode,
-            assemblyCode: assemblyCode) { result in
+            assemblyCode: assemblyCode) { [weak self] result in
                 switch result {
                 case .success(let text):
                     DispatchQueue.main.async {
-                        self.resultText = text
+                        self?.resultText = text
                         SetAnalyticsEvents.event(AnalyticsEvents.Compare.success.rawValue)
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
-                        self.resultText = error.localizedDescription
+                        self?.resultText = error.localizedDescription
                         SetAnalyticsEvents.event(AnalyticsEvents.Compare.error.rawValue)
                     }
                 }
