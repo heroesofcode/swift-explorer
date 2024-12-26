@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## Version 1.8.0
+**2024-12-26**
+
+- Fix warning Tuist and code by @joaolfp - #58
+- Update dependency tuist to v4.38.2 by @renovatebot - #57
+- Update codecov/codecov-action action to v5.1.1 by @renovatebot - #53
+- Update dependency firebase/firebase-ios-sdk to v11.6.0 by @renovatebot - #52
+
 ## Version 1.7.0
 **2024-09-19**
 
