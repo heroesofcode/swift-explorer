@@ -12,7 +12,8 @@ public extension Project {
                 deploymentTargets: .macOS("14.0"),
                 infoPlist: .extendingDefault(with: [
                     "CFBundleShortVersionString": "1.7.0",
-                    "CFBundleVersion": "1"
+                    "CFBundleVersion": "1",
+                    "UIUserInterfaceStyle": "Dark"
                 ]),
                 sources: ["SwiftExplorer/**"],
                 resources: [
