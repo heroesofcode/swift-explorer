@@ -14,6 +14,6 @@ final class ContentViewTests: XCTestCase {
 
     func testShouldValidateLayout() {
         let sut = ContentView()
-        assertSnapshot(of: sut.view(width: 1280, height: 800), as: .image)
+        assertSnapshot(of: sut.view(width: 1280, height: 800), as: .image, record: false)
     }
 }

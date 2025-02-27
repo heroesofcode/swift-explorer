@@ -14,6 +14,6 @@ final class CompareViewTests: XCTestCase {
 
     func testShouldValidateLayout() {
         let sut = CompareView(swiftCode: "code", llvmCode: "lvvm", assemblyCode: "assembly")
-        assertSnapshot(of: sut.view(width: 1280, height: 800), as: .image)
+        assertSnapshot(of: sut.view(width: 1280, height: 800), as: .image, record: false)
     }
 }
