@@ -43,15 +43,8 @@ Please see the [documentation](https://github.com/heroesofcode/swift-explorer/bl
 
 ## Run the project
 
-Install [mise](https://mise.jdx.dev/)
-```sh
-mise install
 ```
-
-Generate `SwiftExplorer.xcworkspace` with [Tuist](https://tuist.io/)
-```
-tuist install
-tuist generate
+open SwiftExplorer.xcodeproj
 ```
 
 ## Inspiration
