@@ -55,7 +55,7 @@ vendor/
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
-*.xcodeproj
+.xcodeproj
 *.xcworkspace
 
 # Swift Package Manager

@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: macOS-14
+    runs-on: macOS-15
 
     steps:
     - uses: actions/checkout@v4
@@ -21,12 +21,6 @@ jobs:
       uses: jdx/mise-action@v2
       with:
         experimental: true
-        
-    - name: Generate project with tuist
-      run: |
-         tuist install
-         tuist generate --no-open
-      shell: bash
 
     - name: Install xrun
       run: |
@@ -34,7 +28,7 @@ jobs:
          brew install heroesofcode/taps/xrun
 
     - name: Run tests with xrun
-      run: xrun workspace SwiftExplorer.xcworkspace SwiftExplorer macOS
+      run: xrun project SwiftExplorer.xcodeproj SwiftExplorer macOS
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5.4.0
