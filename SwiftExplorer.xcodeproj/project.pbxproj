@@ -40,10 +40,10 @@
 		C531A0832D723B5D00FAE911 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A0812D723B5600FAE911 /* HomeViewModel.swift */; };
 		C531A0852D723EAF00FAE911 /* MainCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A0842D723EA500FAE911 /* MainCoordinatorViewModel.swift */; };
 		C531A0862D723EAF00FAE911 /* MainCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A0842D723EA500FAE911 /* MainCoordinatorViewModel.swift */; };
-		C531A0882D723F9800FAE911 /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A0872D723F9400FAE911 /* MainCoordinatorView.swift */; };
-		C531A0892D723F9800FAE911 /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A0872D723F9400FAE911 /* MainCoordinatorView.swift */; };
 		C531A08C2D7250D700FAE911 /* CompareDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A08B2D7250CE00FAE911 /* CompareDTO.swift */; };
 		C531A08D2D7250D700FAE911 /* CompareDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A08B2D7250CE00FAE911 /* CompareDTO.swift */; };
+		C531A0902D725B8200FAE911 /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A08F2D725B7F00FAE911 /* MainCoordinatorView.swift */; };
+		C531A0912D725B8200FAE911 /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A08F2D725B7F00FAE911 /* MainCoordinatorView.swift */; };
 		C58379FB2C26B43B0068D178 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = C58379FA2C26B43B0068D178 /* CodeEditor */; };
 		C5C5DBD32D701CA20015F7AC /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = C5C5DBD22D701CA20015F7AC /* Analytics */; };
 		C5C5DBD52D701CA20015F7AC /* CommonTest in Frameworks */ = {isa = PBXBuildFile; productRef = C5C5DBD42D701CA20015F7AC /* CommonTest */; };
@@ -78,8 +78,8 @@
 		C531A07E2D723ABF00FAE911 /* SwiftExplorerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExplorerCoordinator.swift; sourceTree = "<group>"; };
 		C531A0812D723B5600FAE911 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C531A0842D723EA500FAE911 /* MainCoordinatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorViewModel.swift; sourceTree = "<group>"; };
-		C531A0872D723F9400FAE911 /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
 		C531A08B2D7250CE00FAE911 /* CompareDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareDTO.swift; sourceTree = "<group>"; };
+		C531A08F2D725B7F00FAE911 /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
 		C58379C82C26A3440068D178 /* SwiftExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58379D92C26A3450068D178 /* SwiftExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C5DBCC2D701C690015F7AC /* Analytics */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Analytics; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 		C531A07D2D723ABA00FAE911 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				C531A0872D723F9400FAE911 /* MainCoordinatorView.swift */,
+				C531A08F2D725B7F00FAE911 /* MainCoordinatorView.swift */,
 				C531A0842D723EA500FAE911 /* MainCoordinatorViewModel.swift */,
 				C531A07E2D723ABF00FAE911 /* SwiftExplorerCoordinator.swift */,
 			);
@@ -476,10 +476,10 @@
 				C50823232D70227F00ECE259 /* SwiftExplorerApp.swift in Sources */,
 				C531A08C2D7250D700FAE911 /* CompareDTO.swift in Sources */,
 				C50823242D70227F00ECE259 /* CompareViewModel.swift in Sources */,
+				C531A0902D725B8200FAE911 /* MainCoordinatorView.swift in Sources */,
 				C531A0852D723EAF00FAE911 /* MainCoordinatorViewModel.swift in Sources */,
 				C531A0832D723B5D00FAE911 /* HomeViewModel.swift in Sources */,
 				C531A0802D723AC500FAE911 /* SwiftExplorerCoordinator.swift in Sources */,
-				C531A0892D723F9800FAE911 /* MainCoordinatorView.swift in Sources */,
 				C50823252D70227F00ECE259 /* CompareView.swift in Sources */,
 				C50823262D70227F00ECE259 /* HomeView.swift in Sources */,
 				C531A0762D7229BE00FAE911 /* CompareUseCase.swift in Sources */,
@@ -492,10 +492,10 @@
 			files = (
 				C508232A2D70227F00ECE259 /* L10n.swift in Sources */,
 				C508232B2D70227F00ECE259 /* SwiftExplorerApp.swift in Sources */,
-				C531A0882D723F9800FAE911 /* MainCoordinatorView.swift in Sources */,
 				C508232C2D70227F00ECE259 /* CompareViewModel.swift in Sources */,
 				C531A0772D7229BE00FAE911 /* CompareUseCase.swift in Sources */,
 				C508232D2D70227F00ECE259 /* CompareView.swift in Sources */,
+				C531A0912D725B8200FAE911 /* MainCoordinatorView.swift in Sources */,
 				C531A07F2D723AC500FAE911 /* SwiftExplorerCoordinator.swift in Sources */,
 				C508232E2D70227F00ECE259 /* HomeView.swift in Sources */,
 				C531A0822D723B5D00FAE911 /* HomeViewModel.swift in Sources */,
