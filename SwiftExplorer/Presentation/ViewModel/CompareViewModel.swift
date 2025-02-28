@@ -8,43 +8,36 @@
 import Foundation
 import Gemini
 import Analytics
+import Coordinator
 
-protocol CompareViewModelProtocol: ObservableObject {
-    var resultText: String { get set }
-    var apiKey: String { get set }
-    
-    func didTapCompare(
-        apiKey: String,
-        swiftCode: String,
-        llvmCode: String,
-        assemblyCode: String
-    )
-    func didAppear()
-}
-
-final class CompareViewModel: CompareViewModelProtocol, @unchecked Sendable {
+final class CompareViewModel: PresentationModel {
     
     @Published var resultText: String = ""
     @Published var apiKey: String = ""
+    @Published var compareDTO: CompareDTO
     
+    weak var coordinator: SwiftExplorerCoordinator?
     private let useCase: CompareUseCaseProtocol
     
-    init(useCase: CompareUseCaseProtocol = CompareUseCase()) {
-        self.useCase = useCase
-    }
-    
-    func didTapCompare(
-        apiKey: String,
-        swiftCode: String,
-        llvmCode: String,
-        assemblyCode: String
+    init(
+        coordinator: SwiftExplorerCoordinator,
+        useCase: CompareUseCaseProtocol = CompareUseCase(),
+        compareDTO: CompareDTO
     ) {
+        self.coordinator = coordinator
+        self.useCase = useCase
+        self.compareDTO = compareDTO
+    }
+}
+
+extension CompareViewModel {
+    func didTapCompare(apiKey: String) {
         SetAnalyticsEvents.event(AnalyticsEvents.Compare.button.rawValue)
         resultGemini(
             apiKey: apiKey,
-            swiftCode: swiftCode,
-            llvmCode: llvmCode,
-            assemblyCode: assemblyCode
+            swiftCode: compareDTO.swiftCode,
+            llvmCode: compareDTO.llvmCode,
+            assemblyCode: compareDTO.assemblyCode
         )
     }
     

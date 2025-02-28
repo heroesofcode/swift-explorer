@@ -12,8 +12,13 @@ import XCTest
 
 final class CompareViewTests: XCTestCase {
 
+    @MainActor
     func testShouldValidateLayout() {
-        let sut = CompareView(swiftCode: "code", llvmCode: "lvvm", assemblyCode: "assembly")
+        let coordinator = SwiftExplorerCoordinator(coordinator: nil)
+        let compareDTO = CompareDTO(swiftCode: "22", llvmCode: "22", assemblyCode: "2445")
+        let viewModel = CompareViewModel(coordinator: coordinator, compareDTO: compareDTO)
+        let sut = CompareView(viewModel: viewModel)
+        
         assertSnapshot(of: sut.view(width: 1280, height: 800), as: .image, record: false)
     }
 }

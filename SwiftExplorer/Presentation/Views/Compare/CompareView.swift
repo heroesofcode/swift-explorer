@@ -10,31 +10,9 @@ import Theme
 import Gemini
 import Analytics
 
-struct CompareView<ViewModel: CompareViewModelProtocol>: View, Hashable {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(1)
-    }
+struct CompareView: View {
     
-    static func == (lhs: CompareView, rhs: CompareView) -> Bool {
-        return true
-    }
-    
-    @ObservedObject var viewModel: ViewModel
-    
-    private let swiftCode: String
-    private let llvmCode: String
-    private let assemblyCode: String
-    
-    init(
-        swiftCode: String,
-        llvmCode: String,
-        assemblyCode: String,
-        viewModel: ViewModel = CompareViewModel()) {
-        self.swiftCode = swiftCode
-        self.llvmCode = llvmCode
-        self.assemblyCode = assemblyCode
-        self.viewModel = viewModel
-    }
+    @StateObject var viewModel: CompareViewModel
     
     var body: some View {
         VStack {
@@ -61,12 +39,7 @@ struct CompareView<ViewModel: CompareViewModelProtocol>: View, Hashable {
                         .padding(.leading, 16)
                     
                     Button {
-                        viewModel.didTapCompare(
-                            apiKey: viewModel.apiKey,
-                            swiftCode: swiftCode,
-                            llvmCode: llvmCode,
-                            assemblyCode: assemblyCode
-                        )
+                        viewModel.didTapCompare(apiKey: viewModel.apiKey)
                     } label: {
                         Text(L10n.review)
                             .fontLatoBlack(size: 14)

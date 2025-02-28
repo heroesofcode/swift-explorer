@@ -80,6 +80,16 @@
                ReferencedContainer = "container:Dependencies/Theme">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoordinatorTests"
+               BuildableName = "CoordinatorTests"
+               BlueprintName = "CoordinatorTests"
+               ReferencedContainer = "container:Dependencies/Coordinator">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -11,13 +11,16 @@ import Analytics
 @main
 struct SwiftExplorerApp: App {
     
+    @StateObject var coordinator: MainCoordinatorViewModel
+    
     init() {
+        self._coordinator = StateObject(wrappedValue: MainCoordinatorViewModel())
         FirebaseConfiguration.start()
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainCoordinatorView(viewModel: coordinator)
         }
     }
 }
