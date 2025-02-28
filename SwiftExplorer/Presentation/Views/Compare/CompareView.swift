@@ -19,7 +19,6 @@ struct CompareView<ViewModel: CompareViewModelProtocol>: View, Hashable {
         return true
     }
     
-    @State private var apiKey: String = ""
     @ObservedObject var viewModel: ViewModel
     
     private let swiftCode: String
@@ -49,7 +48,7 @@ struct CompareView<ViewModel: CompareViewModelProtocol>: View, Hashable {
                 }
                 
                 HStack {
-                    TextField(L10n.enterTheApiKeyGemini, text: $apiKey)
+                    TextField(L10n.enterTheApiKeyGemini, text: $viewModel.apiKey)
                         .padding()
                         .frame(width: 400, height: 40)
                         .cornerRadius(8)
@@ -62,14 +61,12 @@ struct CompareView<ViewModel: CompareViewModelProtocol>: View, Hashable {
                         .padding(.leading, 16)
                     
                     Button {
-                        viewModel.resultGemini(
-                            apiKey: apiKey,
+                        viewModel.didTapCompare(
+                            apiKey: viewModel.apiKey,
                             swiftCode: swiftCode,
                             llvmCode: llvmCode,
                             assemblyCode: assemblyCode
                         )
-                        
-                        SetAnalyticsEvents.event(AnalyticsEvents.Compare.button.rawValue)
                     } label: {
                         Text(L10n.review)
                             .fontLatoBlack(size: 14)
@@ -119,7 +116,7 @@ struct CompareView<ViewModel: CompareViewModelProtocol>: View, Hashable {
             Spacer()
         }
         .onAppear {
-            SetAnalyticsEvents.event(AnalyticsEvents.Compare.view.rawValue)
+            viewModel.didAppear()
         }
         .navigationTitle(L10n.details)
     }

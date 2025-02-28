@@ -33,6 +33,9 @@
 		C519A74F2C26ED6B00BF91E3 /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = C519A74E2C26ED6B00BF91E3 /* Theme */; };
 		C519A7622C27044F00BF91E3 /* CommonTest in Frameworks */ = {isa = PBXBuildFile; productRef = C519A7612C27044F00BF91E3 /* CommonTest */; };
 		C519A7642C27045500BF91E3 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = C519A7632C27045500BF91E3 /* SnapshotTesting */; };
+		C531A0762D7229BE00FAE911 /* CompareUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A0752D7229B900FAE911 /* CompareUseCase.swift */; };
+		C531A0772D7229BE00FAE911 /* CompareUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A0752D7229B900FAE911 /* CompareUseCase.swift */; };
+		C531A07A2D7233AC00FAE911 /* Coordinator in Frameworks */ = {isa = PBXBuildFile; productRef = C531A0792D7233AC00FAE911 /* Coordinator */; };
 		C58379FB2C26B43B0068D178 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = C58379FA2C26B43B0068D178 /* CodeEditor */; };
 		C5C5DBD32D701CA20015F7AC /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = C5C5DBD22D701CA20015F7AC /* Analytics */; };
 		C5C5DBD52D701CA20015F7AC /* CommonTest in Frameworks */ = {isa = PBXBuildFile; productRef = C5C5DBD42D701CA20015F7AC /* CommonTest */; };
@@ -64,6 +67,8 @@
 		C508236E2D7024DF00ECE259 /* CompareViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewTests.swift; sourceTree = "<group>"; };
 		C508236F2D7024DF00ECE259 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		C50823712D7024DF00ECE259 /* CompareViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewModelTests.swift; sourceTree = "<group>"; };
+		C531A0752D7229B900FAE911 /* CompareUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareUseCase.swift; sourceTree = "<group>"; };
+		C531A0782D72331300FAE911 /* Coordinator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Coordinator; sourceTree = "<group>"; };
 		C58379C82C26A3440068D178 /* SwiftExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58379D92C26A3450068D178 /* SwiftExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C5DBCC2D701C690015F7AC /* Analytics */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Analytics; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C519A74F2C26ED6B00BF91E3 /* Theme in Frameworks */,
+				C531A07A2D7233AC00FAE911 /* Coordinator in Frameworks */,
 				C5C5DBD32D701CA20015F7AC /* Analytics in Frameworks */,
 				C58379FB2C26B43B0068D178 /* CodeEditor in Frameworks */,
 				C5C5DBD72D701CA20015F7AC /* Gemini in Frameworks */,
@@ -107,14 +113,6 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		C50823132D70227F00ECE259 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C50823122D70227F00ECE259 /* CompareView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		C50823152D70227F00ECE259 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,8 +124,7 @@
 		C50823162D70227F00ECE259 /* Compare */ = {
 			isa = PBXGroup;
 			children = (
-				C50823132D70227F00ECE259 /* View */,
-				C50823152D70227F00ECE259 /* ViewModel */,
+				C50823122D70227F00ECE259 /* CompareView.swift */,
 			);
 			path = Compare;
 			sourceTree = "<group>";
@@ -140,13 +137,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		C50823192D70227F00ECE259 /* Features */ = {
+		C50823192D70227F00ECE259 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				C50823162D70227F00ECE259 /* Compare */,
-				C50823182D70227F00ECE259 /* Home */,
+				C531A07C2D72341A00FAE911 /* Views */,
+				C50823152D70227F00ECE259 /* ViewModel */,
 			);
-			path = Features;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		C508231B2D70227F00ECE259 /* Generated */ = {
@@ -206,6 +203,31 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C531A0742D7229B300FAE911 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				C531A0752D7229B900FAE911 /* CompareUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		C531A07B2D7233F000FAE911 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C531A0742D7229B300FAE911 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C531A07C2D72341A00FAE911 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C50823182D70227F00ECE259 /* Home */,
+				C50823162D70227F00ECE259 /* Compare */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C58379BF2C26A3440068D178 = {
 			isa = PBXGroup;
 			children = (
@@ -229,10 +251,11 @@
 		C58379CA2C26A3440068D178 /* SwiftExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				C531A07B2D7233F000FAE911 /* Domain */,
 				C50823332D70230800ECE259 /* Localizable */,
 				C50823102D70227F00ECE259 /* Application */,
 				C50823112D70227F00ECE259 /* Assets.xcassets */,
-				C50823192D70227F00ECE259 /* Features */,
+				C50823192D70227F00ECE259 /* Presentation */,
 				C508231B2D70227F00ECE259 /* Generated */,
 				C508231C2D70227F00ECE259 /* GoogleService-Info.plist */,
 				C50823202D70227F00ECE259 /* Preview Content */,
@@ -261,6 +284,7 @@
 		C5C5DBD12D701C690015F7AC /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				C531A0782D72331300FAE911 /* Coordinator */,
 				C5C5DBCC2D701C690015F7AC /* Analytics */,
 				C5C5DBCD2D701C690015F7AC /* CommonTest */,
 				C5C5DBCE2D701C690015F7AC /* Gemini */,
@@ -295,6 +319,7 @@
 				C5C5DBD22D701CA20015F7AC /* Analytics */,
 				C5C5DBD42D701CA20015F7AC /* CommonTest */,
 				C5C5DBD62D701CA20015F7AC /* Gemini */,
+				C531A0792D7233AC00FAE911 /* Coordinator */,
 			);
 			productName = SwiftExplorer;
 			productReference = C58379C82C26A3440068D178 /* SwiftExplorer.app */;
@@ -438,6 +463,7 @@
 				C50823242D70227F00ECE259 /* CompareViewModel.swift in Sources */,
 				C50823252D70227F00ECE259 /* CompareView.swift in Sources */,
 				C50823262D70227F00ECE259 /* ContentView.swift in Sources */,
+				C531A0762D7229BE00FAE911 /* CompareUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +474,7 @@
 				C508232A2D70227F00ECE259 /* L10n.swift in Sources */,
 				C508232B2D70227F00ECE259 /* SwiftExplorerApp.swift in Sources */,
 				C508232C2D70227F00ECE259 /* CompareViewModel.swift in Sources */,
+				C531A0772D7229BE00FAE911 /* CompareUseCase.swift in Sources */,
 				C508232D2D70227F00ECE259 /* CompareView.swift in Sources */,
 				C508232E2D70227F00ECE259 /* ContentView.swift in Sources */,
 				C50823732D7024DF00ECE259 /* CompareViewModelTests.swift in Sources */,
@@ -750,6 +777,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C519A7602C27042000BF91E3 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		C531A0792D7233AC00FAE911 /* Coordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Coordinator;
 		};
 		C58379FA2C26B43B0068D178 /* CodeEditor */ = {
 			isa = XCSwiftPackageProductDependency;
