@@ -1,0 +1,28 @@
+# Adapted from https://doc.mergify.io/examples.html#running-ci-pipelines-automatically
+# Validate your changes with:
+#   $ curl -F 'data=@.mergify.yml' https://gh.mergify.io/validate/
+
+pull_request_rules:
+  - name: Automatic merges for Dependabot pull requests
+    conditions:
+      - author~=^dependabot(|-preview)\[bot\]$
+      - check-success=build
+    actions:
+      merge:
+        method: squash
+
+  - name: Automatic merges for Renovate pull requests
+    conditions:
+      - author~=^renovate\[bot\]$
+      - check-success=build
+    actions:
+      merge:
+        method: squash
+
+  - name: Automatic merges for joaolfp pull requests
+    conditions:
+      - author=joaolfp
+      - check-success=build
+    actions:
+      merge:
+        method: squash
