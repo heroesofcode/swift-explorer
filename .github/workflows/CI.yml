@@ -31,7 +31,7 @@ jobs:
       run: xrun project SwiftExplorer.xcodeproj SwiftExplorer macOS
 
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5.4.2
+      uses: codecov/codecov-action@v5.4.3
       with:
         swift: true
         swift_project: SwiftExplorer
