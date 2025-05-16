@@ -1,4 +1,4 @@
 [tools]
-swiftlint = "0.58.2"
+swiftlint = "0.59.1"
 swiftformat = "0.55.5"
 swiftgen = "6.6.3"
