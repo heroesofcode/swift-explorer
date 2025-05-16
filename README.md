@@ -13,7 +13,6 @@ Desktop tool to quickly explore and analyze Swift Intermediate Representation (I
 - <b>Education and Learning:</b> A valuable educational tool for learning about compilers and how different language constructs translate into intermediate representation and assembly.
 - <b>Optimization:</b> Helps identify and optimize code snippets that are not compiling efficiently by providing insights from both LLVM IR and assembly.
 - <b>Comparative Analysis:</b> Allows you to compare how different approaches or code versions generate different IR and assembly code, facilitating the choice of best coding practices.
-- <b>IA Gemini:</b> You can see how to improve your code and compare LVVM and Assembly with the help of Gemini.
 
 ### Optimization flags
 

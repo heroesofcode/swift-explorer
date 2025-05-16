@@ -54,16 +54,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "GeminiTests"
-               BuildableName = "GeminiTests"
-               BlueprintName = "GeminiTests"
-               ReferencedContainer = "container:Dependencies/Gemini">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "LowlevelTests"
                BuildableName = "LowlevelTests"
                BlueprintName = "LowlevelTests"

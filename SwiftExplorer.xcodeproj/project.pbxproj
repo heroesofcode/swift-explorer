@@ -9,34 +9,26 @@
 /* Begin PBXBuildFile section */
 		C50823222D70227F00ECE259 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = C508231A2D70227F00ECE259 /* L10n.swift */; };
 		C50823232D70227F00ECE259 /* SwiftExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C508230F2D70227F00ECE259 /* SwiftExplorerApp.swift */; };
-		C50823242D70227F00ECE259 /* CompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50823142D70227F00ECE259 /* CompareViewModel.swift */; };
-		C50823252D70227F00ECE259 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50823122D70227F00ECE259 /* CompareView.swift */; };
 		C50823262D70227F00ECE259 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50823172D70227F00ECE259 /* ContentView.swift */; };
 		C50823272D70227F00ECE259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C50823112D70227F00ECE259 /* Assets.xcassets */; };
 		C50823282D70227F00ECE259 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C508231F2D70227F00ECE259 /* Preview Assets.xcassets */; };
 		C50823292D70227F00ECE259 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C508231C2D70227F00ECE259 /* GoogleService-Info.plist */; };
 		C508232A2D70227F00ECE259 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = C508231A2D70227F00ECE259 /* L10n.swift */; };
 		C508232B2D70227F00ECE259 /* SwiftExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C508230F2D70227F00ECE259 /* SwiftExplorerApp.swift */; };
-		C508232C2D70227F00ECE259 /* CompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50823142D70227F00ECE259 /* CompareViewModel.swift */; };
-		C508232D2D70227F00ECE259 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50823122D70227F00ECE259 /* CompareView.swift */; };
 		C508232E2D70227F00ECE259 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50823172D70227F00ECE259 /* ContentView.swift */; };
 		C508232F2D70227F00ECE259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C50823112D70227F00ECE259 /* Assets.xcassets */; };
 		C50823302D70227F00ECE259 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C508231F2D70227F00ECE259 /* Preview Assets.xcassets */; };
 		C50823312D70227F00ECE259 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C508231C2D70227F00ECE259 /* GoogleService-Info.plist */; };
 		C50823352D70231D00ECE259 /* SwiftExplorer.strings in Resources */ = {isa = PBXBuildFile; fileRef = C50823342D70231500ECE259 /* SwiftExplorer.strings */; };
 		C50823362D70231D00ECE259 /* SwiftExplorer.strings in Resources */ = {isa = PBXBuildFile; fileRef = C50823342D70231500ECE259 /* SwiftExplorer.strings */; };
-		C50823732D7024DF00ECE259 /* CompareViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50823712D7024DF00ECE259 /* CompareViewModelTests.swift */; };
-		C50823742D7024DF00ECE259 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C508236F2D7024DF00ECE259 /* ContentViewTests.swift */; };
-		C50823752D7024DF00ECE259 /* APIGeminiMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C508236B2D7024DF00ECE259 /* APIGeminiMock.swift */; };
-		C50823762D7024DF00ECE259 /* CompareViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C508236E2D7024DF00ECE259 /* CompareViewTests.swift */; };
 		C512A2A62C28D54F00175F0B /* Lowlevel in Frameworks */ = {isa = PBXBuildFile; productRef = C512A2A52C28D54F00175F0B /* Lowlevel */; };
 		C519A74F2C26ED6B00BF91E3 /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = C519A74E2C26ED6B00BF91E3 /* Theme */; };
 		C519A7622C27044F00BF91E3 /* CommonTest in Frameworks */ = {isa = PBXBuildFile; productRef = C519A7612C27044F00BF91E3 /* CommonTest */; };
 		C519A7642C27045500BF91E3 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = C519A7632C27045500BF91E3 /* SnapshotTesting */; };
 		C58379FB2C26B43B0068D178 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = C58379FA2C26B43B0068D178 /* CodeEditor */; };
+		C5AA92132DD6F0C8004593B9 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA92122DD6F0B9004593B9 /* ContentViewTests.swift */; };
 		C5C5DBD32D701CA20015F7AC /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = C5C5DBD22D701CA20015F7AC /* Analytics */; };
 		C5C5DBD52D701CA20015F7AC /* CommonTest in Frameworks */ = {isa = PBXBuildFile; productRef = C5C5DBD42D701CA20015F7AC /* CommonTest */; };
-		C5C5DBD72D701CA20015F7AC /* Gemini in Frameworks */ = {isa = PBXBuildFile; productRef = C5C5DBD62D701CA20015F7AC /* Gemini */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,23 +44,17 @@
 /* Begin PBXFileReference section */
 		C508230F2D70227F00ECE259 /* SwiftExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExplorerApp.swift; sourceTree = "<group>"; };
 		C50823112D70227F00ECE259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C50823122D70227F00ECE259 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
-		C50823142D70227F00ECE259 /* CompareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewModel.swift; sourceTree = "<group>"; };
 		C50823172D70227F00ECE259 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C508231A2D70227F00ECE259 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		C508231C2D70227F00ECE259 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C508231F2D70227F00ECE259 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C50823212D70227F00ECE259 /* SwiftExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftExplorer.entitlements; sourceTree = "<group>"; };
 		C50823342D70231500ECE259 /* SwiftExplorer.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SwiftExplorer.strings; sourceTree = "<group>"; };
-		C508236B2D7024DF00ECE259 /* APIGeminiMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGeminiMock.swift; sourceTree = "<group>"; };
-		C508236E2D7024DF00ECE259 /* CompareViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewTests.swift; sourceTree = "<group>"; };
-		C508236F2D7024DF00ECE259 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
-		C50823712D7024DF00ECE259 /* CompareViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewModelTests.swift; sourceTree = "<group>"; };
 		C58379C82C26A3440068D178 /* SwiftExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58379D92C26A3450068D178 /* SwiftExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5AA92122DD6F0B9004593B9 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		C5C5DBCC2D701C690015F7AC /* Analytics */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Analytics; sourceTree = "<group>"; };
 		C5C5DBCD2D701C690015F7AC /* CommonTest */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CommonTest; sourceTree = "<group>"; };
-		C5C5DBCE2D701C690015F7AC /* Gemini */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Gemini; sourceTree = "<group>"; };
 		C5C5DBCF2D701C690015F7AC /* Lowlevel */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Lowlevel; sourceTree = "<group>"; };
 		C5C5DBD02D701C690015F7AC /* Theme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Theme; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +67,6 @@
 				C519A74F2C26ED6B00BF91E3 /* Theme in Frameworks */,
 				C5C5DBD32D701CA20015F7AC /* Analytics in Frameworks */,
 				C58379FB2C26B43B0068D178 /* CodeEditor in Frameworks */,
-				C5C5DBD72D701CA20015F7AC /* Gemini in Frameworks */,
 				C5C5DBD52D701CA20015F7AC /* CommonTest in Frameworks */,
 				C512A2A62C28D54F00175F0B /* Lowlevel in Frameworks */,
 			);
@@ -107,31 +92,6 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		C50823132D70227F00ECE259 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C50823122D70227F00ECE259 /* CompareView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C50823152D70227F00ECE259 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C50823142D70227F00ECE259 /* CompareViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		C50823162D70227F00ECE259 /* Compare */ = {
-			isa = PBXGroup;
-			children = (
-				C50823132D70227F00ECE259 /* View */,
-				C50823152D70227F00ECE259 /* ViewModel */,
-			);
-			path = Compare;
-			sourceTree = "<group>";
-		};
 		C50823182D70227F00ECE259 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +103,6 @@
 		C50823192D70227F00ECE259 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				C50823162D70227F00ECE259 /* Compare */,
 				C50823182D70227F00ECE259 /* Home */,
 			);
 			path = Features;
@@ -173,37 +132,12 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
-		C508236C2D7024DF00ECE259 /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				C508236B2D7024DF00ECE259 /* APIGeminiMock.swift */,
-			);
-			path = Mock;
-			sourceTree = "<group>";
-		};
-		C508236D2D7024DF00ECE259 /* Doubles */ = {
-			isa = PBXGroup;
-			children = (
-				C508236C2D7024DF00ECE259 /* Mock */,
-			);
-			path = Doubles;
-			sourceTree = "<group>";
-		};
 		C50823702D7024DF00ECE259 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C508236E2D7024DF00ECE259 /* CompareViewTests.swift */,
-				C508236F2D7024DF00ECE259 /* ContentViewTests.swift */,
+				C5AA92122DD6F0B9004593B9 /* ContentViewTests.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C50823722D7024DF00ECE259 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C50823712D7024DF00ECE259 /* CompareViewModelTests.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C58379BF2C26A3440068D178 = {
@@ -244,9 +178,7 @@
 		C58379DC2C26A3450068D178 /* SwiftExplorerTests */ = {
 			isa = PBXGroup;
 			children = (
-				C508236D2D7024DF00ECE259 /* Doubles */,
 				C50823702D7024DF00ECE259 /* View */,
-				C50823722D7024DF00ECE259 /* ViewModel */,
 			);
 			path = SwiftExplorerTests;
 			sourceTree = "<group>";
@@ -263,7 +195,6 @@
 			children = (
 				C5C5DBCC2D701C690015F7AC /* Analytics */,
 				C5C5DBCD2D701C690015F7AC /* CommonTest */,
-				C5C5DBCE2D701C690015F7AC /* Gemini */,
 				C5C5DBCF2D701C690015F7AC /* Lowlevel */,
 				C5C5DBD02D701C690015F7AC /* Theme */,
 			);
@@ -294,7 +225,6 @@
 				C512A2A52C28D54F00175F0B /* Lowlevel */,
 				C5C5DBD22D701CA20015F7AC /* Analytics */,
 				C5C5DBD42D701CA20015F7AC /* CommonTest */,
-				C5C5DBD62D701CA20015F7AC /* Gemini */,
 			);
 			productName = SwiftExplorer;
 			productReference = C58379C82C26A3440068D178 /* SwiftExplorer.app */;
@@ -435,8 +365,6 @@
 			files = (
 				C50823222D70227F00ECE259 /* L10n.swift in Sources */,
 				C50823232D70227F00ECE259 /* SwiftExplorerApp.swift in Sources */,
-				C50823242D70227F00ECE259 /* CompareViewModel.swift in Sources */,
-				C50823252D70227F00ECE259 /* CompareView.swift in Sources */,
 				C50823262D70227F00ECE259 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,13 +375,8 @@
 			files = (
 				C508232A2D70227F00ECE259 /* L10n.swift in Sources */,
 				C508232B2D70227F00ECE259 /* SwiftExplorerApp.swift in Sources */,
-				C508232C2D70227F00ECE259 /* CompareViewModel.swift in Sources */,
-				C508232D2D70227F00ECE259 /* CompareView.swift in Sources */,
 				C508232E2D70227F00ECE259 /* ContentView.swift in Sources */,
-				C50823732D7024DF00ECE259 /* CompareViewModelTests.swift in Sources */,
-				C50823742D7024DF00ECE259 /* ContentViewTests.swift in Sources */,
-				C50823752D7024DF00ECE259 /* APIGeminiMock.swift in Sources */,
-				C50823762D7024DF00ECE259 /* CompareViewTests.swift in Sources */,
+				C5AA92132DD6F0C8004593B9 /* ContentViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,10 +686,6 @@
 		C5C5DBD42D701CA20015F7AC /* CommonTest */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CommonTest;
-		};
-		C5C5DBD62D701CA20015F7AC /* Gemini */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Gemini;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -18,10 +18,3 @@
 "warning" = "Warning";
 "messageEmptyField" = "Enter the Swift field";
 "ok" = "OK";
-
-// MARK: - CompareView
-
-"details" = "Details";
-"titleCompareView" = "Review the details of the generated LVVM and Assembly";
-"review" = "Review";
-"enterTheApiKeyGemini" = "Enter the API Key Gemini";
