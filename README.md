@@ -33,7 +33,7 @@ This project was inspired by [kotlin-explorer](https://github.com/romainguy/kotl
 
 If you have any questions about the kotlin-explorer tool, I recommend you watch the talk **Practical Optimizations - Romain Guy**
 
-<a href="https://www.youtube.com/watch?v=5cxw_fdpnoA&list=PLn7H9CUCuXAtxPltq2mEHc_Wbgckrd4B-"><img src="youtube.png" width="640"/></a>
+<a href="https://www.youtube.com/watch?v=5cxw_fdpnoA&list=PLn7H9CUCuXAtxPltq2mEHc_Wbgckrd4B-"><img src="Assets/youtube.jpg" width="640"/></a>
 
 
 ## License
