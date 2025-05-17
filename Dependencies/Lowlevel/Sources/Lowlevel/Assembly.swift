@@ -4,7 +4,10 @@ public final class Assembly {
 
     public init() {}
 
-    public func generateAssembly(fromSwiftCode swiftCode: String, optimizationLevel: OptimizationLevel) -> String {
+    public func generateAssembly(
+        fromSwiftCode swiftCode: String,
+        optimizationLevel: OptimizationLevel
+    ) -> String {
         let tempDirectory = FileManager.default.temporaryDirectory
         let swiftFileURL = tempDirectory.appendingPathComponent("temp.swift")
         let assemblyFileURL = tempDirectory.appendingPathComponent("temp.s")
@@ -39,7 +42,11 @@ public final class Assembly {
         }
     }
 
-    private func processArgument(assemblyFileURL: URL, swiftFileURL: URL, optimizationLevel: OptimizationLevel) -> Process {
+    private func processArgument(
+        assemblyFileURL: URL,
+        swiftFileURL: URL,
+        optimizationLevel: OptimizationLevel
+    ) -> Process {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/bin/swiftc")
         process.arguments = [

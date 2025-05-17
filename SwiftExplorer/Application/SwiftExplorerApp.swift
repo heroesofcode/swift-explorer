@@ -17,7 +17,7 @@ struct SwiftExplorerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

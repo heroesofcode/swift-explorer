@@ -1,5 +1,5 @@
 //
-//  ContentViewTests.swift
+//  HomeViewTests.swift
 //  SwiftExplorer
 //
 //  Created by João Lucas on 22/06/24.
@@ -10,10 +10,11 @@ import SnapshotTesting
 import XCTest
 @testable import SwiftExplorer
 
-final class ContentViewTests: XCTestCase {
+final class HomeViewTests: XCTestCase {
 
     func testShouldValidateLayout() {
-        let sut = ContentView()
-        assertSnapshot(of: sut.view(width: 1280, height: 800), as: .image, record: false)
+        let sut = HomeView()
+        let view = sut.view(width: 1280, height: 800)
+        assertSnapshot(of: view, as: .image)
     }
 }
