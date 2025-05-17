@@ -222,8 +222,6 @@
 				C58379C42C26A3440068D178 /* Sources */,
 				C58379C52C26A3440068D178 /* Frameworks */,
 				C58379C62C26A3440068D178 /* Resources */,
-				C54400512C743A200007208E /* SwiftLint */,
-				C54400532C743E980007208E /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -330,45 +328,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C54400512C743A200007208E /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$HOME/.local/share/mise/shims:$PATH\"\nswiftlint\n";
-		};
-		C54400532C743E980007208E /* SwiftGen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftGen;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$HOME/.local/share/mise/shims:$PATH\"\nswiftgen\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C58379C42C26A3440068D178 /* Sources */ = {

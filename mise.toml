@@ -2,7 +2,7 @@
 swiftlint = "0.59.1"
 swiftgen = "6.6.3"
 
-[tasks.lint]
+[tasks.swiftlint]
 run = "swiftlint"
 
 [tasks.swiftgen]
