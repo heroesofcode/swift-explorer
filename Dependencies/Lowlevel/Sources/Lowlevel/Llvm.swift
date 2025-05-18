@@ -45,7 +45,7 @@ public final class Llvm {
         result(errorOutput: errorOutput, outputFile: outputFile)
     }
 
-    private func validationFieldSwiftCode() -> (String, String) {
+    func validationFieldSwiftCode() -> (String, String) {
         let tempFile = NSTemporaryDirectory() + "tempfile.swift"
         let outputFile = NSTemporaryDirectory() + "output.ll"
 
