@@ -1,10 +1,24 @@
 import Foundation
 
+/// A class responsible for generating Assembly code from Swift source code using `swiftc`.
 public final class Assembly {
 
+    /// Initializes a new instance of `Assembly`.
     public init() {}
 
-    public func generateAssembly(fromSwiftCode swiftCode: String, optimizationLevel: OptimizationLevel) -> String {
+    /// Generates Assembly code from the given Swift source code.
+    ///
+    /// This method writes the Swift code to a temporary file, compiles it using `swiftc -S`,
+    /// and returns the resulting assembly code or an error message.
+    ///
+    /// - Parameters:
+    ///   - swiftCode: The Swift source code to compile.
+    ///   - optimizationLevel: The optimization level to apply during compilation.
+    /// - Returns: A string containing the assembly code or an error message.
+    public func generateAssembly(
+        fromSwiftCode swiftCode: String,
+        optimizationLevel: OptimizationLevel
+    ) -> String {
         let tempDirectory = FileManager.default.temporaryDirectory
         let swiftFileURL = tempDirectory.appendingPathComponent("temp.swift")
         let assemblyFileURL = tempDirectory.appendingPathComponent("temp.s")
@@ -39,7 +53,11 @@ public final class Assembly {
         }
     }
 
-    private func processArgument(assemblyFileURL: URL, swiftFileURL: URL, optimizationLevel: OptimizationLevel) -> Process {
+    private func processArgument(
+        assemblyFileURL: URL,
+        swiftFileURL: URL,
+        optimizationLevel: OptimizationLevel
+    ) -> Process {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/bin/swiftc")
         process.arguments = [
