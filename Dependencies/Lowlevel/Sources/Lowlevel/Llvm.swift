@@ -1,12 +1,19 @@
 import Foundation
 import SwiftUI
 
+/// A class responsible for generating LLVM IR from Swift source code using `swiftc`.
 public final class Llvm {
 
     @Binding private var swiftCode: String
     @Binding private var llvm: String
     @Binding private var optimizationLevel: OptimizationLevel
 
+    /// Initializes a new instance of `Llvm`.
+    ///
+    /// - Parameters:
+    ///   - swiftCode: A binding to the Swift source code input.
+    ///   - llvm: A binding to store the resulting LLVM IR.
+    ///   - optimizationLevel: A binding that defines the optimization level to use during compilation.
     public init(
         swiftCode: Binding<String>,
         llvm: Binding<String>,
@@ -17,6 +24,10 @@ public final class Llvm {
         _optimizationLevel = optimizationLevel
     }
 
+    /// Generates LLVM IR from the provided Swift code.
+    ///
+    /// This method writes the Swift code to a temporary file,
+    /// invokes `swiftc` with the `-emit-ir` flag, and stores the output or error in the `llvm` binding.
     public func generateLlvm() {
         let (tempFile, outputFile) = validationFieldSwiftCode()
 
@@ -34,7 +45,7 @@ public final class Llvm {
         result(errorOutput: errorOutput, outputFile: outputFile)
     }
 
-    func validationFieldSwiftCode() -> (String, String) {
+    private func validationFieldSwiftCode() -> (String, String) {
         let tempFile = NSTemporaryDirectory() + "tempfile.swift"
         let outputFile = NSTemporaryDirectory() + "output.ll"
 

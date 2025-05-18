@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Extension to convert any SwiftUI `View` into an `NSView` for testing purposes on macOS.
+///
+/// This is useful when writing snapshot tests or manually inspecting SwiftUI views in a macOS test environment.
+/// It wraps the view in an `NSHostingController`, embeds it in an `NSWindow`, and applies an optional size and color scheme.
 public extension View {
 
     func view(

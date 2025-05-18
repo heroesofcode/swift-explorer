@@ -7,7 +7,12 @@
 
 import SwiftUI
 
+/// Extension that adds convenient Lato font styling methods to `Text`.
+///
+/// Each method applies a different Lato font style (e.g. Black, Bold, Italic) with the given size,
+/// allowing for consistent and reusable typography across the app.
 public extension Text {
+
     func fontLatoBlack(size: CGFloat) -> Text {
         return self.font(.custom(FontFamily.Lato.black, size: size))
     }

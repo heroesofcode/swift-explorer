@@ -7,18 +7,13 @@
 
 import Foundation
 
+/// A namespace containing all analytics event names used throughout the app.
 public enum AnalyticsEvents {
 
+    /// Analytics events related to the Home screen.
     public enum Home: String {
         case view = "home_view"
         case button = "generate_button"
         case empty_field = "empty_field"
-    }
-    
-    public enum Compare: String {
-        case view = "compare_view"
-        case button = "review_button"
-        case success = "review_success"
-        case error = "review_error"
     }
 }

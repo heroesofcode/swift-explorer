@@ -20,8 +20,6 @@ struct HomeView: View {
     @State private var fontSize: Int = 14
     @State private var showAlert = false
 
-    @State private var navigation = NavigationPath()
-
     var body: some View {
         VStack {
             HStack {
@@ -133,7 +131,7 @@ struct HomeView: View {
                 SetAnalyticsEvents.event(AnalyticsEvents.Home.empty_field.rawValue)
             }
         } label: {
-            Text("Click to explore")
+            Text(L10n.exploreButton)
                 .fontLatoBlack(size: 16)
                 .foregroundColor(.swiftColor)
                 .padding()
@@ -161,7 +159,7 @@ struct HomeView: View {
             }
         } label: {
             HStack {
-                Text("Optmization Level: \(optimizationLevel.rawValue)")
+                Text(L10n.optmizationLevelTitle(optimizationLevel.rawValue))
                     .foregroundColor(Color.blackColor)
                 Image(systemName: "chevron.down")
                     .foregroundColor(.swiftColor)

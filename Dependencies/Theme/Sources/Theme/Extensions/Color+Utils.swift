@@ -7,9 +7,12 @@
 
 import SwiftUI
 
-import SwiftUI
-
+/// Extension for creating custom `Color` values from hexadecimal strings and defining common color constants.
+///
+/// Provides a convenient initializer to create `Color` using hex values (with or without alpha),
+/// and includes predefined colors for consistent usage across the app.
 public extension Color {
+    
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "#", with: "")
         let scanner = Scanner(string: hex)

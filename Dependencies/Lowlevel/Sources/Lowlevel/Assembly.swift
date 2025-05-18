@@ -1,9 +1,20 @@
 import Foundation
 
+/// A class responsible for generating Assembly code from Swift source code using `swiftc`.
 public final class Assembly {
 
+    /// Initializes a new instance of `Assembly`.
     public init() {}
 
+    /// Generates Assembly code from the given Swift source code.
+    ///
+    /// This method writes the Swift code to a temporary file, compiles it using `swiftc -S`,
+    /// and returns the resulting assembly code or an error message.
+    ///
+    /// - Parameters:
+    ///   - swiftCode: The Swift source code to compile.
+    ///   - optimizationLevel: The optimization level to apply during compilation.
+    /// - Returns: A string containing the assembly code or an error message.
     public func generateAssembly(
         fromSwiftCode swiftCode: String,
         optimizationLevel: OptimizationLevel
