@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## Version 2.0.0
+**2025-05-17**
+
+- Update layout and organize code by @joaolfp - #94
+- Remove gemini support by @joaolfp - #93
+- Bump fastlane from 2.227.1 to 2.227.2 by @dependabot - #90
+
 ## Version 1.8.0
 **2024-12-26**
 
