@@ -1,4 +1,4 @@
-# Swift Explorer
+# <img src="https://seekvectors.com/files/download/0026759ac56872589655bd7e2c12f919.png" width="40" alt="Swift logo"> Swift Explorer
 
 [![⬇️ Download App](https://img.shields.io/badge/📥-Download_App-orange?style=for-the-badge)](https://github.com/heroesofcode/swift-explorer/releases/download/2.0.0/SwiftExplorer.dmg)
 ![Platforms](https://img.shields.io/badge/Platforms-MacOS-blue?style=for-the-badge&logo=swift)
