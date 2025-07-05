@@ -9,16 +9,12 @@ import CodeEditor
 import Lowlevel
 import SwiftUI
 import Theme
-import Analytics
 
 struct HomeView: View {
-    @State private var swiftCode: String = ""
-    @State private var llvm: String = ""
-    @State private var assemblyCode: String = ""
-    @State private var optimizationLevel: OptimizationLevel = .balanced
+    
+    @StateObject var viewModel = HomeViewModel()
 
     @State private var fontSize: Int = 14
-    @State private var showAlert = false
 
     var body: some View {
         VStack {
@@ -34,7 +30,7 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            SetAnalyticsEvents.event(AnalyticsEvents.Home.view.rawValue)
+            viewModel.onAppear()
         }
         .background(.white)
     }
@@ -50,11 +46,13 @@ struct HomeView: View {
             }
 
             CodeEditor(
-                source: $swiftCode,
+                source: $viewModel.swiftCode,
                 language: .swift,
                 theme: .atelierSavannaLight,
-                fontSize: .init(get: { CGFloat(16) },
-                                set: { fontSize = Int($0) })
+                fontSize: .init(
+                    get: { CGFloat(16) },
+                    set: { fontSize = Int($0) }
+                )
             )
             .border(Color.blackColor, width: 2)
             .font(.system(size: 100))
@@ -74,11 +72,13 @@ struct HomeView: View {
             }
 
             CodeEditor(
-                source: $llvm,
+                source: $viewModel.llvm,
                 language: .bash,
                 theme: .atelierSavannaLight,
-                fontSize: .init(get: { CGFloat(16) },
-                                set: { fontSize = Int($0) })
+                fontSize: .init(
+                    get: { CGFloat(16) },
+                    set: { fontSize = Int($0) }
+                )
             )
             .border(Color.blackColor, width: 2)
             .frame(maxWidth: .infinity)
@@ -97,11 +97,13 @@ struct HomeView: View {
             }
 
             CodeEditor(
-                source: $assemblyCode,
+                source: $viewModel.assemblyCode,
                 language: .bash,
                 theme: .atelierSavannaLight,
-                fontSize: .init(get: { CGFloat(16) },
-                                set: { fontSize = Int($0) })
+                fontSize: .init(
+                    get: { CGFloat(16) },
+                    set: { fontSize = Int($0) }
+                )
             )
             .border(Color.blackColor, width: 2)
             .frame(maxWidth: .infinity)
@@ -111,25 +113,13 @@ struct HomeView: View {
     
     private func exploreButtonView() -> some View {
         Button {
-            if !swiftCode.isEmpty {
-                let llvm = Llvm(
-                    swiftCode: $swiftCode,
-                    llvm: $llvm,
-                    optimizationLevel: $optimizationLevel
-                )
-
-                llvm.generateLlvm()
-
-                assemblyCode = Assembly().generateAssembly(
-                    fromSwiftCode: swiftCode,
-                    optimizationLevel: optimizationLevel
-                )
-
-                SetAnalyticsEvents.event(AnalyticsEvents.Home.button.rawValue)
-            } else {
-                showAlert = true
-                SetAnalyticsEvents.event(AnalyticsEvents.Home.empty_field.rawValue)
-            }
+            let llvm = Llvm(
+                swiftCode: $viewModel.swiftCode,
+                llvm: $viewModel.llvm,
+                optimizationLevel: $viewModel.optimizationLevel
+            )
+            
+            viewModel.tapGenerate(llvm: llvm)
         } label: {
             Text(L10n.exploreButton)
                 .fontLatoBlack(size: 16)
@@ -138,7 +128,7 @@ struct HomeView: View {
                 .cornerRadius(8)
         }
         .buttonStyle(.link)
-        .alert(isPresented: $showAlert) {
+        .alert(isPresented: $viewModel.showAlert) {
             Alert(
                 title: Text(L10n.warning),
                 message: Text(L10n.messageEmptyField),
@@ -151,7 +141,7 @@ struct HomeView: View {
         Menu {
             ForEach(OptimizationLevel.allCases, id: \.self) { level in
                 Button {
-                    optimizationLevel = level
+                    viewModel.optimizationLevel = level
                 } label: {
                     Text(level.rawValue)
                         .fontLatoRegular(size: 14)
@@ -159,7 +149,7 @@ struct HomeView: View {
             }
         } label: {
             HStack {
-                Text(L10n.optmizationLevelTitle(optimizationLevel.rawValue))
+                Text(L10n.optmizationLevelTitle(viewModel.optimizationLevel.rawValue))
                     .foregroundColor(Color.blackColor)
                 Image(systemName: "chevron.down")
                     .foregroundColor(.swiftColor)
