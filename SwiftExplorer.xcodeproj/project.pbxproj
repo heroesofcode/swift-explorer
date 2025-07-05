@@ -27,6 +27,8 @@
 		C519A7642C27045500BF91E3 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = C519A7632C27045500BF91E3 /* SnapshotTesting */; };
 		C554E3742DD9509800F39E39 /* testShouldValidateLayout.1.png in Resources */ = {isa = PBXBuildFile; fileRef = C554E3712DD9509800F39E39 /* testShouldValidateLayout.1.png */; };
 		C58379FB2C26B43B0068D178 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = C58379FA2C26B43B0068D178 /* CodeEditor */; };
+		C5AA91DB2E19841D00777E54 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA91DA2E19841A00777E54 /* HomeViewModel.swift */; };
+		C5AA91DC2E19841D00777E54 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA91DA2E19841A00777E54 /* HomeViewModel.swift */; };
 		C5AA92132DD6F0C8004593B9 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA92122DD6F0B9004593B9 /* HomeViewTests.swift */; };
 		C5C5DBD32D701CA20015F7AC /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = C5C5DBD22D701CA20015F7AC /* Analytics */; };
 		C5C5DBD52D701CA20015F7AC /* CommonTest in Frameworks */ = {isa = PBXBuildFile; productRef = C5C5DBD42D701CA20015F7AC /* CommonTest */; };
@@ -54,6 +56,7 @@
 		C554E3712DD9509800F39E39 /* testShouldValidateLayout.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShouldValidateLayout.1.png; sourceTree = "<group>"; };
 		C58379C82C26A3440068D178 /* SwiftExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58379D92C26A3450068D178 /* SwiftExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5AA91DA2E19841A00777E54 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C5AA92122DD6F0B9004593B9 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
 		C5C5DBCC2D701C690015F7AC /* Analytics */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Analytics; sourceTree = "<group>"; };
 		C5C5DBCD2D701C690015F7AC /* CommonTest */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CommonTest; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 		C50823182D70227F00ECE259 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C5AA91DA2E19841A00777E54 /* HomeViewModel.swift */,
 				C50823172D70227F00ECE259 /* HomeView.swift */,
 			);
 			path = Home;
@@ -222,6 +226,7 @@
 				C58379C42C26A3440068D178 /* Sources */,
 				C58379C52C26A3440068D178 /* Frameworks */,
 				C58379C62C26A3440068D178 /* Resources */,
+				C5AA91DD2E198A3900777E54 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -329,6 +334,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C5AA91DD2E198A3900777E54 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C58379C42C26A3440068D178 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -337,6 +368,7 @@
 				C50823222D70227F00ECE259 /* L10n.swift in Sources */,
 				C50823232D70227F00ECE259 /* SwiftExplorerApp.swift in Sources */,
 				C50823262D70227F00ECE259 /* HomeView.swift in Sources */,
+				C5AA91DC2E19841D00777E54 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +379,7 @@
 				C508232A2D70227F00ECE259 /* L10n.swift in Sources */,
 				C508232B2D70227F00ECE259 /* SwiftExplorerApp.swift in Sources */,
 				C508232E2D70227F00ECE259 /* HomeView.swift in Sources */,
+				C5AA91DB2E19841D00777E54 /* HomeViewModel.swift in Sources */,
 				C5AA92132DD6F0C8004593B9 /* HomeViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,12 +1,12 @@
 //
-//  SetEvents.swift
+//  SetAnalyticsEvents.swift
 //  Analytics
 //
 //  Created by João Lucas on 08/09/24.
 //
 
-import FirebaseAnalytics
 import Foundation
+import FirebaseAnalytics
 
 /// A protocol that defines how analytics events are logged.
 protocol AnalyticsLogging {

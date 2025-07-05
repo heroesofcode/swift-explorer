@@ -9,8 +9,11 @@ import FirebaseCore
 import Foundation
 
 /// A utility for configuring Firebase in the app.
-public enum FirebaseConfiguration {
-
+public final class FirebaseConfiguration {
+    
+    /// Prevents instantiation.
+    private init() {}
+    
     /// Initializes and configures Firebase.
     ///
     /// This method should be called once during app startup (e.g., inside the `App` or `AppDelegate`).
