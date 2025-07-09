@@ -33,7 +33,6 @@
 		C5ABF11E2E1EF39E00CE81E3 /* AboutViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABF11D2E1EF39900CE81E3 /* AboutViewTests.swift */; };
 		C5ABF12B2E1EF6B900CE81E3 /* testShouldValidateLayout.1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5ABF1282E1EF6B900CE81E3 /* testShouldValidateLayout.1.png */; };
 		C5ABF12C2E1EF6B900CE81E3 /* testShouldValidateAboutViewLayout.1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5ABF1262E1EF6B900CE81E3 /* testShouldValidateAboutViewLayout.1.png */; };
-		C5ABF12F2E1EFAA000CE81E3 /* CodeEditSourceEditor in Frameworks */ = {isa = PBXBuildFile; productRef = C5ABF12E2E1EFAA000CE81E3 /* CodeEditSourceEditor */; };
 		C5C5DBD32D701CA20015F7AC /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = C5C5DBD22D701CA20015F7AC /* Analytics */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5ABF12F2E1EFAA000CE81E3 /* CodeEditSourceEditor in Frameworks */,
 				C519A74F2C26ED6B00BF91E3 /* Theme in Frameworks */,
 				C5C5DBD32D701CA20015F7AC /* Analytics in Frameworks */,
 				C512A2A62C28D54F00175F0B /* Lowlevel in Frameworks */,
@@ -264,7 +262,6 @@
 				C512A2A52C28D54F00175F0B /* Lowlevel */,
 				C5C5DBD22D701CA20015F7AC /* Analytics */,
 				C5ABF1152E1EEA3B00CE81E3 /* Common */,
-				C5ABF12E2E1EFAA000CE81E3 /* CodeEditSourceEditor */,
 			);
 			productName = SwiftExplorer;
 			productReference = C58379C82C26A3440068D178 /* SwiftExplorer.app */;
@@ -320,7 +317,6 @@
 			);
 			mainGroup = C58379BF2C26A3440068D178;
 			packageReferences = (
-				C5ABF12D2E1EFA9600CE81E3 /* XCRemoteSwiftPackageReference "CodeEditSourceEditor" */,
 			);
 			productRefGroup = C58379C92C26A3440068D178 /* Products */;
 			projectDirPath = "";
@@ -669,17 +665,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		C5ABF12D2E1EFA9600CE81E3 /* XCRemoteSwiftPackageReference "CodeEditSourceEditor" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CodeEditApp/CodeEditSourceEditor";
-			requirement = {
-				kind = exactVersion;
-				version = 0.14.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		C512A2A52C28D54F00175F0B /* Lowlevel */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -696,11 +681,6 @@
 		C5ABF1152E1EEA3B00CE81E3 /* Common */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Common;
-		};
-		C5ABF12E2E1EFAA000CE81E3 /* CodeEditSourceEditor */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5ABF12D2E1EFA9600CE81E3 /* XCRemoteSwiftPackageReference "CodeEditSourceEditor" */;
-			productName = CodeEditSourceEditor;
 		};
 		C5C5DBD22D701CA20015F7AC /* Analytics */ = {
 			isa = XCSwiftPackageProductDependency;
