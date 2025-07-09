@@ -14,7 +14,9 @@ import SwiftUI
 public extension Color {
     
     init(hex: String) {
-        let hex = hex.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "#", with: "")
+        let hex = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: "#", with: "")
+        
         let scanner = Scanner(string: hex)
         var rgb: UInt64 = 0
         scanner.scanHexInt64(&rgb)
@@ -40,6 +42,8 @@ public extension Color {
         self.init(red: r, green: g, blue: b, opacity: a)
     }
 
+    static let whiteColor = Color(hex: "#FFFFFF")
     static let blackColor = Color(hex: "#000000")
     static let swiftColor = Color(hex: "#FA7343")
+    static let grayColor = Color(hex: "#EBEBF599")
 }
