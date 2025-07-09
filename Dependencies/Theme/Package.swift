@@ -14,9 +14,18 @@ let package = Package(
             targets: ["Theme"]
         )
     ],
+    dependencies: [
+        .package(
+            url: "https://github.com/ZeeZide/CodeEditor",
+            exact: "1.2.6"
+        )
+    ],
     targets: [
         .target(
             name: "Theme",
+            dependencies: [
+                "CodeEditor"
+            ],
             resources: [
                 .process("Resources")
             ]
