@@ -18,7 +18,8 @@ let package = Package(
         .package(
             url: "https://github.com/ZeeZide/CodeEditor",
             exact: "1.2.6"
-        )
+        ),
+        .package(path: "../CommonTest"),
     ],
     targets: [
         .target(
@@ -32,7 +33,10 @@ let package = Package(
         ),
         .testTarget(
             name: "ThemeTests",
-            dependencies: ["Theme"]
+            dependencies: [
+                "Theme",
+                "CommonTest"
+            ]
         )
     ]
 )
