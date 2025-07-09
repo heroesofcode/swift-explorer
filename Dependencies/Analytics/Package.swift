@@ -14,14 +14,23 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/firebase/firebase-ios-sdk", exact: "11.15.0")
+        .package(
+            url: "https://github.com/firebase/firebase-ios-sdk",
+            exact: "11.15.0"
+        )
     ],
     targets: [
         .target(
             name: "Analytics",
             dependencies: [
-                .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
-                .product(name: "FirebaseCrashlytics", package: "firebase-ios-sdk")
+                .product(
+                    name: "FirebaseAnalytics",
+                    package: "firebase-ios-sdk"
+                ),
+                .product(
+                    name: "FirebaseCrashlytics",
+                    package: "firebase-ios-sdk"
+                )
             ]
         ),
         .testTarget(

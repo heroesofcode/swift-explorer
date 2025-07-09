@@ -14,16 +14,29 @@ let package = Package(
             targets: ["Theme"]
         )
     ],
+    dependencies: [
+        .package(
+            url: "https://github.com/ZeeZide/CodeEditor",
+            exact: "1.2.6"
+        ),
+        .package(path: "../CommonTest"),
+    ],
     targets: [
         .target(
             name: "Theme",
+            dependencies: [
+                "CodeEditor"
+            ],
             resources: [
                 .process("Resources")
             ]
         ),
         .testTarget(
             name: "ThemeTests",
-            dependencies: ["Theme"]
+            dependencies: [
+                "Theme",
+                "CommonTest"
+            ]
         )
     ]
 )

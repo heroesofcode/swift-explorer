@@ -5,7 +5,6 @@
 //  Created by João Lucas on 22/06/24.
 //
 
-import CodeEditor
 import Lowlevel
 import SwiftUI
 import Theme
@@ -45,14 +44,10 @@ struct HomeView: View {
                 Spacer()
             }
 
-            CodeEditor(
+            CustomCodeEditorView(
                 source: $viewModel.swiftCode,
                 language: .swift,
-                theme: .atelierSavannaLight,
-                fontSize: .init(
-                    get: { CGFloat(16) },
-                    set: { fontSize = Int($0) }
-                )
+                theme: .atelierSavannaLight
             )
             .border(Color.blackColor, width: 2)
             .font(.system(size: 100))
@@ -71,14 +66,10 @@ struct HomeView: View {
                 Spacer()
             }
 
-            CodeEditor(
+            CustomCodeEditorView(
                 source: $viewModel.llvm,
                 language: .bash,
-                theme: .atelierSavannaLight,
-                fontSize: .init(
-                    get: { CGFloat(16) },
-                    set: { fontSize = Int($0) }
-                )
+                theme: .atelierSavannaLight
             )
             .border(Color.blackColor, width: 2)
             .frame(maxWidth: .infinity)
@@ -96,14 +87,10 @@ struct HomeView: View {
                 Spacer()
             }
 
-            CodeEditor(
+            CustomCodeEditorView(
                 source: $viewModel.assemblyCode,
                 language: .bash,
-                theme: .atelierSavannaLight,
-                fontSize: .init(
-                    get: { CGFloat(16) },
-                    set: { fontSize = Int($0) }
-                )
+                theme: .atelierSavannaLight
             )
             .border(Color.blackColor, width: 2)
             .frame(maxWidth: .infinity)

@@ -6,15 +6,13 @@
 //
 
 import CommonTest
-import SnapshotTesting
 import XCTest
 @testable import SwiftExplorer
 
-final class HomeViewTests: XCTestCase {
+final class HomeViewTests: TestBase {
 
     func testShouldValidateLayout() {
         let sut = HomeView()
-        let view = sut.view(width: 1280, height: 800)
-        assertSnapshot(of: view, as: .image)
+        self.assertSnapshot(of: sut)
     }
 }
