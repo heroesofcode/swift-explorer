@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// About SwiftExplorer
+  internal static let aboutSwiftExplorer = L10n.tr("SwiftExplorer", "aboutSwiftExplorer", fallback: "About SwiftExplorer")
   /// Assembly
   internal static let assembly = L10n.tr("SwiftExplorer", "assembly", fallback: "Assembly")
   /// 🧑‍💻 Contribute

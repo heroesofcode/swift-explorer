@@ -22,7 +22,7 @@ struct SwiftExplorerApp: App {
         }
         .commands {
             CommandGroup(replacing: .appInfo) {
-                Button("About SwiftExplorer") {
+                Button(L10n.aboutSwiftExplorer) {
                     showAboutWindow()
                 }
             }
