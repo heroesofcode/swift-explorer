@@ -31,7 +31,7 @@ final class HomeViewModel: ObservableObject {
             SetCrashlyticsEvents.event(CrashlyticsEvents.Home.button.rawValue)
         } else {
             showAlert = true
-            SetAnalyticsEvents.event(AnalyticsEvents.Home.empty_field.rawValue)
+            SetAnalyticsEvents.event(AnalyticsEvents.Home.emptyField.rawValue)
         }
     }
     

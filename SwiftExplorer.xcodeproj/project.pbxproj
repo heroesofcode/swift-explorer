@@ -255,6 +255,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C552E13F2E20BD5700A4859E /* PBXTargetDependency */,
 			);
 			name = SwiftExplorer;
 			packageProductDependencies = (
@@ -317,6 +318,7 @@
 			);
 			mainGroup = C58379BF2C26A3440068D178;
 			packageReferences = (
+				C552E13D2E20BD3200A4859E /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */,
 			);
 			productRefGroup = C58379C92C26A3440068D178 /* Products */;
 			projectDirPath = "";
@@ -411,6 +413,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C552E13F2E20BD5700A4859E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C552E13E2E20BD5700A4859E /* SwiftLint */;
+		};
 		C58379DB2C26A3450068D178 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C58379C72C26A3440068D178 /* SwiftExplorer */;
@@ -665,6 +671,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		C552E13D2E20BD3200A4859E /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lukepistrol/SwiftLintPlugin";
+			requirement = {
+				kind = exactVersion;
+				version = 0.59.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		C512A2A52C28D54F00175F0B /* Lowlevel */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -677,6 +694,11 @@
 		C531BE6D2E1E21C9005F5829 /* CommonTest */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CommonTest;
+		};
+		C552E13E2E20BD5700A4859E /* SwiftLint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C552E13D2E20BD3200A4859E /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */;
+			productName = "plugin:SwiftLint";
 		};
 		C5ABF1152E1EEA3B00CE81E3 /* Common */ = {
 			isa = XCSwiftPackageProductDependency;

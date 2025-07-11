@@ -1,19 +1,6 @@
 disabled_rules:
-  - line_length
-  - force_try
-  - identifier_name
   - trailing_whitespace
-  - force_cast
-  - colon
-  - implicit_getter
-  - void_return
-  - unused_enumerated
-  - function_parameter_count
-  - file_length
-  - self_in_property_initialization
   - blanket_disable_command
-  - void_function_in_ternary
-  - non_optional_string_data_conversion
   
 vertical_whitespace:
     severity: error
@@ -36,6 +23,7 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods
   - Carthage
   - Fastlane
+  - DerivedData
   - SwiftExplorerTests
   - Dependencies/Analytics/Tests
   - Dependencies/Theme/Tests

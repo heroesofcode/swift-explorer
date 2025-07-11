@@ -14,7 +14,7 @@ public enum AnalyticsEvents {
     public enum Home: String {
         case view = "home_view"
         case button = "generate_button"
-        case empty_field = "empty_field"
+        case emptyField = "empty_field"
     }
 }
 

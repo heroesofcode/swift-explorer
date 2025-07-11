@@ -16,32 +16,33 @@ public extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: .whitespacesAndNewlines)
             .replacingOccurrences(of: "#", with: "")
-        
+
         let scanner = Scanner(string: hex)
-        var rgb: UInt64 = 0
-        scanner.scanHexInt64(&rgb)
-
-        let r, g, b, a: Double
+        var hexValue: UInt64 = 0
+        scanner.scanHexInt64(&hexValue)
+        
+        let redValue, greenValue, blueValue, alphaValue: Double
+        
         if hex.count == 6 {
-            r = Double((rgb & 0xFF0000) >> 16) / 255.0
-            g = Double((rgb & 0x00FF00) >> 8) / 255.0
-            b = Double(rgb & 0x0000FF) / 255.0
-            a = 1.0
+            redValue = Double((hexValue & 0xFF0000) >> 16) / 255.0
+            greenValue = Double((hexValue & 0x00FF00) >> 8) / 255.0
+            blueValue = Double(hexValue & 0x0000FF) / 255.0
+            alphaValue = 1.0
         } else if hex.count == 8 {
-            r = Double((rgb & 0xFF000000) >> 24) / 255.0
-            g = Double((rgb & 0x00FF0000) >> 16) / 255.0
-            b = Double((rgb & 0x0000FF00) >> 8) / 255.0
-            a = Double(rgb & 0x000000FF) / 255.0
+            redValue = Double((hexValue & 0xFF000000) >> 24) / 255.0
+            greenValue = Double((hexValue & 0x00FF0000) >> 16) / 255.0
+            blueValue = Double((hexValue & 0x0000FF00) >> 8) / 255.0
+            alphaValue = Double(hexValue & 0x000000FF) / 255.0
         } else {
-            r = 0
-            g = 0
-            b = 0
-            a = 1.0
+            redValue = 0
+            greenValue = 0
+            blueValue = 0
+            alphaValue = 1.0
         }
-
-        self.init(red: r, green: g, blue: b, opacity: a)
+        
+        self.init(red: redValue, green: greenValue, blue: blueValue, opacity: alphaValue)
     }
-
+    
     static let whiteColor = Color(hex: "#FFFFFF")
     static let blackColor = Color(hex: "#000000")
     static let swiftColor = Color(hex: "#FA7343")
