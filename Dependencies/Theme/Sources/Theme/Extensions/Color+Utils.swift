@@ -14,8 +14,7 @@ import SwiftUI
 public extension Color {
     
     init(hex: String) {
-        let hex = hex
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+        let hex = hex.trimmingCharacters(in: .whitespacesAndNewlines)
             .replacingOccurrences(of: "#", with: "")
 
         let scanner = Scanner(string: hex)

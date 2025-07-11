@@ -17,12 +17,7 @@ jobs:
         with:
           xcode-version: ${{ env.XCODE_VERSION }}
 
-      - name: Install xrun
-        run: |
-          brew tap heroesofcode/taps
-          brew install heroesofcode/taps/xrun
-
-      - name: Run unit tests (ignore failures)
+      - name: Run tests
         run: |
           xcodebuild \
             -project SwiftExplorer.xcodeproj \
