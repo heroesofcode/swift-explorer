@@ -73,4 +73,3 @@ struct AboutView: View {
         URL(string: AppLinks.license.rawValue)
     }
 }
-

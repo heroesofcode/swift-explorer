@@ -19,7 +19,7 @@ let package = Package(
             url: "https://github.com/ZeeZide/CodeEditor",
             exact: "1.2.6"
         ),
-        .package(path: "../CommonTest"),
+        .package(path: "../CommonTest")
     ],
     targets: [
         .target(

@@ -9,7 +9,7 @@ let package = Package(
         .library(
             name: "Common",
             targets: ["Common"]
-        ),
+        )
     ],
     targets: [
         .target(
