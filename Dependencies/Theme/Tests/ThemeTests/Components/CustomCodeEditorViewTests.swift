@@ -27,6 +27,6 @@ final class CustomCodeEditorViewTests: TestBase {
         )
         .frame(width: 300, height: 200)
 
-        self.assertSnapshot(of: view)
+        self.compareSnapshot(of: view)
     }
 }

@@ -5,48 +5,36 @@
 //  Created by João Lucas on 09/07/25.
 //
 
-import XCTest
-import SnapshotTesting
 import SwiftUI
+import SnapshotTesting
+import Testing
+import XCTest
 
-/// A base test class that provides snapshot testing utilities for SwiftUI views on macOS.
-///
-/// This class includes a custom `assertSnapshot` method to easily capture and validate
-/// the rendered appearance of SwiftUI views, using configurable parameters such as size and color scheme.
+/// Inherit from this class to create your tests and override the isRecording property
+@MainActor
 open class TestBase: XCTestCase {
-
-    /// Asserts a snapshot of the given SwiftUI view using `SnapshotTesting`.
-    ///
+    
+    /// Override this value to record all snapshots again
+    open var isRecording: Bool { false }
+    
+    /// Compares or record a snapshot
     /// - Parameters:
-    ///   - view: The SwiftUI view to be snapshot tested.
-    ///   - width: The width of the view to render. Defaults to `1280`.
-    ///   - height: The height of the view to render. Defaults to `800`.
-    ///   - colorScheme: The color scheme (light or dark) to apply to the view environment. Defaults to `.light`.
-    ///   - isSnapshot: A flag that allows skipping the snapshot assertion when set to `false`. Defaults to `true`.
-    ///   - file: The file name where the failure occurs. Defaults to the calling file.
-    ///   - testName: The name of the test function. Defaults to the calling function.
-    ///   - line: The line number where the failure occurs. Defaults to the current line.
-    public func assertSnapshot<V: View>(
+    ///   - view: the view to snapshot
+    ///   - isRecording: True if you want to record the snapshot. False otherwise. Leave it nil to default to false.
+    ///   - file: file reference for test
+    ///   - testName: file name reference for test
+    ///   - line: line reference for test
+    public func compareSnapshot<V: View>(
         of view: V,
-        width: CGFloat = 1280,
-        height: CGFloat = 800,
-        colorScheme: ColorScheme = .light,
-        isSnapshot: Bool = true,
+        isRecording: Bool? = nil,
         file: StaticString = #file,
         testName: String = #function,
         line: UInt = #line
     ) {
-        guard isSnapshot else { return }
-
-        let nsView = view.view(
-            width: width,
-            height: height,
-            colorScheme: colorScheme
-        )
-
-        SnapshotTesting.assertSnapshot(
-            of: nsView,
+        assertSnapshot(
+            of: view.view(),
             as: .image,
+            record: isRecording ?? self.isRecording,
             file: file,
             testName: testName,
             line: line

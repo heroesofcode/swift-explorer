@@ -13,8 +13,8 @@ final class AboutViewTests: TestBase {
 
     func testShouldValidateAboutViewLayout() {
         let sut = AboutView()
-            .frame(width: 200, height: 200)
+            .frame(width: 500, height: 500)
         
-        self.assertSnapshot(of: sut)
+        self.compareSnapshot(of: sut)
     }
 }

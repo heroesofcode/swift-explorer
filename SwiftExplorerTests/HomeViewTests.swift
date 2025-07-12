@@ -10,9 +10,11 @@ import XCTest
 @testable import SwiftExplorer
 
 final class HomeViewTests: TestBase {
-
+    
     func testShouldValidateLayout() {
         let sut = HomeView()
-        self.assertSnapshot(of: sut)
+            .frame(width: 1280, height: 800)
+        
+        self.compareSnapshot(of: sut)
     }
 }
