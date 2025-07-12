@@ -9,7 +9,6 @@ import Foundation
 import Lowlevel
 import Analytics
 
-@MainActor
 final class HomeViewModel: ObservableObject {
     
     @Published var swiftCode: String = ""

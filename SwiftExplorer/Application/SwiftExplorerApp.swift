@@ -14,6 +14,7 @@ struct SwiftExplorerApp: App {
 
     init() {
         FirebaseConfiguration.start()
+        startDependendyInjection()
     }
 
     var body: some Scene {
@@ -27,6 +28,10 @@ struct SwiftExplorerApp: App {
                 }
             }
         }
+    }
+    
+    private func startDependendyInjection() {
+        startDI(modules: [homeModule])
     }
 
     private func showAboutWindow() {

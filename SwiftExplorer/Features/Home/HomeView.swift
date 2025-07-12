@@ -8,12 +8,11 @@
 import Lowlevel
 import SwiftUI
 import Theme
+import Common
 
 struct HomeView: View {
     
-    @StateObject var viewModel = HomeViewModel()
-
-    @State private var fontSize: Int = 14
+    @ViewModel var viewModel: HomeViewModel
 
     var body: some View {
         VStack {
