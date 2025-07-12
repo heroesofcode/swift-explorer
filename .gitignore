@@ -95,4 +95,3 @@ fastlane/screenshots
 fastlane/test_output
 
 Derived/
-Dependencies/CommonTest/Sources/CommonTest/TestBase.swift
