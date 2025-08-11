@@ -6,7 +6,7 @@ jobs:
     runs-on: macOS-15
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Read Xcode version
         id: xcode_version
