@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/pointfreeco/swift-snapshot-testing",
-            exact: "1.18.6"
+            exact: "1.18.7"
         )
     ],
     targets: [
