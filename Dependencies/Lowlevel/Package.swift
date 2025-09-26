@@ -15,11 +15,17 @@ let package = Package(
             targets: ["Lowlevel"]
         )
     ],
+    dependencies: [
+        .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.0")
+    ],
     targets: [
         .target(
             name: "Lowlevel",
             resources: [
                 .process("Localizable")
+            ],
+            plugins: [
+                .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
             ]
         ),
         .testTarget(

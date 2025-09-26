@@ -15,10 +15,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/ZeeZide/CodeEditor",
-            exact: "1.2.6"
-        ),
+        .package(url: "https://github.com/ZeeZide/CodeEditor", exact: "1.2.6"),
+        .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.0"),
         .package(path: "../CommonTest")
     ],
     targets: [
@@ -29,6 +27,9 @@ let package = Package(
             ],
             resources: [
                 .process("Resources")
+            ],
+            plugins: [
+                .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
             ]
         ),
         .testTarget(
