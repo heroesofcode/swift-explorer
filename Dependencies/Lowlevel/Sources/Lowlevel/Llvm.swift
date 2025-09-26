@@ -40,8 +40,6 @@ public final class Llvm {
         let errorData = pipe.fileHandleForReading.readDataToEndOfFile()
         let errorOutput = String(data: errorData, encoding: .utf8) ?? ""
 
-        print(L10n.errorOutput(errorOutput))
-
         result(errorOutput: errorOutput, outputFile: outputFile)
     }
 
