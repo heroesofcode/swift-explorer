@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: macOS-15
+    runs-on: macOS-26
 
     steps:
       - uses: actions/checkout@v5
