@@ -39,7 +39,7 @@ struct HomeView: View {
                 Text(L10n.swift)
                     .bold()
                     .fontLatoBold(size: 20)
-                    .foregroundColor(.swiftColor)
+                    .foregroundColor(ThemeAsset.swift.swiftUIColor)
                 Spacer()
             }
 
@@ -48,7 +48,7 @@ struct HomeView: View {
                 language: .swift,
                 theme: .atelierSavannaLight
             )
-            .border(Color.blackColor, width: 2)
+            .border(ThemeAsset.black.swiftUIColor, width: 2)
             .font(.system(size: 100))
             .frame(maxWidth: .infinity)
         }
@@ -61,7 +61,7 @@ struct HomeView: View {
                 Text(L10n.llvm)
                     .bold()
                     .fontLatoBold(size: 20)
-                    .foregroundColor(.swiftColor)
+                    .foregroundColor(ThemeAsset.swift.swiftUIColor)
                 Spacer()
             }
 
@@ -70,7 +70,7 @@ struct HomeView: View {
                 language: .bash,
                 theme: .atelierSavannaLight
             )
-            .border(Color.blackColor, width: 2)
+            .border(ThemeAsset.black.swiftUIColor, width: 2)
             .frame(maxWidth: .infinity)
         }
         .padding(.leading, 4)
@@ -82,7 +82,7 @@ struct HomeView: View {
                 Text(L10n.assembly)
                     .bold()
                     .fontLatoBold(size: 20)
-                    .foregroundColor(.swiftColor)
+                    .foregroundColor(ThemeAsset.swift.swiftUIColor)
                 Spacer()
             }
 
@@ -91,7 +91,7 @@ struct HomeView: View {
                 language: .bash,
                 theme: .atelierSavannaLight
             )
-            .border(Color.blackColor, width: 2)
+            .border(ThemeAsset.black.swiftUIColor, width: 2)
             .frame(maxWidth: .infinity)
         }
         .padding([.leading, .trailing], 4)
@@ -109,7 +109,7 @@ struct HomeView: View {
         } label: {
             Text(L10n.exploreButton)
                 .fontLatoBlack(size: 16)
-                .foregroundColor(.swiftColor)
+                .foregroundColor(ThemeAsset.swift.swiftUIColor)
                 .padding()
                 .cornerRadius(8)
         }
@@ -136,12 +136,12 @@ struct HomeView: View {
         } label: {
             HStack {
                 Text(L10n.optmizationLevelTitle(viewModel.optimizationLevel.rawValue))
-                    .foregroundColor(Color.blackColor)
+                    .foregroundColor(ThemeAsset.black.swiftUIColor)
                 Image(systemName: "chevron.down")
-                    .foregroundColor(.swiftColor)
+                    .foregroundColor(ThemeAsset.swift.swiftUIColor)
             }
             .padding()
-            .background(Color.swiftColor)
+            .background(ThemeAsset.swift.swiftUIColor)
             .cornerRadius(8)
         }
         .frame(width: 300)

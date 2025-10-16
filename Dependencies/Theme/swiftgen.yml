@@ -4,3 +4,13 @@ fonts:
   outputs:
     - templateName: swift5
       output: ${DERIVED_SOURCES_DIR}/FontsFamily.swift
+
+xcassets:
+  inputs:
+    - Sources/Theme/Resources/Colors.xcassets
+  outputs:
+    - templateName: swift5
+      output: ${DERIVED_SOURCES_DIR}/ThemeColors.swift
+      params:
+        enumName: ThemeAsset
+        publicAccess: true
