@@ -12,7 +12,7 @@ import Common
 
 struct HomeView: View {
     
-    @ViewModel var viewModel: HomeViewModel
+    @StateObject var viewModel = HomeViewModel()
 
     var body: some View {
         VStack {

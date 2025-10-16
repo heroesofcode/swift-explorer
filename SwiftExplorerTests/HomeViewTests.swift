@@ -12,14 +12,6 @@ import Common
 
 final class HomeViewTests: TestBase {
 
-    override func setUp() {
-        super.setUp()
-
-        startDI(modules: [
-            { $0.factory { HomeViewModel() } }
-        ])
-    }
-
     func testShouldValidateLayout() {
         let sut = HomeView()
             .frame(width: 1280, height: 800)
