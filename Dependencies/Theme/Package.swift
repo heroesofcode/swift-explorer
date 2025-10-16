@@ -3,6 +3,8 @@
 
 import PackageDescription
 
+let githubUrl = "https://github.com/"
+
 let package = Package(
     name: "Theme",
     platforms: [
@@ -15,8 +17,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/ZeeZide/CodeEditor", exact: "1.2.6"),
-        .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.2"),
+        .package(url: "\(githubUrl)ZeeZide/CodeEditor", exact: "1.2.6"),
+        .package(url: "\(githubUrl)SwiftGen/SwiftGenPlugin", from: "6.6.2"),
         .package(path: "../CommonTest")
     ],
     targets: [
