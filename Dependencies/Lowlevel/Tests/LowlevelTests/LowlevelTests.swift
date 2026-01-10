@@ -4,15 +4,15 @@ import XCTest
 
 final class LowlevelTests: XCTestCase {
 
-    @State private var swiftCode: String = "let a = 10"
-    @State private var llvm: String = ""
-    @State private var optimizationLevel: OptimizationLevel = .balanced
+    private var swiftCode: String = "let a = 10"
+    private var llvm: String = ""
+    private var optimizationLevel: OptimizationLevel = .balanced
 
     func testValidationFieldSwiftCode() {
         let bytecodeGenerator = Llvm(
-            swiftCode: $swiftCode,
-            llvm: $llvm,
-            optimizationLevel: $optimizationLevel
+            swiftCode: .constant(swiftCode),
+            llvm: .constant(llvm),
+            optimizationLevel: .constant(optimizationLevel)
         )
 
         let (tempFile, outputFile) = bytecodeGenerator.validationFieldSwiftCode()
@@ -41,9 +41,13 @@ final class LowlevelTests: XCTestCase {
             optimizationLevel: optimizationLevel
         )
 
-        XCTAssertTrue(assemblyCode.contains("sum"),
-                      "The generated assembly code must contain the 'sum' function.")
-        XCTAssertTrue(assemblyCode.contains("ret"),
-                      "The generated assembly code must contain the 'ret' instruction.")
+        XCTAssertTrue(
+            assemblyCode.contains("sum"),
+            "The generated assembly code must contain the 'sum' function."
+        )
+        XCTAssertTrue(
+            assemblyCode.contains("ret"),
+            "The generated assembly code must contain the 'ret' instruction."
+        )
     }
 }
