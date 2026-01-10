@@ -18,11 +18,3 @@ pull_request_rules:
     actions:
       merge:
         method: squash
-
-  - name: Automatic merges for joaolfp pull requests
-    conditions:
-      - author=joaolfp
-      - check-success=build
-    actions:
-      merge:
-        method: squash
