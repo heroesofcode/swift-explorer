@@ -678,7 +678,7 @@
 			repositoryURL = "https://github.com/lukepistrol/SwiftLintPlugin";
 			requirement = {
 				kind = exactVersion;
-				version = 0.63.0;
+				version = 0.63.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
