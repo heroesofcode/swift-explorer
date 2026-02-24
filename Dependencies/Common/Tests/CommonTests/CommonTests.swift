@@ -2,11 +2,25 @@ import XCTest
 @testable import Common
 
 final class CommonTests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+    
+    func testAppLinksGithubURL() {
+        XCTAssertEqual(AppLinks.github.rawValue, "https://github.com/heroesofcode/swift-explorer")
+    }
+    
+    func testAppLinksLicenseURL() {
+        XCTAssertEqual(AppLinks.license.rawValue, "https://github.com/heroesofcode/swift-explorer/blob/main/LICENSE")
+    }
+    
+    func testBundleAppVersionFormat() {
+        let version = Bundle.main.appVersion
+        XCTAssertFalse(version.isEmpty)
+        XCTAssertTrue(version.contains("("))
+        XCTAssertTrue(version.contains(")"))
     }
 }
+
+    func testAppVersionWithMissingInfo() {
+        let bundle = Bundle(for: type(of: self))
+        let version = bundle.appVersion
+        XCTAssertFalse(version.isEmpty)
+    }

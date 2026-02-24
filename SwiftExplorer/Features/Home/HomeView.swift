@@ -7,7 +7,7 @@
 
 import Lowlevel
 import SwiftUI
-import Theme
+import DesignSystem
 import Common
 
 struct HomeView: View {
