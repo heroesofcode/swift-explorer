@@ -35,8 +35,7 @@ final class AnalyticsTests: XCTestCase {
     func testCrashlyticsEventsHomeRawValues() {
         XCTAssertEqual(CrashlyticsEvents.Home.button.rawValue, "generate_button")
     }
-}
-
+    
     func testMultipleEventLogging() {
         let mockLogger = MockAnalyticsLogger()
         SetAnalyticsEvents.configureLogger(mockLogger)
@@ -47,3 +46,4 @@ final class AnalyticsTests: XCTestCase {
         
         XCTAssertEqual(mockLogger.loggedEvents.count, 3)
     }
+}

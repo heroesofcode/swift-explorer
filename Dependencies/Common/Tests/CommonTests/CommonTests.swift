@@ -17,10 +17,10 @@ final class CommonTests: XCTestCase {
         XCTAssertTrue(version.contains("("))
         XCTAssertTrue(version.contains(")"))
     }
-}
 
     func testAppVersionWithMissingInfo() {
         let bundle = Bundle(for: type(of: self))
         let version = bundle.appVersion
         XCTAssertFalse(version.isEmpty)
     }
+}
