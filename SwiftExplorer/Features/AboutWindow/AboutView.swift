@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Common
-import Theme
+import DesignSystem
 
 struct AboutView: View {
     

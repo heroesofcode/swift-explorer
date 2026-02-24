@@ -8,7 +8,7 @@
 import XCTest
 import SwiftUI
 import CommonTest
-@testable import Theme
+@testable import DesignSystem
 
 final class CustomCodeEditorViewTests: TestBase {
     

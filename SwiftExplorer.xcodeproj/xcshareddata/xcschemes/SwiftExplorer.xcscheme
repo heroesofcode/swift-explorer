@@ -28,7 +28,45 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C58379C72C26A3440068D178"
+            BuildableName = "SwiftExplorer.app"
+            BlueprintName = "SwiftExplorer"
+            ReferencedContainer = "container:SwiftExplorer.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Common"
+            BuildableName = "Common"
+            BlueprintName = "Common"
+            ReferencedContainer = "container:Dependencies/Common">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Lowlevel"
+            BuildableName = "Lowlevel"
+            BlueprintName = "Lowlevel"
+            ReferencedContainer = "container:Dependencies/Lowlevel">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DesignSystem"
+            BuildableName = "DesignSystem"
+            BlueprintName = "DesignSystem"
+            ReferencedContainer = "container:Dependencies/DesignSystem">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Analytics"
+            BuildableName = "Analytics"
+            BlueprintName = "Analytics"
+            ReferencedContainer = "container:Dependencies/Analytics">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">

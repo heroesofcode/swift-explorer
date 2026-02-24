@@ -6,24 +6,24 @@ import PackageDescription
 let githubUrl = "https://github.com/"
 
 let package = Package(
-    name: "Theme",
+    name: "DesignSystem",
     platforms: [
         .macOS(.v14)
     ],
     products: [
         .library(
-            name: "Theme",
-            targets: ["Theme"]
+            name: "DesignSystem",
+            targets: ["DesignSystem"]
         )
     ],
     dependencies: [
-        .package(url: "\(githubUrl)ZeeZide/CodeEditor", exact: "1.2.6"),
+        .package(url: "\(githubUrl)joaolfp/CodeEditor", branch: "hotfix/fix-border"),
         .package(url: "\(githubUrl)SwiftGen/SwiftGenPlugin", from: "6.6.2"),
         .package(path: "../CommonTest")
     ],
     targets: [
         .target(
-            name: "Theme",
+            name: "DesignSystem",
             dependencies: [
                 "CodeEditor"
             ],
@@ -35,9 +35,9 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "ThemeTests",
+            name: "DesignSystemTests",
             dependencies: [
-                "Theme",
+                "DesignSystem",
                 "CommonTest"
             ]
         )
