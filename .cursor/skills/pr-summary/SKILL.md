@@ -1,56 +1,88 @@
-# PR Summary Skill
+---
+name: pr-summary
+description: Reviews local git changes and generates a pull request summary following the project template. Use when the user asks to automate PR summary, generate PR description, fill PR template, or review local changes for a PR.
+---
 
-## Description
+# PR Summary from Local Changes
 
-Reviews local git changes and generates a pull request summary following the project template.
+Generates a PR description that matches `.github/pull_request_template.md` by analyzing the repository's local changes (staged and/or unstaged).
 
-## Steps
+## Workflow
 
-1. **Gather change context** by running the following git commands:
-   - `git diff --stat HEAD` — list changed files and line counts
-   - `git diff HEAD` — full diff of all changes
-   - `git log --oneline origin/main..HEAD` — list commits in this branch
+1. **Gather change context**
+   - Run `git status` to see modified/added/deleted files and current branch.
+   - Run `git diff --staged` for staged changes; if empty, run `git diff` for unstaged changes (or both if the user wants everything).
+   - Optionally run `git log -1 --oneline` or `git log origin/main..HEAD --oneline` to see recent commits on the branch.
 
-2. **Infer the type of change** from the diff and file list. Common types:
-   - `feat` — new feature or functionality added
-   - `fix` — bug fix
-   - `refactor` — code restructuring without behavior change
-   - `chore` — maintenance, dependency updates, config changes
-   - `docs` — documentation updates
-   - `test` — test additions or changes
-   - `ci` — CI/CD workflow changes
+2. **Infer type of change**
+   From the diff and file list, choose one or more types that fit:
+   - **Enhancement** – improvements to existing behavior
+   - **Bug fix** – fixes to incorrect behavior
+   - **Security fix** – security-related changes
+   - **Breaking change** – API or behavior changes that break compatibility
+   - **New feature** – new functionality
+   - **New release** – version/release bumps or release notes
+   - **Documentation** – docs, comments, README only
+   - **Refactor** – restructuring without changing behavior
 
-3. **Write the summary as topic bullets**, grouping related changes together. Each bullet should be concise and describe *what* changed and *why* (if discernible from the diff).
+3. **Write the summary as topic bullets**
+   - Use only bullet points (topics), no paragraph text.
+   - One short line per change, e.g. "add ...", "fix ...", "update ...", "remove ...".
+   - No extra explanation; keep each line concise.
 
-4. **Output in template format** (see below).
+4. **Output in template format**
+   Use this structure (from the project template). Replace the summary text and check the applicable type(s).
 
-5. **Deliver the result** in a markdown code block and write the content to `pr-description.md` in the repository root.
+5. **Deliver the result**
+   - Reply with the PR summary in a **markdown code block** (so the user can copy it from the chat).
+   - **Also write** the same content to `pr-description.md` in the repository root so the user can open the file and copy from there. Tell the user the file path; they can delete the file after pasting into the PR.
 
 ## Output Template
 
+Use this exact structure. Under "Summary", list only bullet-point topics (no paragraph). In "Type of Change", check only the box(es) that apply (use `[x]` for checked, `[ ]` for unchecked).
+
 ```markdown
-## What changed
+## ✨ Summary
 
-- <bullet summarizing change 1>
-- <bullet summarizing change 2>
+- <topic 1>
+- <topic 2>
+- ...
 
-## Why
+## 🔧 Type of Change
 
-<One or two sentences explaining the motivation or context for the changes.>
-
-## Type of change
-
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Refactor
-- [ ] Chore / maintenance
-- [ ] Documentation
-- [ ] Tests
-- [ ] CI/CD
-
-## Checklist
-
-- [ ] Code compiles and existing tests pass
-- [ ] New tests added (if applicable)
-- [ ] Documentation updated (if applicable)
+- [ ] ✨ Enhancement
+- [ ] 🐞 Bug fix
+- [ ] 🔐 Security fix
+- [ ] 💥 Breaking change
+- [ ] 🚀 New feature
+- [ ] 📦 New release
+- [ ] 📚 Documentation
+- [ ] ♻️ Refactor
 ```
+
+## Example
+
+**After reviewing a diff that adds a new Swift API and updates README:**
+
+```markdown
+## ✨ Summary
+
+- add public `validate(input:)` method
+- update README with usage docs
+
+## 🔧 Type of Change
+
+- [ ] ✨ Enhancement
+- [ ] 🐞 Bug fix
+- [ ] 🔐 Security fix
+- [ ] 💥 Breaking change
+- [x] 🚀 New feature
+- [ ] 📦 New release
+- [x] 📚 Documentation
+- [ ] ♻️ Refactor
+```
+
+## Notes
+
+- If there are no local changes, say so and suggest running from a branch with changes or staging files first.
+- Prefer the project template at `.github/pull_request_template.md` if it diverges from the template above; the template in this skill matches the current project standard.
