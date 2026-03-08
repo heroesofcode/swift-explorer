@@ -23,7 +23,7 @@ struct AboutView: View {
                 .bold()
 
             Text(L10n.version(Bundle.main.appVersion))
-                .foregroundColor(ThemeAsset.grayClear.swiftUIColor)
+                .foregroundColor(Color.themeGrayClear)
 
             Divider()
 
@@ -55,11 +55,11 @@ struct AboutView: View {
         Link(destination: url) {
             Text(title)
                 .font(.system(size: 16, weight: .semibold))
-                .foregroundColor(ThemeAsset.white.swiftUIColor)
+                .foregroundColor(.themeWhite)
                 .frame(maxWidth: .infinity)
                 .frame(height: 10)
                 .padding()
-                .background(ThemeAsset.swift.swiftUIColor)
+                .background(Color.themeSwift)
                 .cornerRadius(8)
                 .contentShape(Rectangle())
         }
