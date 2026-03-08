@@ -30,9 +30,9 @@ internal enum L10n {
   internal static let messageEmptyField = L10n.tr("SwiftExplorer", "messageEmptyField", fallback: "Enter the Swift field")
   /// OK
   internal static let ok = L10n.tr("SwiftExplorer", "ok", fallback: "OK")
-  /// Optmization Level: %@
+  /// Optimization Level: %@
   internal static func optmizationLevelTitle(_ p1: Any) -> String {
-    return L10n.tr("SwiftExplorer", "optmizationLevelTitle", String(describing: p1), fallback: "Optmization Level: %@")
+    return L10n.tr("SwiftExplorer", "optmizationLevelTitle", String(describing: p1), fallback: "Optimization Level: %@")
   }
   /// Swift
   internal static let swift = L10n.tr("SwiftExplorer", "swift", fallback: "Swift")

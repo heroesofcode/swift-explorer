@@ -14,7 +14,7 @@ final class HomeViewTests: TestBase {
 
     func testShouldValidateLayout() {
         let sut = HomeView()
-            .frame(width: 1280, height: 800)
+            .frame(width: 1280, height: 820)
 
         self.compareSnapshot(of: sut)
     }

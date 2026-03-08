@@ -38,8 +38,8 @@ struct HomeView: View {
             HStack {
                 Text(L10n.swift)
                     .bold()
-                    .fontLatoBold(size: 20)
-                    .foregroundColor(ThemeAsset.swift.swiftUIColor)
+                    .font(.latoBold(size: 20))
+                    .foregroundColor(.themeSwift)
                 Spacer()
             }
 
@@ -48,7 +48,7 @@ struct HomeView: View {
                 language: .swift,
                 theme: .atelierSavannaLight
             )
-            .border(ThemeAsset.black.swiftUIColor, width: 2)
+            .border(Color.themeBlack, width: 2)
             .font(.system(size: 100))
             .frame(maxWidth: .infinity)
         }
@@ -60,8 +60,8 @@ struct HomeView: View {
             HStack {
                 Text(L10n.llvm)
                     .bold()
-                    .fontLatoBold(size: 20)
-                    .foregroundColor(ThemeAsset.swift.swiftUIColor)
+                    .font(.latoBold(size: 20))
+                    .foregroundColor(.themeSwift)
                 Spacer()
             }
 
@@ -70,7 +70,7 @@ struct HomeView: View {
                 language: .bash,
                 theme: .atelierSavannaLight
             )
-            .border(ThemeAsset.black.swiftUIColor, width: 2)
+            .border(Color.themeBlack, width: 2)
             .frame(maxWidth: .infinity)
         }
         .padding(.leading, 4)
@@ -81,8 +81,8 @@ struct HomeView: View {
             HStack {
                 Text(L10n.assembly)
                     .bold()
-                    .fontLatoBold(size: 20)
-                    .foregroundColor(ThemeAsset.swift.swiftUIColor)
+                    .font(.latoBold(size: 20))
+                    .foregroundColor(.themeSwift)
                 Spacer()
             }
 
@@ -91,7 +91,7 @@ struct HomeView: View {
                 language: .bash,
                 theme: .atelierSavannaLight
             )
-            .border(ThemeAsset.black.swiftUIColor, width: 2)
+            .border(Color.themeBlack, width: 2)
             .frame(maxWidth: .infinity)
         }
         .padding([.leading, .trailing], 4)
@@ -108,8 +108,8 @@ struct HomeView: View {
             viewModel.tapGenerate(llvm: llvm)
         } label: {
             Text(L10n.exploreButton)
-                .fontLatoBlack(size: 16)
-                .foregroundColor(ThemeAsset.swift.swiftUIColor)
+                .font(.latoBlack(size: 16))
+                .foregroundColor(.themeSwift)
                 .padding()
                 .cornerRadius(8)
         }
@@ -124,26 +124,30 @@ struct HomeView: View {
     }
     
     private func optmizationLevelMenuView() -> some View {
-        Menu {
-            ForEach(OptimizationLevel.allCases, id: \.self) { level in
-                Button {
-                    viewModel.optimizationLevel = level
-                } label: {
-                    Text(level.rawValue)
-                        .fontLatoRegular(size: 14)
+        ButtonSelect(backgroundColor: Color.themeSwift) {
+            Text(L10n.optmizationLevelTitle(viewModel.optimizationLevel.rawValue))
+                .foregroundColor(.white)
+                .font(.latoBlack(size: 13))
+        } content: { dismiss in
+            VStack(spacing: 4) {
+                ForEach(OptimizationLevel.allCases, id: \.self) { level in
+                    Button {
+                        viewModel.optimizationLevel = level
+                        dismiss()
+                    } label: {
+                        Text(level.rawValue)
+                            .font(.latoRegular(size: 14))
+                            .foregroundColor(.themeBlack)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 8)
+                            .background(Color.themeGrayClear)
+                            .cornerRadius(4)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
-        } label: {
-            HStack {
-                Text(L10n.optmizationLevelTitle(viewModel.optimizationLevel.rawValue))
-                    .foregroundColor(ThemeAsset.black.swiftUIColor)
-                Image(systemName: "chevron.down")
-                    .foregroundColor(ThemeAsset.swift.swiftUIColor)
-            }
-            .padding()
-            .background(ThemeAsset.swift.swiftUIColor)
-            .cornerRadius(8)
         }
-        .frame(width: 300)
+        .frame(width: 240)
     }
 }
