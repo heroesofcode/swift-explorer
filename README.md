@@ -1,4 +1,4 @@
-# <img src="https://seekvectors.com/files/download/0026759ac56872589655bd7e2c12f919.png" width="40" alt="Swift logo"> Swift Explorer
+# <img src="Assets/swift.png" width="30" height="30" /> Swift Explorer
 
 [![CI](https://github.com/heroesofcode/swift-explorer/actions/workflows/CI.yml/badge.svg)](https://github.com/heroesofcode/swift-explorer/actions/workflows/CI.yml)
 [![⬇️ Download App](https://img.shields.io/badge/📥-Download_App-orange)](https://github.com/heroesofcode/swift-explorer/releases/download/2.0.0/SwiftExplorer.dmg)
