@@ -46,13 +46,14 @@ struct HomeView: View {
             CustomCodeEditorView(
                 source: $viewModel.swiftCode,
                 language: .swift,
-                theme: .atelierSavannaLight
+                theme: .xcodeWhite
             )
             .border(Color.themeBlack, width: 2)
             .font(.system(size: 100))
             .frame(maxWidth: .infinity)
         }
         .padding(.leading, 4)
+        .frame(minWidth: 600)
     }
     
     private func llvmView() -> some View {
@@ -129,25 +130,32 @@ struct HomeView: View {
                 .foregroundColor(.white)
                 .font(.latoBlack(size: 13))
         } content: { dismiss in
-            VStack(spacing: 4) {
-                ForEach(OptimizationLevel.allCases, id: \.self) { level in
-                    Button {
-                        viewModel.optimizationLevel = level
-                        dismiss()
-                    } label: {
-                        Text(level.rawValue)
-                            .font(.latoRegular(size: 14))
-                            .foregroundColor(.themeBlack)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 8)
-                            .background(Color.themeGrayClear)
-                            .cornerRadius(4)
-                    }
-                    .buttonStyle(.plain)
-                }
-            }
+            optimizationLevelOptionsView(dismiss: dismiss)
         }
         .frame(width: 240)
+    }
+
+    @ViewBuilder
+    private func optimizationLevelOptionsView(
+        dismiss: @escaping () -> Void
+    ) -> some View {
+        VStack(spacing: 4) {
+            ForEach(OptimizationLevel.allCases, id: \.self) { level in
+                Button {
+                    viewModel.optimizationLevel = level
+                    dismiss()
+                } label: {
+                    Text(level.rawValue)
+                        .font(.latoRegular(size: 14))
+                        .foregroundColor(.themeBlack)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background(Color.themeGrayClear)
+                        .cornerRadius(4)
+                }
+                .buttonStyle(.plain)
+            }
+        }
     }
 }
