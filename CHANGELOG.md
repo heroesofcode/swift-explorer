@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 2.1.0
+**2025-03-13**
+
+- Setup xcode theme by @joaolfp - #147
+- Xcode 26 Support by @joaolfp - #114
+
 ## Version 2.0.0
 **2025-05-17**
 
