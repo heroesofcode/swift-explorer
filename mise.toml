@@ -1,5 +1,6 @@
 [tools]
 swiftgen = "6.6.3"
+tuist = "4.202.1"
 
 [tasks.swiftgen]
 run = "swiftgen"
