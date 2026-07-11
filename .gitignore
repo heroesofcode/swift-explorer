@@ -58,6 +58,9 @@ playground.xcworkspace
 .xcodeproj
 *.xcworkspace
 
+## Tuist-generated project (Tuist.swift / Project.swift are the source of truth)
+*.xcodeproj/
+
 # Swift Package Manager
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
