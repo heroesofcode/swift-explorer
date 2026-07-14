@@ -3,4 +3,4 @@ fonts:
     - Sources/DesignSystem/Resources/Fonts
   outputs:
     - templateName: swift5
-      output: ${DERIVED_SOURCES_DIR}/FontsFamily.swift
+      output: Sources/DesignSystem/Generated/FontsFamily.swift

@@ -3,10 +3,8 @@ import ProjectDescription
 let project = Project(
     name: "SwiftExplorer",
     packages: [
-        .package(path: "Dependencies/Common"),
         .package(path: "Dependencies/CommonTest"),
         .package(path: "Dependencies/Analytics"),
-        .package(path: "Dependencies/DesignSystem"),
         .package(path: "Dependencies/Lowlevel"),
         .package(url: "https://github.com/lukepistrol/SwiftLintPlugin", .exact("0.63.1"))
     ],
@@ -47,9 +45,9 @@ let project = Project(
                 )
             ],
             dependencies: [
-                .package(product: "Common"),
+                .project(target: "Common", path: "Dependencies/Common"),
+                .project(target: "DesignSystem", path: "Dependencies/DesignSystem"),
                 .package(product: "Analytics"),
-                .package(product: "DesignSystem"),
                 .package(product: "Lowlevel"),
                 .package(product: "SwiftLint", type: .plugin)
             ],

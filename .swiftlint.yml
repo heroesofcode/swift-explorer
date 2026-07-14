@@ -29,3 +29,4 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Dependencies/Theme/Tests
   - Dependencies/Gemini/Tests
   - Dependencies/Lowlevel/Tests
+  - Tuist/.build

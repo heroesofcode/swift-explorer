@@ -1,0 +1,24 @@
+{
+  "originHash" : "5ca0f91201cbb5b9e031ce5ac9641d09806e62ffea68c5e082c63a45a59bfbe2",
+  "pins" : [
+    {
+      "identity" : "codeeditor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/joaolfp/CodeEditor",
+      "state" : {
+        "branch" : "hotfix/fix-border",
+        "revision" : "af38ea4959b6f1d0069a164ec3a4851971e511cf"
+      }
+    },
+    {
+      "identity" : "highlightr",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/helje5/Highlightr",
+      "state" : {
+        "revision" : "bd0358056ff1f12ea83833a9fc1b3b5a396a9da0",
+        "version" : "3.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}

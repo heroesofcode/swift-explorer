@@ -10,54 +10,54 @@ import SwiftUI
 @testable import DesignSystem
 
 final class TextFontsTests: XCTestCase {
-    
+
     func testFontLatoBlack() {
-        let text = Text("Test").fontLatoBlack(size: 16)
-        XCTAssertNotNil(text)
+        let font = SwiftUI.Font.latoBlack(size: 16)
+        XCTAssertNotNil(font)
     }
-    
+
     func testFontLatoBlackItalic() {
-        let text = Text("Test").fontLatoBlackItalic(size: 16)
-        XCTAssertNotNil(text)
+        let font = SwiftUI.Font.latoBlackItalic(size: 16)
+        XCTAssertNotNil(font)
     }
-    
+
     func testFontLatoBold() {
-        let text = Text("Test").fontLatoBold(size: 16)
-        XCTAssertNotNil(text)
+        let font = SwiftUI.Font.latoBold(size: 16)
+        XCTAssertNotNil(font)
     }
-    
+
     func testFontLatoBoldItalic() {
-        let text = Text("Test").fontLatoBoldItalic(size: 16)
-        XCTAssertNotNil(text)
+        let font = SwiftUI.Font.latoBoldItalic(size: 16)
+        XCTAssertNotNil(font)
     }
-    
+
     func testFontLatoItalic() {
-        let text = Text("Test").fontLatoItalic(size: 16)
-        XCTAssertNotNil(text)
+        let font = SwiftUI.Font.latoItalic(size: 16)
+        XCTAssertNotNil(font)
     }
-    
+
     func testFontLatoLight() {
-        let text = Text("Test").fontLatoLight(size: 16)
-        XCTAssertNotNil(text)
+        let font = SwiftUI.Font.latoLight(size: 16)
+        XCTAssertNotNil(font)
     }
-    
+
     func testFontLatoLightItalic() {
-        let text = Text("Test").fontLatoLightItalic(size: 16)
-        XCTAssertNotNil(text)
+        let font = SwiftUI.Font.latoLightItalic(size: 16)
+        XCTAssertNotNil(font)
     }
-    
+
     func testFontLatoRegular() {
-        let text = Text("Test").fontLatoRegular(size: 16)
-        XCTAssertNotNil(text)
+        let font = SwiftUI.Font.latoRegular(size: 16)
+        XCTAssertNotNil(font)
     }
-    
+
     func testFontLatoThin() {
-        let text = Text("Test").fontLatoThin(size: 16)
-        XCTAssertNotNil(text)
+        let font = SwiftUI.Font.latoThin(size: 16)
+        XCTAssertNotNil(font)
     }
-    
+
     func testFontLatoThinItalic() {
-        let text = Text("Test").fontLatoThinItalic(size: 16)
-        XCTAssertNotNil(text)
+        let font = SwiftUI.Font.latoThinItalic(size: 16)
+        XCTAssertNotNil(font)
     }
 }

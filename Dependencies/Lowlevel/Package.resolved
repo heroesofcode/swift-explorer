@@ -1,5 +1,5 @@
 {
-  "originHash" : "8c1085e87a7e6e1e67ade50d046d507df554e16576de331a56a20771933ad2d0",
+  "originHash" : "9777dc9adba826b585a14147610d6a79df2d0915f2390c70e92a320e7025a3f5",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -17,15 +17,6 @@
       "state" : {
         "revision" : "3e33dd27dd4c69bd81c7c81fe61d8ccf58846902",
         "version" : "11.3.1"
-      }
-    },
-    {
-      "identity" : "codeeditor",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/joaolfp/CodeEditor",
-      "state" : {
-        "branch" : "hotfix/fix-border",
-        "revision" : "af38ea4959b6f1d0069a164ec3a4851971e511cf"
       }
     },
     {
@@ -89,15 +80,6 @@
       "state" : {
         "revision" : "c0ac7575d70050c2973ba2318bd5af47f8e8153a",
         "version" : "5.3.0"
-      }
-    },
-    {
-      "identity" : "highlightr",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/helje5/Highlightr",
-      "state" : {
-        "revision" : "bd0358056ff1f12ea83833a9fc1b3b5a396a9da0",
-        "version" : "3.0.2"
       }
     },
     {
