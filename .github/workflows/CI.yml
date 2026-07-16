@@ -38,11 +38,8 @@ jobs:
             -skipPackagePluginValidation \
             clean test || true
 
-      - name: Run Common tests
-        run: mise exec -- tuist test Common
-
-      - name: Run DesignSystem tests
-        run: mise exec -- tuist test DesignSystem
+      - name: Run tuist tests
+        run: mise exec -- tuist test
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2
