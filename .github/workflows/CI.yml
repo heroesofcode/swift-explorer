@@ -6,7 +6,7 @@ jobs:
     runs-on: macOS-26
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Read Xcode version
         id: xcode_version
