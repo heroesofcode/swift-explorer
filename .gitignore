@@ -26,6 +26,7 @@ Temporary Items
 ## Build generated
 build/
 DerivedData/
+.derived-data-log-*
 
 ## Various settings
 *.pbxuser
@@ -60,6 +61,7 @@ playground.xcworkspace
 
 ## Tuist-generated project (Tuist.swift / Project.swift are the source of truth)
 *.xcodeproj/
+.package.resolved
 
 # Swift Package Manager
 #
