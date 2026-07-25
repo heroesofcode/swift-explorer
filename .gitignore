@@ -61,7 +61,6 @@ playground.xcworkspace
 
 ## Tuist-generated project (Tuist.swift / Project.swift are the source of truth)
 *.xcodeproj/
-.package.resolved
 
 # Swift Package Manager
 #
