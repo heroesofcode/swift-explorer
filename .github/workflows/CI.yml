@@ -24,18 +24,13 @@ jobs:
           cache: true
 
       - name: Generate Xcode project with Tuist
-        run: mise exec -- tuist generate --no-open
+        run: mise run generate
 
       - name: Run tests
-        run: |
-          xcodebuild \
-            -workspace SwiftExplorer.xcworkspace \
-            -scheme "SwiftExplorer" \
-            -destination "platform=macOS,arch=x86_64" \
-            -skipPackagePluginValidation \
-            clean test || true
+        run: mise run test
 
       - name: Upload coverage to Codecov
+        if: always()
         uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2
         with:
           swift: true
