@@ -7,16 +7,31 @@ public extension TargetScript {
         if command -v mise >/dev/null 2>&1; then
             mise run swiftgen
         else
-            echo "warning: mise not found, skipping SwiftGen generation. Install mise: https://mise.jdx.dev"
+            echo "error: mise not found, cannot generate SwiftGen sources. Install mise: https://mise.jdx.dev"
+            exit 1
         fi
         """,
         name: "SwiftGen",
         inputPaths: [
-            "$(SRCROOT)/SwiftExplorer/Localizable/SwiftExplorer.strings"
+            "$(SRCROOT)/swiftgen.yml",
+            "$(SRCROOT)/SwiftExplorer/Localizable/**/*.strings"
         ],
         outputPaths: [
             "$(SRCROOT)/SwiftExplorer/Generated/L10n.swift"
         ]
+    )
+
+    static let swiftlint = TargetScript.pre(
+        script: """
+        export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
+        if command -v mise >/dev/null 2>&1; then
+            mise run swiftlint
+        else
+            echo "warning: mise not found, skipping SwiftLint. Install mise: https://mise.jdx.dev"
+        fi
+        """,
+        name: "SwiftLint",
+        basedOnDependencyAnalysis: false
     )
 
     static let crashlytics = TargetScript.post(

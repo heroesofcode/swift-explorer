@@ -27,10 +27,11 @@ xcodebuild clean test -workspace SwiftExplorer.xcworkspace -scheme SwiftExplorer
 xcodebuild test -workspace SwiftExplorer.xcworkspace -scheme SwiftExplorer -only-testing:SwiftExplorerTests/HomeViewModelTests
 ```
 
-**Lint:**
+**Lint (requires mise):**
 ```bash
-swiftlint
+mise run swiftlint
 ```
+Also runs automatically as a pre-build script on the `SwiftExplorer` target (see `Tuist/ProjectDescriptionHelpers/Scripts.swift`).
 
 **Localization strings (requires mise):**
 ```bash

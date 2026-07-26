@@ -34,6 +34,7 @@ let project = Project(
             ],
             entitlements: .file(path: "SwiftExplorer/SwiftExplorer.entitlements"),
             scripts: [
+                .swiftlint,
                 .swiftgen,
                 .crashlytics
             ],
@@ -41,8 +42,7 @@ let project = Project(
                 .package(product: "Common"),
                 .package(product: "Analytics"),
                 .package(product: "DesignSystem"),
-                .package(product: "Lowlevel"),
-                .external(name: "SwiftLint")
+                .package(product: "Lowlevel")
             ],
             settings: .settings(
                 base: [

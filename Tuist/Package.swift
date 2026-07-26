@@ -11,7 +11,5 @@ let packageSettings = PackageSettings(
 
 let package = Package(
     name: "SwiftExplorer",
-    dependencies: [
-        .package(url: "https://github.com/lukepistrol/SwiftLintPlugin", .exact("0.63.1"))
-    ]
+    dependencies: []
 )
