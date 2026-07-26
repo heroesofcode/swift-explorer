@@ -1,4 +1,5 @@
 import ProjectDescription
+import ProjectDescriptionHelpers
 
 let project = Project(
     name: "SwiftExplorer",
@@ -7,8 +8,7 @@ let project = Project(
         .package(path: "Dependencies/CommonTest"),
         .package(path: "Dependencies/Analytics"),
         .package(path: "Dependencies/DesignSystem"),
-        .package(path: "Dependencies/Lowlevel"),
-        .package(url: "https://github.com/lukepistrol/SwiftLintPlugin", .exact("0.63.1"))
+        .package(path: "Dependencies/Lowlevel")
     ],
     targets: [
         .target(
@@ -34,24 +34,15 @@ let project = Project(
             ],
             entitlements: .file(path: "SwiftExplorer/SwiftExplorer.entitlements"),
             scripts: [
-                .post(
-                    script: "",
-                    name: "Crashlytics",
-                    inputPaths: [
-                        "$(DWARF_DSYM_FOLDER_PATH)/$(DWARF_DSYM_FILE_NAME)",
-                        "$(DWARF_DSYM_FOLDER_PATH)/$(DWARF_DSYM_FILE_NAME)/Contents/Resources/DWARF/$(PRODUCT_NAME)",
-                        "$(DWARF_DSYM_FOLDER_PATH)/$(DWARF_DSYM_FILE_NAME)/Contents/Info.plist",
-                        "$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
-                        "$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)"
-                    ]
-                )
+                .swiftlint,
+                .swiftgen,
+                .crashlytics
             ],
             dependencies: [
                 .package(product: "Common"),
                 .package(product: "Analytics"),
                 .package(product: "DesignSystem"),
-                .package(product: "Lowlevel"),
-                .package(product: "SwiftLint", type: .plugin)
+                .package(product: "Lowlevel")
             ],
             settings: .settings(
                 base: [

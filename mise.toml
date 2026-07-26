@@ -1,9 +1,16 @@
 [tools]
 swiftgen = "6.6.3"
+swiftlint = "0.63.2"
 tuist = "4.202.6"
 
 [tasks.swiftgen]
 run = "swiftgen"
+
+[tasks.swiftlint]
+run = "swiftlint"
+
+[tasks.install]
+run = "mise exec -- tuist install"
 
 [tasks.generate]
 run = "mise exec -- tuist generate --no-open"
