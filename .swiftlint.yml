@@ -25,9 +25,8 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Fastlane
   - DerivedData
   - SwiftExplorerTests
-  - Dependencies/Analytics/Tests
-  - Dependencies/Theme/Tests
-  - Dependencies/Gemini/Tests
-  - Dependencies/Lowlevel/Tests
+  - Modules/Analytics/Tests
+  - Modules/Theme/Tests
+  - Modules/Lowlevel/Tests
   - "**/.build"
   - "**/checkouts"

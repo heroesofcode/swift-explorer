@@ -3,13 +3,7 @@ import ProjectDescriptionHelpers
 
 let project = Project(
     name: "SwiftExplorer",
-    packages: [
-        .package(path: "Dependencies/Common"),
-        .package(path: "Dependencies/CommonTest"),
-        .package(path: "Dependencies/Analytics"),
-        .package(path: "Dependencies/DesignSystem"),
-        .package(path: "Dependencies/Lowlevel")
-    ],
+    packages: Package.all,
     targets: [
         .target(
             name: "SwiftExplorer",
@@ -39,10 +33,10 @@ let project = Project(
                 .crashlytics
             ],
             dependencies: [
-                .package(product: "Common"),
-                .package(product: "Analytics"),
-                .package(product: "DesignSystem"),
-                .package(product: "Lowlevel")
+                .common,
+                .analytics,
+                .designSystem,
+                .lowlevel
             ],
             settings: .app,
             launchArguments: [
@@ -60,7 +54,7 @@ let project = Project(
             sources: ["SwiftExplorerTests/**/*.swift"],
             dependencies: [
                 .target(name: "SwiftExplorer"),
-                .package(product: "CommonTest")
+                .commonTest
             ],
             settings: .tests
         )
