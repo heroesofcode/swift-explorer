@@ -14,10 +14,10 @@ public extension TargetScript {
         name: "SwiftGen",
         inputPaths: [
             "$(SRCROOT)/swiftgen.yml",
-            "$(SRCROOT)/SwiftExplorer/Localizable/**/*.strings"
+            "$(SRCROOT)/Sources/Localizable/**/*.strings"
         ],
         outputPaths: [
-            "$(SRCROOT)/SwiftExplorer/Generated/L10n.swift"
+            "$(SRCROOT)/Sources/Generated/L10n.swift"
         ]
     )
 

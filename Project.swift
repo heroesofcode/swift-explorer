@@ -19,14 +19,14 @@ let project = Project(
                     "UIUserInterfaceStyle": "Light"
                 ]
             ),
-            sources: ["SwiftExplorer/**/*.swift"],
+            sources: ["Sources/**/*.swift"],
             resources: [
-                "SwiftExplorer/Assets.xcassets",
-                "SwiftExplorer/Preview Content/**",
-                "SwiftExplorer/GoogleService-Info.plist",
-                "SwiftExplorer/Localizable/SwiftExplorer.strings"
+                "Sources/Assets.xcassets",
+                "Sources/Preview Content/**",
+                "Sources/GoogleService-Info.plist",
+                "Sources/Localizable/SwiftExplorer.strings"
             ],
-            entitlements: .file(path: "SwiftExplorer/SwiftExplorer.entitlements"),
+            entitlements: .file(path: "Sources/SwiftExplorer.entitlements"),
             scripts: [
                 .swiftlint,
                 .swiftgen,
@@ -51,7 +51,7 @@ let project = Project(
             bundleId: "com.joaolfp.SwiftExplorerTests",
             deploymentTargets: .macOS("14.5"),
             infoPlist: .extendingDefault(with: ["UIUserInterfaceStyle": "Dark"]),
-            sources: ["SwiftExplorerTests/**/*.swift"],
+            sources: ["Tests/**/*.swift"],
             dependencies: [
                 .target(name: "SwiftExplorer"),
                 .commonTest
