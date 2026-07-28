@@ -8,7 +8,7 @@ public extension Settings {
             "CODE_SIGN_STYLE": "Automatic",
             "COMBINE_HIDPI_IMAGES": "YES",
             "CURRENT_PROJECT_VERSION": "1",
-            "DEVELOPMENT_ASSET_PATHS": "\"SwiftExplorer/Preview Content\"",
+            "DEVELOPMENT_ASSET_PATHS": "\"Sources/Preview Content\"",
             "ENABLE_PREVIEWS": "YES",
             "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
             "LD_RUNPATH_SEARCH_PATHS": ["$(inherited)", "@executable_path/../Frameworks"],

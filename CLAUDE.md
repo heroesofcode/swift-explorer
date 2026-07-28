@@ -50,15 +50,15 @@ The project uses MVVM with a local Swift Package Manager monorepo under `Modules
 - **Common** — `AppLinks`, `Bundle+AppVersion`.
 - **CommonTest** — `TestBase`, SwiftUI test helpers shared across package tests.
 
-**Main app layer** (`SwiftExplorer/`):
+**Main app layer** (`Sources/`):
 - `HomeView` — Three code editors (Swift input, LLVM IR output, Assembly output) plus an optimization-level picker and an Explore button.
 - `HomeViewModel` — `@Observable` class, holds the three code strings and optimization level. `generate()` calls `Lowlevel` to produce IR and assembly. Accepts `AnalyticsTracking` and `CrashlyticsTracking` via protocol injection.
 - `AboutView` — Static about screen.
 
 ## Testing Patterns
 
-- ViewModels are tested in `SwiftExplorerTests/` using stub implementations of the Analytics/Crashlytics protocols (e.g., `AnalyticsTrackingStub`).
-- Snapshot tests live in `SwiftExplorerTests/__Snapshots__/` — update them intentionally when UI changes.
+- ViewModels are tested in `Tests/` using stub implementations of the Analytics/Crashlytics protocols (e.g., `AnalyticsTrackingStub`).
+- Snapshot tests live in `Tests/__Snapshots__/` — update them intentionally when UI changes.
 - Each SPM package has its own `Tests/` target tested through the main scheme.
 
 ## Code Conventions

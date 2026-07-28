@@ -1,5 +1,5 @@
 strings:
-  inputs: SwiftExplorer/Localizable/
+  inputs: Sources/Localizable/
   outputs:
     templateName: structured-swift5
-    output: SwiftExplorer/Generated/L10n.swift
+    output: Sources/Generated/L10n.swift
